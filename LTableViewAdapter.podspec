@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "6.0"
   s.source       = { :git => "https://github.com/banchichen/LTableViewAdapter.git", :tag => "1.7.0" }
   s.requires_arc = true
-  s.resources    = "LTableViewAdapter/LTableViewAdapter/*.{png,xib,nib,bundle}"
-  s.source_files = "LTableViewAdapter/LTableViewAdapter/*.{h,m}"
+  s.resources    = "LTableViewAdapter/**/*.{png,xib,nib,bundle}"
+  s.source_files = "LTableViewAdapter/**/*.{h,m}"
 end
