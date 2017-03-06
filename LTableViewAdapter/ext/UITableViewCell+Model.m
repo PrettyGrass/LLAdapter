@@ -54,16 +54,20 @@ static NSString *cellmodelkey = @"cellmodelkey";
 }
 - (void)updateUI {
     
-    self.textLabel.text = self.model.title;
-    self.detailTextLabel.text = self.model.subTitle;
-    
-    NSString *img = self.model.image;
-    if ([img hasPrefix:@"http://"]||[img hasPrefix:@"https://"]) {
-        //[self.imageView setImageURL:[NSURL URLWithString:img]];
-    } else if (img.length > 0) {
-        self.imageView.image = [UIImage imageNamed:img];
+    if ([NSStringFromClass(self.class) isEqualToString:@"UITableViewCell"]) {
+        self.textLabel.text = self.model.title;
+        self.detailTextLabel.text = self.model.subTitle;
+        NSString *img = self.model.image;
+        if ([img hasPrefix:@"http://"]||[img hasPrefix:@"https://"]) {
+            //[self.imageView setImageURL:[NSURL URLWithString:img]];
+        } else if (img.length > 0) {
+            self.imageView.image = [UIImage imageNamed:img];
+        }
     }
-    
+    __weak typeof(self) weakSelf = self;
+    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [weakSelf setValue:obj forKeyPath:key];
+    }];
 //    if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
 //        NSInteger tag = 123154;
 //        UIView *separ = [self viewWithTag:tag];

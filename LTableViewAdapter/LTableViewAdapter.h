@@ -13,6 +13,10 @@
 #import "TableViewAdapter.h"
 #import "UICollectionViewCell+Model.h"
 #import "UITableViewCell+Model.h"
-
-
+#import "TableSection.h"
+#import "CollectSection.h"
+#import "UICollectionViewCell+Model.h"
+#import "UITableViewCell+Model.h"
+#import "TableCell.h"
+#import "CollectCell.h"
 #endif /* LTableViewAdapter_h */

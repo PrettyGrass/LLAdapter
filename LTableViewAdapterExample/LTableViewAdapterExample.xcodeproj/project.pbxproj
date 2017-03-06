@@ -16,6 +16,7 @@
 		DF5BA7971E6D4DA100838FB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5BA7951E6D4DA100838FB1 /* LaunchScreen.storyboard */; };
 		DF5BA7A21E6D4DA100838FB1 /* LTableViewAdapterExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA7A11E6D4DA100838FB1 /* LTableViewAdapterExampleTests.m */; };
 		DF5BA7AD1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA7AC1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m */; };
+		DF5BA8AE1E6D619500838FB1 /* SimpleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA8AD1E6D619500838FB1 /* SimpleCellView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		DF5BA7A81E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTableViewAdapterExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5BA7AC1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTableViewAdapterExampleUITests.m; sourceTree = "<group>"; };
 		DF5BA7AE1E6D4DA100838FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF5BA8AC1E6D619500838FB1 /* SimpleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCellView.h; sourceTree = "<group>"; };
+		DF5BA8AD1E6D619500838FB1 /* SimpleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 		DF5BA7861E6D4DA100838FB1 /* LTableViewAdapterExample */ = {
 			isa = PBXGroup;
 			children = (
+				DF5BA8AC1E6D619500838FB1 /* SimpleCellView.h */,
+				DF5BA8AD1E6D619500838FB1 /* SimpleCellView.m */,
 				DF5BA78A1E6D4DA100838FB1 /* AppDelegate.h */,
 				DF5BA78B1E6D4DA100838FB1 /* AppDelegate.m */,
 				DF5BA78D1E6D4DA100838FB1 /* ViewController.h */,
@@ -353,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF5BA8AE1E6D619500838FB1 /* SimpleCellView.m in Sources */,
 				DF5BA78F1E6D4DA100838FB1 /* ViewController.m in Sources */,
 				DF5BA78C1E6D4DA100838FB1 /* AppDelegate.m in Sources */,
 				DF5BA7891E6D4DA100838FB1 /* main.m in Sources */,
