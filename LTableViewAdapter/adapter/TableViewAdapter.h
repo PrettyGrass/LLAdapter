@@ -23,4 +23,6 @@
 @property (weak, nonatomic) id<UITableViewDelegate> tableViewDelegate;
 @property (assign, nonatomic) id<UITableViewDataSource> dataSourceDelegate;
 
+- (TableSection *)addNewSection;
+
 @end

@@ -21,4 +21,7 @@
 @property (copy, nonatomic) NSString *sectionTitle;
 /// 单元的数据集合
 @property (strong, nonatomic) NSMutableArray <TableCell *>*datas;
+
+- (TableCell *)addNewCell;
+
 @end

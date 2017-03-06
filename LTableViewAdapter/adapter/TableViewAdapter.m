@@ -34,6 +34,17 @@
     [super reloadData];
     [self.tableView reloadData];
 }
+
+- (TableSection *)addNewSection {
+    
+    if (!self.sections) {
+        self.sections = [NSMutableArray array];
+    }
+    TableSection *section = [[TableSection alloc] init];
+    [self.sections addObject:section];
+    return section;
+}
+
 #pragma - mark - UITableViewDelegate
 - (NSInteger )numberOfSectionsInTableView:(UITableView *)tableView {
     

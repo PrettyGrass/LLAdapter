@@ -7,6 +7,7 @@
 //
 
 #import "TableSection.h"
+#import "TableCell.h"
 
 @implementation TableSection
 - (instancetype)init
@@ -17,4 +18,11 @@
     }
     return self;
 }
+
+- (TableCell *)addNewCell {
+    TableCell *cell = [[TableCell alloc] init];
+    [self.datas addObject:cell];
+    return cell;
+}
+
 @end

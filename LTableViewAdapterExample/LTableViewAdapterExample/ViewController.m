@@ -19,12 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    ///初始化适配器
     TableViewAdapter *adapter = [[TableViewAdapter alloc] init];
     self.adapter = adapter;
-    
-    adapter.sections = [[NSMutableArray alloc] init];
+    ///初始化单元数组
+    //adapter.sections = [[NSMutableArray alloc] init];
+    ///设置适配器依附的视图
     adapter.tableView = self.simpleTable;
-    
+    ///设置数据
     [self setData:@[@"dsd", @"s"] isRefresh:true];
 }
 
@@ -32,15 +34,13 @@
     
     TableSection *section = self.adapter.sections.firstObject;
     if (!section) {
-        section = [[TableSection alloc] init];
-        [self.adapter.sections addObject:section];
+        section = [self.adapter addNewSection];
     }
     if (isRefresh) {
         [section.datas removeAllObjects];
     }
     for (NSInteger idx = 0; idx < datas.count; idx ++) {
-        TableCell *cell = [[TableCell alloc] init];
-        [section.datas addObject:cell];
+        TableCell *cell = [section addNewCell];
         
         cell.loadType = CellLoadTypeInner;
         cell.cellClazz = NSClassFromString(@"SimpleCellView");
