@@ -65,38 +65,38 @@
     
     TableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     cellModel.indexPath = indexPath;
-    UITableViewCell *cell;// = [tableView dequeueReusableCellWithIdentifier:[cellModel.cellClazz className]];
+    UITableViewCell *cell;
     /// 是否重用
     if (dequeue) {
         cell = [tableView dequeueReusableCellWithIdentifier:[cellModel.cellClazz className]];
         if (!cell) {
             switch (cellModel.loadType) {
                 case CellLoadTypeInner:
-                    [tableView registerClass:cellModel.cellClazz forCellReuseIdentifier:[cellModel.cellClazz className]];
+                    [tableView registerClass:cellModel.cellClazz forCellReuseIdentifier:cellModel.cellIdentity];
                     break;
                 case CellLoadTypeNib:
-                    [tableView registerNib:[UINib nibWithNibName:[cellModel.cellClazz className] bundle:nil] forCellReuseIdentifier:[cellModel.cellClazz className]];
+                    [tableView registerNib:[UINib nibWithNibName:cellModel.cellNibName bundle:nil] forCellReuseIdentifier:cellModel.cellIdentity];
                     break;
                 case CellLoadTypeOri:
-                    [tableView registerClass:cellModel.cellClazz forCellReuseIdentifier:[cellModel.cellClazz className]];
+                    [tableView registerClass:cellModel.cellClazz forCellReuseIdentifier:cellModel.cellIdentity];
                     break;
                     
                 default:
                     break;
             }
-            cell = [tableView dequeueReusableCellWithIdentifier:[cellModel.cellClazz className]];
+            cell = [tableView dequeueReusableCellWithIdentifier:cellModel.cellIdentity];
         }
     } else {
         switch (cellModel.loadType) {
             case CellLoadTypeInner:
-                cell = [[cellModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:[cellModel.cellClazz className]];
+                cell = [[cellModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellModel.cellIdentity];
                 break;
             case CellLoadTypeNib:{
-                cell = [cellModel.cellClazz loadViewFromXib];
+                cell = [cellModel.cellClazz loadViewFromXibName:cellModel.cellNibName];
             }
                 break;
             case CellLoadTypeOri:
-                cell = [[cellModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:[cellModel.cellClazz className]];
+                cell = [[cellModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellModel.cellIdentity];
                 break;
                 
             default:

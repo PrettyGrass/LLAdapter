@@ -13,10 +13,31 @@
 {
     self = [super init];
     if (self) {
-        _cellHeight = 44;//UITableViewAutomaticDimension
+        _cellHeight = UITableViewAutomaticDimension;//UITableViewAutomaticDimension
         _cellClazz = [UITableViewCell class];
         _kvcExt = [NSMutableDictionary dictionary];
     }
     return self;
 }
+
+- (NSString *)cellIdentity {
+    
+    if (_cellIdentity) {
+        return _cellIdentity;
+    }
+    NSString *val = NSStringFromClass(self.cellClazz);
+    
+    return val;
+}
+
+- (NSString *)cellNibName {
+    
+    if (_cellNibName) {
+        return _cellNibName;
+    }
+    NSString *val = NSStringFromClass(self.cellClazz);
+    
+    return val;
+}
+
 @end

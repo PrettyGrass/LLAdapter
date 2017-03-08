@@ -51,14 +51,16 @@ typedef void (^CellClick)(TableCell *model, NSIndexPath *index);
 @property (copy, nonatomic) NSString *title;
 /// 子标题
 @property (copy, nonatomic) NSString *subTitle;
-/// 图片名字或者URL
+/// 图片名字  URL UIImage
 @property (assign, nonatomic) id image;
-///
-//@property (assign, nonatomic) NSInteger algin;
 /// 点击事件
 @property (copy, nonatomic) CellClick cellClick;
 /// cell类
 @property (assign, nonatomic) Class cellClazz;
+/// cell Identity
+@property (copy, nonatomic) NSString *cellIdentity;
+/// cell NibName
+@property (copy, nonatomic) NSString *cellNibName;
 /// cell加载类型
 @property (assign, nonatomic) CellLoadType loadType;
 /// 选择的风格
@@ -67,7 +69,6 @@ typedef void (^CellClick)(TableCell *model, NSIndexPath *index);
 @property (assign, nonatomic) DeSelectionStyle deSelectionStyle;
 /// 附件风格
 @property (assign, nonatomic) UITableViewCellAccessoryType accessoryType;// = UITableViewCellAccessoryNone;
-
 /// 行分割线风格
 @property (assign, nonatomic) TableViewCellSeparatorStyle separatorStyle;
 /// 行分割线颜色
@@ -75,6 +76,6 @@ typedef void (^CellClick)(TableCell *model, NSIndexPath *index);
 /// 分割线的位置
 @property (nonatomic) UIEdgeInsets separatorInset;
 /// 数据
-@property (strong, nonatomic) NSObject *data;
+@property (assign, nonatomic) id data;
 
 @end

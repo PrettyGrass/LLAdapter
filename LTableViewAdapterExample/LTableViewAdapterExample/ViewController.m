@@ -22,12 +22,13 @@
     ///初始化适配器
     TableViewAdapter *adapter = [[TableViewAdapter alloc] init];
     self.adapter = adapter;
-    ///初始化单元数组
-    //adapter.sections = [[NSMutableArray alloc] init];
     ///设置适配器依附的视图
     adapter.tableView = self.simpleTable;
+    
+    self.simpleTable.estimatedRowHeight = 44;
+    self.simpleTable.rowHeight = UITableViewAutomaticDimension;
     ///设置数据
-    [self setData:@[@"dsd", @"s"] isRefresh:true];
+    [self setData:@[@"dsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlv", @"dsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlv"] isRefresh:true];
 }
 
 - (void)setData:(NSArray <NSString *>*)datas isRefresh:(BOOL)isRefresh {

@@ -87,108 +87,97 @@
 }
 
 #pragma -mark- UIScrollViewDelegate
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-//
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, velocity,targetContentOffset, nil];
-//}
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-//    
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, decelerate, nil];
-//}
-//- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return nil;
-//    }
-//    return [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, view, nil];
-//}
-//- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, view, scale, nil];
-//}
-//- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return false;
-//    }
-//    return [[(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil] boolValue];
-//}
-//- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView{
-//    
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, scrollView, nil];
-//}
-//- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, collectionView, cell, indexPath, nil];
-//}
-//- (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
-//        return;
-//    }
-//    [(NSObject *)self.collectionViewDelegate performSelectorWithArgs:_cmd, collectionView, cell, indexPath, nil];
-//}
+#pragma - mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewDidScroll:scrollView];
+}
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewDidZoom:scrollView];
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewWillBeginDragging:scrollView];
+}
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+}
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewWillBeginDecelerating:scrollView];
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewDidEndDecelerating:scrollView];
+}
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewDidEndScrollingAnimation:scrollView];
+}
+- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return nil;
+    }
+    return [self.collectionViewDelegate viewForZoomingInScrollView:scrollView];
+}
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewWillBeginZooming:scrollView withView:view];
+}
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(nullable UIView *)view atScale:(CGFloat)scale{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewDidEndZooming:scrollView withView:view atScale:scale];
+}
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return false;
+    }
+    return [self.collectionViewDelegate scrollViewShouldScrollToTop:scrollView];
+}
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView{
+    
+    if (![self.collectionViewDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.collectionViewDelegate scrollViewDidScrollToTop:scrollView];
+}
 
 @end
