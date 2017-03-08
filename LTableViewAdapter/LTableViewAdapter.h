@@ -9,6 +9,7 @@
 #ifndef LTableViewAdapter_h
 #define LTableViewAdapter_h
 
+#import "LTabbleViewDefine.h"
 #import "CollectionViewAdapter.h"
 #import "TableViewAdapter.h"
 #import "UICollectionViewCell+Model.h"
@@ -19,4 +20,5 @@
 #import "UITableViewCell+Model.h"
 #import "TableCell.h"
 #import "CollectCell.h"
+
 #endif /* LTableViewAdapter_h */

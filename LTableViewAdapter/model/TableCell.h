@@ -7,27 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class TableCell;
-typedef NS_ENUM(NSInteger, CellLoadType) {
-    CellLoadTypeInner,
-    CellLoadTypeOri,
-    CellLoadTypeNib
-};
-/// 点击后的去选风格
-typedef NS_ENUM(NSInteger, DeSelectionStyle) {
-    DeSelectionStyleNone,//不操作
-    DeSelectionStyleNow,//立即去选择
-    DeSelectionStylePersist,//永久选择
-};
-/// 分割线风格
-typedef NS_ENUM(NSInteger, TableViewCellSeparatorStyle) {
-    TableViewCellSeparatorStyleNone,//无
-    TableViewCellSeparatorStyleInner,//系统内置
-    TableViewCellSeparatorStyleCustom,//自定义
-};
+#import "LTabbleViewDefine.h"
 
-
-typedef void (^CellClick)(TableCell *model, NSIndexPath *index);
 /**
  *	@author Y0, 16-07-04 17:07:34
  *
@@ -54,7 +35,7 @@ typedef void (^CellClick)(TableCell *model, NSIndexPath *index);
 /// 图片名字  URL UIImage
 @property (assign, nonatomic) id image;
 /// 点击事件
-@property (copy, nonatomic) CellClick cellClick;
+@property (copy, nonatomic) TableCellAction cellClick;
 /// cell类
 @property (assign, nonatomic) Class cellClazz;
 /// cell Identity
