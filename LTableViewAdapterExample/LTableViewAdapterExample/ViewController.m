@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <LTableViewAdapter/LTableViewAdapter.h>
+#import "SimpleTableViewController.h"
 
 @interface ViewController ()
 
@@ -20,35 +21,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     ///初始化适配器
-    TableViewAdapter *adapter = [[TableViewAdapter alloc] init];
+    TableViewAdapter *adapter = [[TableViewAdapter alloc] initWithTableView:self.simpleTable];
     self.adapter = adapter;
-    ///设置适配器依附的视图
-    adapter.tableView = self.simpleTable;
     
     self.simpleTable.estimatedRowHeight = 44;
     self.simpleTable.rowHeight = UITableViewAutomaticDimension;
     ///设置数据
-    [self setData:@[@"dsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlv", @"dsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlvdsdgdfgljsd;fgksdfj;gslkdfgksdfg;sdfogpserugopwejkgvsdjfiupytuoperwjkldfsnivesrufgdfskjgsodyrtesfvkjsr8gtoswejrlv"] isRefresh:true];
-}
-
-- (void)setData:(NSArray <NSString *>*)datas isRefresh:(BOOL)isRefresh {
     
     TableSection *section = self.adapter.sections.firstObject;
     if (!section) {
         section = [self.adapter addNewSection];
     }
-    if (isRefresh) {
-        [section.datas removeAllObjects];
-    }
-    for (NSInteger idx = 0; idx < datas.count; idx ++) {
-        TableCell *cell = [section addNewCell];
-        
-        cell.loadType = CellLoadTypeInner;
-        cell.cellClazz = NSClassFromString(@"SimpleCellView");
-        cell.title = datas[idx];
-        [cell.kvcExt setObject:[UIColor redColor] forKey:@"titleLab.textColor"];
-        
-    }
+    
+    TableCell *cell = [section addNewCell];
+    
+    cell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
+        SimpleTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleTableViewController"];
+        [self.navigationController pushViewController:vc animated:true];
+    };
+    cell.loadType = CellLoadTypeInner;
+    //cell.cellClazz = NSClassFromString(@"SimpleCellView");
+    cell.title = @"简单";
+    //[cell.kvcExt setObject:[UIColor redColor] forKey:@"titleLab.textColor"];
+    
+    
+    
     [self.adapter reloadData];
 }
 

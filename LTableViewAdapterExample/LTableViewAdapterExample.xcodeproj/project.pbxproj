@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9C0EC5FF9825F7207E5162CB /* libPods-LTableViewAdapterExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 953537232472727D715685E8 /* libPods-LTableViewAdapterExample.a */; };
+		DF03BEA51E701B4E0055FEE4 /* SimpleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF03BEA41E701B4E0055FEE4 /* SimpleTableViewController.m */; };
+		DF03BEA81E701FC50055FEE4 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF03BEA71E701FC50055FEE4 /* CustomTableViewController.m */; };
 		DF5BA7891E6D4DA100838FB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA7881E6D4DA100838FB1 /* main.m */; };
 		DF5BA78C1E6D4DA100838FB1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA78B1E6D4DA100838FB1 /* AppDelegate.m */; };
 		DF5BA78F1E6D4DA100838FB1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA78E1E6D4DA100838FB1 /* ViewController.m */; };
@@ -42,6 +44,10 @@
 		4FAC04515B0672B3D0B5635C /* Pods-LTableViewAdapterExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTableViewAdapterExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTableViewAdapterExample/Pods-LTableViewAdapterExample.release.xcconfig"; sourceTree = "<group>"; };
 		953537232472727D715685E8 /* libPods-LTableViewAdapterExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTableViewAdapterExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD918E24E4B17033C7874996 /* Pods-LTableViewAdapterExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTableViewAdapterExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTableViewAdapterExample/Pods-LTableViewAdapterExample.debug.xcconfig"; sourceTree = "<group>"; };
+		DF03BEA31E701B4E0055FEE4 /* SimpleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableViewController.h; sourceTree = "<group>"; };
+		DF03BEA41E701B4E0055FEE4 /* SimpleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableViewController.m; sourceTree = "<group>"; };
+		DF03BEA61E701FC50055FEE4 /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
+		DF03BEA71E701FC50055FEE4 /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
 		DF5BA7841E6D4DA100838FB1 /* LTableViewAdapterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTableViewAdapterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF5BA7881E6D4DA100838FB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF5BA78A1E6D4DA100838FB1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +144,10 @@
 				DF5BA78B1E6D4DA100838FB1 /* AppDelegate.m */,
 				DF5BA78D1E6D4DA100838FB1 /* ViewController.h */,
 				DF5BA78E1E6D4DA100838FB1 /* ViewController.m */,
+				DF03BEA31E701B4E0055FEE4 /* SimpleTableViewController.h */,
+				DF03BEA41E701B4E0055FEE4 /* SimpleTableViewController.m */,
+				DF03BEA61E701FC50055FEE4 /* CustomTableViewController.h */,
+				DF03BEA71E701FC50055FEE4 /* CustomTableViewController.m */,
 				DF5BA7901E6D4DA100838FB1 /* Main.storyboard */,
 				DF5BA7931E6D4DA100838FB1 /* Assets.xcassets */,
 				DF5BA7951E6D4DA100838FB1 /* LaunchScreen.storyboard */,
@@ -360,7 +370,9 @@
 			files = (
 				DF5BA8AE1E6D619500838FB1 /* SimpleCellView.m in Sources */,
 				DF5BA78F1E6D4DA100838FB1 /* ViewController.m in Sources */,
+				DF03BEA51E701B4E0055FEE4 /* SimpleTableViewController.m in Sources */,
 				DF5BA78C1E6D4DA100838FB1 /* AppDelegate.m in Sources */,
+				DF03BEA81E701FC50055FEE4 /* CustomTableViewController.m in Sources */,
 				DF5BA7891E6D4DA100838FB1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

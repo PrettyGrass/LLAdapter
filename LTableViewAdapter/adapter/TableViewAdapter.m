@@ -19,6 +19,15 @@
 
 @implementation TableViewAdapter
 
+- (instancetype)initWithTableView:(UITableView *)tableView {
+    
+    self = [self init];
+    if (self) {
+        self.tableView = tableView;
+    }
+    return self;
+}
+
 - (void)setTableView:(UITableView *)tableView {
     
     if (_tableView == tableView) {
