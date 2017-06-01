@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <LTableViewAdapter/LTableViewAdapter.h>
 #import "SimpleTableViewController.h"
+#import "CustomTableViewController.h"
 
 @interface ViewController ()
 
@@ -33,19 +34,24 @@
         section = [self.adapter addNewSection];
     }
     
-    TableCell *cell = [section addNewCell];
+    TableCell *simpleCell = [section addNewCell];
     
-    cell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
+    simpleCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
         SimpleTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
     };
-    cell.loadType = CellLoadTypeInner;
-    //cell.cellClazz = NSClassFromString(@"SimpleCellView");
-    cell.title = @"简单";
-    //[cell.kvcExt setObject:[UIColor redColor] forKey:@"titleLab.textColor"];
+    simpleCell.loadType = CellLoadTypeInner;
+    simpleCell.title = @"简单";
     
+    TableCell *customCell = [section addNewCell];
     
-    
+    customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
+        CustomTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CustomTableViewController"];
+        [self.navigationController pushViewController:vc animated:true];
+    };
+    customCell.loadType = CellLoadTypeInner;
+    customCell.title = @"自定义";
+
     [self.adapter reloadData];
 }
 

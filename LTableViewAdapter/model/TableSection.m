@@ -24,5 +24,10 @@
     [self.datas addObject:cell];
     return cell;
 }
+- (TableCell *)addNewCell:(Class)clzz {
+    TableCell *cell = [[clzz alloc] init];
+    [self.datas addObject:cell];
+    return cell;
+}
 
 @end
