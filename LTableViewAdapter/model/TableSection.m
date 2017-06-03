@@ -19,12 +19,12 @@
     return self;
 }
 
-- (TableCell *)addNewCell {
+- (__kindof TableCell *)addNewCell {
     TableCell *cell = [[TableCell alloc] init];
     [self.datas addObject:cell];
     return cell;
 }
-- (TableCell *)addNewCell:(Class)clzz {
+- (__kindof TableCell *)addNewCell:(Class)clzz {
     TableCell *cell = [[clzz alloc] init];
     [self.datas addObject:cell];
     return cell;

@@ -22,6 +22,7 @@
 /// 单元的数据集合
 @property (strong, nonatomic) NSMutableArray <TableCell *>*datas;
 
-- (TableCell *)addNewCell;
+- (__kindof TableCell *)addNewCell;
+- (__kindof TableCell *)addNewCell:(Class)clzz;
 
 @end

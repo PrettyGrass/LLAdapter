@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = false;
     ///初始化适配器
     TableViewAdapter *adapter = [[TableViewAdapter alloc] initWithTableView:self.simpleTable];
     self.adapter = adapter;
@@ -44,7 +45,6 @@
     simpleCell.title = @"简单";
     
     TableCell *customCell = [section addNewCell];
-    
     customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
         CustomTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CustomTableViewController"];
         [self.navigationController pushViewController:vc animated:true];

@@ -35,7 +35,7 @@
         section = [self.adapter addNewSection];
     }
     
-    KVTableCell *simpleCell = [section addNewCell];
+    KVTableCell *simpleCell = [section addNewCell:KVTableCell.class];
     
     simpleCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
         

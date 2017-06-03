@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, TableViewCellSeparatorStyle) {
     TableViewCellSeparatorStyleCustom,//自定义
 };
 
-typedef void (^TableCellAction)(TableCell *model, NSIndexPath *index);
+typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 
 /**
  *	@author Y0, 16-07-04 17:07:34

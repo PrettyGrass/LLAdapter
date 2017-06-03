@@ -258,7 +258,7 @@
 				TargetAttributes = {
 					DF5BA7831E6D4DA100838FB1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = CAJWHGNRQK;
+						DevelopmentTeam = 3UFAY7EAJX;
 						ProvisioningStyle = Automatic;
 					};
 					DF5BA79C1E6D4DA100838FB1 = {
@@ -527,7 +527,7 @@
 			baseConfigurationReference = CD918E24E4B17033C7874996 /* Pods-LTableViewAdapterExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CAJWHGNRQK;
+				DEVELOPMENT_TEAM = 3UFAY7EAJX;
 				INFOPLIST_FILE = LTableViewAdapterExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExample;
@@ -540,7 +540,7 @@
 			baseConfigurationReference = 4FAC04515B0672B3D0B5635C /* Pods-LTableViewAdapterExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = CAJWHGNRQK;
+				DEVELOPMENT_TEAM = 3UFAY7EAJX;
 				INFOPLIST_FILE = LTableViewAdapterExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExample;
