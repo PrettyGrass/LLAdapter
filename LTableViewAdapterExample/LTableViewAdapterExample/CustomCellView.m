@@ -9,6 +9,7 @@
 #import "CustomCellView.h"
 #import <UITableViewCell+Model.h>
 #import "TableCell.h"
+#import <Masonry.h>
 
 @implementation CustomCellView
 
@@ -18,6 +19,7 @@
 }
 
 - (void)updateUI {
+    __weak typeof(self) weakSelf = self;
     [super updateUI];
     self.titleLab.text = self.model.title;
 }

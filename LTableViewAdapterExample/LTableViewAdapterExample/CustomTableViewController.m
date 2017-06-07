@@ -23,8 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = false;
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    self.simpleTable.backgroundColor = [UIColor clearColor];
+    //self.view.backgroundColor = [UIColor lightGrayColor];
+    //self.simpleTable.backgroundColor = [UIColor clearColor];
     ///初始化适配器
     TableViewAdapter *adapter = [[TableViewAdapter alloc] initWithTableView:self.simpleTable];
     self.adapter = adapter;
@@ -49,7 +49,8 @@
     {
         TableCell *customCell = [section addNewCell:KVTableCell.class];
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
-        [customCell.kvcExt setObject:[UIColor blueColor] forKey:@"backgroundColor"];
+        customCell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        [customCell.kvcExt setObject:[UIColor lightGrayColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
             
@@ -62,8 +63,8 @@
         TableCell *customCell = [section addNewCell:KVTableCell.class];
         customCell.cellHeight = 88;
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
-        [customCell.kvcExt setObject:[UIColor blueColor] forKey:@"backgroundColor"];
-        [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
+        [customCell.kvcExt setObject:[UIColor lightGrayColor] forKey:@"backgroundColor"];
+        //[customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
             
         };
@@ -78,19 +79,19 @@
         customCell.cellClazz = CustomCellView.class;
         //customCell.cellHeight = 88;
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
-        [customCell.kvcExt setObject:[UIColor orangeColor] forKey:@"backgroundColor"];
+        [customCell.kvcExt setObject:[UIColor lightGrayColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 0, 20, 0);
+        customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 20, 20, 20);
         customCell.title = @"上下下边距";
     }
     {
         TableCell *customCell = [section addNewCell:KVTableCell.class];
         customCell.cellHeight = 88;
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
-        [customCell.kvcExt setObject:[UIColor blueColor] forKey:@"backgroundColor"];
+        [customCell.kvcExt setObject:[UIColor lightGrayColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
             

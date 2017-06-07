@@ -14,6 +14,36 @@
 static NSString *cellmodelkey = @"cellmodelkey";
 @implementation UITableViewCell (Model)
 
+//+ (void)load {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        Class class = [self class];
+//        // When swizzling a class method, use the following:
+//        //Class class = object_getClass((id)self);
+//
+//        SEL originalSelector = NSSelectorFromString(@"setSelected:animated:");
+//        SEL swizzledSelector = @selector(customSetSelected::animated:);
+//
+//        Method originalMethod = class_getClassMethod(class, originalSelector);
+//        Method swizzledMethod = class_getClassMethod(class, swizzledSelector);
+//
+//        BOOL didAddMethod =
+//        class_addMethod(class,
+//                        originalSelector,
+//                        method_getImplementation(swizzledMethod),
+//                        method_getTypeEncoding(swizzledMethod));
+//
+//        if (didAddMethod) {
+//            class_replaceMethod(class,
+//                                swizzledSelector,
+//                                method_getImplementation(originalMethod),
+//                                method_getTypeEncoding(originalMethod));
+//        } else {
+//            method_exchangeImplementations(originalMethod, swizzledMethod);
+//        }
+//    });
+//}
+
 - (void)setModel:(TableCell *)model {
     objc_setAssociatedObject(self, &cellmodelkey, model, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     model.cellOriFrame = CGRectZero;
@@ -70,6 +100,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
     [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [weakSelf setValue:obj forKeyPath:key];
     }];
+    
     if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
         NSInteger tag = 123154;
         UIView *separ = [self.contentView viewWithTag:tag];
@@ -87,7 +118,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
         if (self.model.separatorStyle == TableViewCellSeparatorStyleInner) {
             [separ setBackgroundColor:defaultColor];
             [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
-            
+                
                 make.leading.equalTo(weakSelf.textLabel);
                 make.trailing.equalTo(weakSelf);
                 make.bottom.equalTo(weakSelf);
@@ -96,19 +127,61 @@ static NSString *cellmodelkey = @"cellmodelkey";
         } else {
             [separ setBackgroundColor:color];
             [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
-            
+                
                 make.leading.equalTo(weakSelf.contentView).offset(weakSelf.model.separatorInset.left);
                 make.trailing.equalTo(weakSelf.contentView).offset(-weakSelf.model.separatorInset.right);
                 make.bottom.equalTo(weakSelf.contentView).offset(-weakSelf.model.separatorInset.bottom);
                 make.height.mas_equalTo(0.3f);
             }];
         }
-
+        
     }
-//    ___weakSelf
-//    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-//        [weakSelf setValue:obj forKeyPath:key];
-//    }];
+    
+    //if (self.selectionStyle) {
+    UIView *v = [[UIView alloc] initWithFrame:self.contentView.frame];
+    v.tag = 1000221;
+    self.selectedBackgroundView = v;
+    //[self.selectedBackgroundView addSubview:v];
+    self.selectedBackgroundView.backgroundColor = [UIColor clearColor];
+    v.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
+    //}
+    
+    //    ___weakSelf
+    //    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    //        [weakSelf setValue:obj forKeyPath:key];
+    //    }];
+}
+//- (void)customSetSelected:(BOOL)selected animated:(BOOL)animated {
+//    [self customSetSelected:selected animated:animated];
+//    __weak typeof(self) weakSelf = self;
+//    if (self.selectedBackgroundView.superview) {
+//        [self.selectedBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//            make.leading.equalTo(weakSelf.selectedBackgroundView.superview).offset(weakSelf.model.cellSpaceMargin.left);
+//            make.trailing.equalTo(weakSelf.selectedBackgroundView.superview).offset(-weakSelf.model.cellSpaceMargin.right);
+//            make.top.equalTo(weakSelf.selectedBackgroundView.superview).offset(weakSelf.model.cellSpaceMargin.top);
+//            make.bottom.equalTo(weakSelf.selectedBackgroundView.superview).offset(-weakSelf.model.cellSpaceMargin.bottom);
+//        }];
+//        self.selectedBackgroundView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
+//    }
+//
+//}
+
+- (void)didAddSubview:(UIView *)subview {
+    [super didAddSubview:subview];
+    if (subview.tag == 1000221) {
+        __weak typeof(self) weakSelf = self;
+        if (self.selectedBackgroundView.superview) {
+            [self.selectedBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+                
+                make.leading.equalTo(weakSelf.selectedBackgroundView.superview).offset(weakSelf.model.cellSpaceMargin.left);
+                make.trailing.equalTo(weakSelf.selectedBackgroundView.superview).offset(-weakSelf.model.cellSpaceMargin.right);
+                make.top.equalTo(weakSelf.selectedBackgroundView.superview).offset(weakSelf.model.cellSpaceMargin.top);
+                make.bottom.equalTo(weakSelf.selectedBackgroundView.superview).offset(-weakSelf.model.cellSpaceMargin.bottom);
+            }];
+            self.selectedBackgroundView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
+        }
+    }
 }
 
 @end
