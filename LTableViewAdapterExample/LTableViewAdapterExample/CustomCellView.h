@@ -10,4 +10,6 @@
 
 @interface CustomCellView : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+
 @end

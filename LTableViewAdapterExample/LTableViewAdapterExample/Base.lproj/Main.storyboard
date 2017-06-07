@@ -198,16 +198,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-LC-QHg">
-                                                    <rect key="frame" x="12" y="12" width="351" height="125"/>
+                                                    <rect key="frame" x="12" y="12" width="351" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHo-CE-4tl">
+                                                    <rect key="frame" x="94" y="84" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tyx-LC-QHg" secondAttribute="trailing" constant="4" id="26Q-zH-dNd"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="tyx-LC-QHg" secondAttribute="bottom" constant="4" id="63V-WF-MUA"/>
+                                                <constraint firstItem="JHo-CE-4tl" firstAttribute="leading" secondItem="toT-3V-gQK" secondAttribute="leadingMargin" constant="86" id="ThF-W6-Ddp"/>
                                                 <constraint firstItem="tyx-LC-QHg" firstAttribute="top" secondItem="toT-3V-gQK" secondAttribute="topMargin" constant="4" id="Z8a-EQ-Vlo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JHo-CE-4tl" secondAttribute="trailing" constant="227" id="dD7-AY-fgl"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="JHo-CE-4tl" secondAttribute="bottom" constant="27" id="mWx-ES-pj2"/>
+                                                <constraint firstItem="JHo-CE-4tl" firstAttribute="top" secondItem="tyx-LC-QHg" secondAttribute="bottom" constant="55" id="nbo-on-zLR"/>
                                                 <constraint firstItem="tyx-LC-QHg" firstAttribute="leading" secondItem="toT-3V-gQK" secondAttribute="leadingMargin" constant="4" id="wgw-BM-ecb"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -234,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rQ-L5-opv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1283" y="266"/>
+            <point key="canvasLocation" x="1623" y="251"/>
         </scene>
     </scenes>
 </document>

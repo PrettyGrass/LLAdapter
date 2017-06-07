@@ -7,6 +7,8 @@
 //
 
 #import "CustomCellView.h"
+#import <UITableViewCell+Model.h>
+#import "TableCell.h"
 
 @implementation CustomCellView
 
@@ -15,10 +17,9 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)updateUI {
+    [super updateUI];
+    self.titleLab.text = self.model.title;
 }
 
 @end

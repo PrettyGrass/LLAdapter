@@ -73,7 +73,8 @@
     }
     {
         TableCell *customCell = [section addNewCell:KVTableCell.class];
-        customCell.loadType = CellLoadTypeInner;
+        customCell.loadType = CellLoadTypeNib;
+        customCell.selectionStyle = UITableViewCellSelectionStyleDefault;
         customCell.cellClazz = CustomCellView.class;
         //customCell.cellHeight = 88;
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
@@ -83,7 +84,6 @@
             
         };
         customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 0, 20, 0);
-        customCell.loadType = CellLoadTypeInner;
         customCell.title = @"上下下边距";
     }
     {
