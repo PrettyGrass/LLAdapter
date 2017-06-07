@@ -9,6 +9,7 @@
 #import "UITableViewCell+Model.h"
 #import "objc/runtime.h"
 #import "TableCell.h"
+#import "Masonry.h"
 
 static NSString *cellmodelkey = @"cellmodelkey";
 @implementation UITableViewCell (Model)
@@ -43,12 +44,12 @@ static NSString *cellmodelkey = @"cellmodelkey";
         frame.size.height -= (self.model.cellSpaceMargin.top+self.model.cellSpaceMargin.bottom);
         frame.origin.x += self.model.cellSpaceMargin.left;
         frame.size.width -= (self.model.cellSpaceMargin.left+self.model.cellSpaceMargin.right);
-        //[self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //    make.leading.equalTo(self).offset(self.model.cellSpaceMargin.left);
-        //    make.trailing.equalTo(self).offset(self.model.cellSpaceMargin.right);
-        //    make.top.equalTo(self).offset(self.model.cellSpaceMargin.top);
-        //    make.bottom.equalTo(self).offset(self.model.cellSpaceMargin.bottom);
-        //}];
+        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(self).offset(self.model.cellSpaceMargin.left);
+            make.trailing.equalTo(self).offset(self.model.cellSpaceMargin.right);
+            make.top.equalTo(self).offset(self.model.cellSpaceMargin.top);
+            make.bottom.equalTo(self).offset(self.model.cellSpaceMargin.bottom);
+        }];
     }
     [super setFrame:frame];
 }
@@ -64,44 +65,46 @@ static NSString *cellmodelkey = @"cellmodelkey";
             self.imageView.image = [UIImage imageNamed:img];
         }
     }
+    
     __weak typeof(self) weakSelf = self;
     [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [weakSelf setValue:obj forKeyPath:key];
     }];
-//    if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
-//        NSInteger tag = 123154;
-//        UIView *separ = [self viewWithTag:tag];
-//        if (!separ) {
-//            separ = [[UIView alloc] init];
-//            separ.tag = tag;
-//            [self addSubview:separ];
-//        }
-//        UIColor *color = self.model.separatorColor;
-//        if (!color) {
-//            color = UIColorHexString(kColorGray8);
-//        }
-//        
-//        if (self.model.separatorStyle == TableViewCellSeparatorStyleInner) {
-//            [separ setBackgroundColor:UIColorHexString(kColorGray8)];
-//            [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                
-//                make.leading.equalTo(self.textLabel);
-//                make.trailing.equalTo(self);
-//                make.bottom.equalTo(self);
-//                make.height.mas_equalTo(0.3f);
-//            }];
-//        } else {
-//            [separ setBackgroundColor:color];
-//            [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                
-//                make.leading.equalTo(self).offset(self.model.separatorInset.left);
-//                make.trailing.equalTo(self).offset(-self.model.separatorInset.right);
-//                make.bottom.equalTo(self).offset(-self.model.separatorInset.bottom);
-//                make.height.mas_equalTo(0.3f);
-//            }];
-//        }
-//
-//    }
+    if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
+        NSInteger tag = 123154;
+        UIView *separ = [self.contentView viewWithTag:tag];
+        if (!separ) {
+            separ = [[UIView alloc] init];
+            separ.tag = tag;
+            [self.contentView addSubview:separ];
+        }
+        UIColor *defaultColor = [UIColor redColor];//[UIColor colorWithHue:229/255.0 saturation:229/255.0 brightness:229/255.0 alpha:1];
+        UIColor *color = self.model.separatorColor;
+        if (!color) {
+            color = defaultColor;
+        }
+        
+        if (self.model.separatorStyle == TableViewCellSeparatorStyleInner) {
+            [separ setBackgroundColor:defaultColor];
+            [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
+            
+                make.leading.equalTo(weakSelf.textLabel);
+                make.trailing.equalTo(weakSelf);
+                make.bottom.equalTo(weakSelf);
+                make.height.mas_equalTo(0.3f);
+            }];
+        } else {
+            [separ setBackgroundColor:color];
+            [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
+            
+                make.leading.equalTo(weakSelf.contentView).offset(weakSelf.model.separatorInset.left);
+                make.trailing.equalTo(weakSelf.contentView).offset(-weakSelf.model.separatorInset.right);
+                make.bottom.equalTo(weakSelf.contentView).offset(-weakSelf.model.separatorInset.bottom);
+                make.height.mas_equalTo(0.3f);
+            }];
+        }
+
+    }
 //    ___weakSelf
 //    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 //        [weakSelf setValue:obj forKeyPath:key];

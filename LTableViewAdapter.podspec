@@ -7,8 +7,10 @@ Pod::Spec.new do |s|
   s.author       = { "ylin8890" => "ylin8890@gmail.com" }
   s.platform     = :ios
   s.ios.deployment_target = "8.0"
+  s.dependency  'Masonry'
   s.source       = { :git => "...", :tag => "1.0.0" }
   s.requires_arc = true
   s.resources    = "LTableViewAdapter/**/*.{png,xib,nib,bundle}"
   s.source_files = "LTableViewAdapter/**/*.{h,m}"
+
 end

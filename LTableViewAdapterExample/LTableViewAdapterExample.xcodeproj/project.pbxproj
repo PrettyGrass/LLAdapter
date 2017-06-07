@@ -17,27 +17,8 @@
 		DF5BA7921E6D4DA100838FB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5BA7901E6D4DA100838FB1 /* Main.storyboard */; };
 		DF5BA7941E6D4DA100838FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5BA7931E6D4DA100838FB1 /* Assets.xcassets */; };
 		DF5BA7971E6D4DA100838FB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5BA7951E6D4DA100838FB1 /* LaunchScreen.storyboard */; };
-		DF5BA7A21E6D4DA100838FB1 /* LTableViewAdapterExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA7A11E6D4DA100838FB1 /* LTableViewAdapterExampleTests.m */; };
-		DF5BA7AD1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA7AC1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m */; };
 		DF5BA8AE1E6D619500838FB1 /* SimpleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA8AD1E6D619500838FB1 /* SimpleCellView.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DF5BA79E1E6D4DA100838FB1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF5BA77C1E6D4DA100838FB1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF5BA7831E6D4DA100838FB1;
-			remoteInfo = LTableViewAdapterExample;
-		};
-		DF5BA7A91E6D4DA100838FB1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF5BA77C1E6D4DA100838FB1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DF5BA7831E6D4DA100838FB1;
-			remoteInfo = LTableViewAdapterExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		45CA3AD6FDE581CCAC294089 /* libPods-LTableViewAdapterExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTableViewAdapterExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,12 +42,6 @@
 		DF5BA7931E6D4DA100838FB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF5BA7961E6D4DA100838FB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF5BA7981E6D4DA100838FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF5BA79D1E6D4DA100838FB1 /* LTableViewAdapterExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTableViewAdapterExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF5BA7A11E6D4DA100838FB1 /* LTableViewAdapterExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTableViewAdapterExampleTests.m; sourceTree = "<group>"; };
-		DF5BA7A31E6D4DA100838FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF5BA7A81E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LTableViewAdapterExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF5BA7AC1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTableViewAdapterExampleUITests.m; sourceTree = "<group>"; };
-		DF5BA7AE1E6D4DA100838FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF5BA8AC1E6D619500838FB1 /* SimpleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCellView.h; sourceTree = "<group>"; };
 		DF5BA8AD1E6D619500838FB1 /* SimpleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,20 +52,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0EC5FF9825F7207E5162CB /* libPods-LTableViewAdapterExample.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF5BA79A1E6D4DA100838FB1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF5BA7A51E6D4DA100838FB1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,8 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				DF5BA7861E6D4DA100838FB1 /* LTableViewAdapterExample */,
-				DF5BA7A01E6D4DA100838FB1 /* LTableViewAdapterExampleTests */,
-				DF5BA7AB1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests */,
 				DF5BA7851E6D4DA100838FB1 /* Products */,
 				3AC63A9B2EFE6129EC7FADCE /* Pods */,
 				C0D762FB930CFDD6D19AC111 /* Frameworks */,
@@ -132,8 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				DF5BA7841E6D4DA100838FB1 /* LTableViewAdapterExample.app */,
-				DF5BA79D1E6D4DA100838FB1 /* LTableViewAdapterExampleTests.xctest */,
-				DF5BA7A81E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,24 +127,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DF5BA7A01E6D4DA100838FB1 /* LTableViewAdapterExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				DF5BA7A11E6D4DA100838FB1 /* LTableViewAdapterExampleTests.m */,
-				DF5BA7A31E6D4DA100838FB1 /* Info.plist */,
-			);
-			path = LTableViewAdapterExampleTests;
-			sourceTree = "<group>";
-		};
-		DF5BA7AB1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DF5BA7AC1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m */,
-				DF5BA7AE1E6D4DA100838FB1 /* Info.plist */,
-			);
-			path = LTableViewAdapterExampleUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,42 +150,6 @@
 			productReference = DF5BA7841E6D4DA100838FB1 /* LTableViewAdapterExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DF5BA79C1E6D4DA100838FB1 /* LTableViewAdapterExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF5BA7B41E6D4DA100838FB1 /* Build configuration list for PBXNativeTarget "LTableViewAdapterExampleTests" */;
-			buildPhases = (
-				DF5BA7991E6D4DA100838FB1 /* Sources */,
-				DF5BA79A1E6D4DA100838FB1 /* Frameworks */,
-				DF5BA79B1E6D4DA100838FB1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DF5BA79F1E6D4DA100838FB1 /* PBXTargetDependency */,
-			);
-			name = LTableViewAdapterExampleTests;
-			productName = LTableViewAdapterExampleTests;
-			productReference = DF5BA79D1E6D4DA100838FB1 /* LTableViewAdapterExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DF5BA7A71E6D4DA100838FB1 /* LTableViewAdapterExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF5BA7B71E6D4DA100838FB1 /* Build configuration list for PBXNativeTarget "LTableViewAdapterExampleUITests" */;
-			buildPhases = (
-				DF5BA7A41E6D4DA100838FB1 /* Sources */,
-				DF5BA7A51E6D4DA100838FB1 /* Frameworks */,
-				DF5BA7A61E6D4DA100838FB1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DF5BA7AA1E6D4DA100838FB1 /* PBXTargetDependency */,
-			);
-			name = LTableViewAdapterExampleUITests;
-			productName = LTableViewAdapterExampleUITests;
-			productReference = DF5BA7A81E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -260,16 +163,6 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 3UFAY7EAJX;
 						ProvisioningStyle = Automatic;
-					};
-					DF5BA79C1E6D4DA100838FB1 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DF5BA7831E6D4DA100838FB1;
-					};
-					DF5BA7A71E6D4DA100838FB1 = {
-						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = DF5BA7831E6D4DA100838FB1;
 					};
 				};
 			};
@@ -287,8 +180,6 @@
 			projectRoot = "";
 			targets = (
 				DF5BA7831E6D4DA100838FB1 /* LTableViewAdapterExample */,
-				DF5BA79C1E6D4DA100838FB1 /* LTableViewAdapterExampleTests */,
-				DF5BA7A71E6D4DA100838FB1 /* LTableViewAdapterExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -301,20 +192,6 @@
 				DF5BA7971E6D4DA100838FB1 /* LaunchScreen.storyboard in Resources */,
 				DF5BA7941E6D4DA100838FB1 /* Assets.xcassets in Resources */,
 				DF5BA7921E6D4DA100838FB1 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF5BA79B1E6D4DA100838FB1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF5BA7A61E6D4DA100838FB1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +240,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -383,36 +260,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF5BA7991E6D4DA100838FB1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF5BA7A21E6D4DA100838FB1 /* LTableViewAdapterExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF5BA7A41E6D4DA100838FB1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DF5BA7AD1E6D4DA100838FB1 /* LTableViewAdapterExampleUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DF5BA79F1E6D4DA100838FB1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF5BA7831E6D4DA100838FB1 /* LTableViewAdapterExample */;
-			targetProxy = DF5BA79E1E6D4DA100838FB1 /* PBXContainerItemProxy */;
-		};
-		DF5BA7AA1E6D4DA100838FB1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DF5BA7831E6D4DA100838FB1 /* LTableViewAdapterExample */;
-			targetProxy = DF5BA7A91E6D4DA100838FB1 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DF5BA7901E6D4DA100838FB1 /* Main.storyboard */ = {
@@ -548,52 +396,6 @@
 			};
 			name = Release;
 		};
-		DF5BA7B51E6D4DA100838FB1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LTableViewAdapterExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTableViewAdapterExample.app/LTableViewAdapterExample";
-			};
-			name = Debug;
-		};
-		DF5BA7B61E6D4DA100838FB1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = LTableViewAdapterExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LTableViewAdapterExample.app/LTableViewAdapterExample";
-			};
-			name = Release;
-		};
-		DF5BA7B81E6D4DA100838FB1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LTableViewAdapterExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = LTableViewAdapterExample;
-			};
-			name = Debug;
-		};
-		DF5BA7B91E6D4DA100838FB1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = LTableViewAdapterExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = LTableViewAdapterExample;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -611,24 +413,6 @@
 			buildConfigurations = (
 				DF5BA7B21E6D4DA100838FB1 /* Debug */,
 				DF5BA7B31E6D4DA100838FB1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF5BA7B41E6D4DA100838FB1 /* Build configuration list for PBXNativeTarget "LTableViewAdapterExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF5BA7B51E6D4DA100838FB1 /* Debug */,
-				DF5BA7B61E6D4DA100838FB1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF5BA7B71E6D4DA100838FB1 /* Build configuration list for PBXNativeTarget "LTableViewAdapterExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DF5BA7B81E6D4DA100838FB1 /* Debug */,
-				DF5BA7B91E6D4DA100838FB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -34,6 +34,10 @@
         return;
     }
     _tableView = tableView;
+    
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.separatorColor = [UIColor clearColor];
+    
     _tableView.delegate = self;
     _tableView.dataSource = self;
 }
