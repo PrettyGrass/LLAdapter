@@ -68,7 +68,7 @@
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.cellSpaceMargin = UIEdgeInsetsMake(0, 0, 20, 0);
+        //customCell.cellSpaceMargin = UIEdgeInsetsMake(0, 0, 20, 0);
         customCell.loadType = CellLoadTypeInner;
         customCell.title = @"下边距";
     }
@@ -80,11 +80,11 @@
         customCell.cellHeight = 140;
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
-        [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
+        //[customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 20, 20, 20);
+        //customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 20, 20, 20);
         customCell.title = @"上下下边距";
     }
     {
@@ -92,11 +92,11 @@
         customCell.cellHeight = 88;
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
-        [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
+        //[customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 0, 0, 0);
+        //customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 0, 0, 0);
         customCell.loadType = CellLoadTypeInner;
         customCell.title = @"上边距";
     }
