@@ -30,7 +30,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
 }
 
 - (void)setFrame:(CGRect)frame {
-    
+    __weak typeof(self) weakSelf = self;
     /// 设置上下左右边距
     if ([self resetCellFrame] && [self.model isKindOfClass:[TableCell class]]) {
         /// cell重用时要重置frame
@@ -40,15 +40,15 @@ static NSString *cellmodelkey = @"cellmodelkey";
         } else {
             frame = self.model.cellOriFrame;
         }
-        frame.origin.y += self.model.cellSpaceMargin.top;
-        frame.size.height -= (self.model.cellSpaceMargin.top+self.model.cellSpaceMargin.bottom);
-        frame.origin.x += self.model.cellSpaceMargin.left;
-        frame.size.width -= (self.model.cellSpaceMargin.left+self.model.cellSpaceMargin.right);
+        //frame.origin.y += self.model.cellSpaceMargin.top;
+        //frame.size.height -= (self.model.cellSpaceMargin.top+self.model.cellSpaceMargin.bottom);
+        //frame.origin.x += self.model.cellSpaceMargin.left;
+        //frame.size.width -= (self.model.cellSpaceMargin.left+self.model.cellSpaceMargin.right);
         [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(self).offset(self.model.cellSpaceMargin.left);
-            make.trailing.equalTo(self).offset(self.model.cellSpaceMargin.right);
-            make.top.equalTo(self).offset(self.model.cellSpaceMargin.top);
-            make.bottom.equalTo(self).offset(self.model.cellSpaceMargin.bottom);
+            make.leading.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.left);
+            make.trailing.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.right);
+            make.top.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.top);
+            make.bottom.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.bottom);
         }];
     }
     [super setFrame:frame];
@@ -78,7 +78,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
             separ.tag = tag;
             [self.contentView addSubview:separ];
         }
-        UIColor *defaultColor = [UIColor redColor];//[UIColor colorWithHue:229/255.0 saturation:229/255.0 brightness:229/255.0 alpha:1];
+        UIColor *defaultColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1];
         UIColor *color = self.model.separatorColor;
         if (!color) {
             color = defaultColor;

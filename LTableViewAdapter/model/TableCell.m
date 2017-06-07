@@ -16,6 +16,7 @@
         _cellHeight = UITableViewAutomaticDimension;//UITableViewAutomaticDimension
         _cellClazz = [UITableViewCell class];
         _kvcExt = [NSMutableDictionary dictionary];
+        _separatorStyle = TableViewCellSeparatorStyleInner;
     }
     return self;
 }

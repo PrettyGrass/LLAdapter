@@ -147,6 +147,9 @@
     TableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     cellModel.indexPath = indexPath;
     //[self getCell:tableView cellForRowAtIndexPath:indexPath dequeue:false];
+    if (cellModel.cellHeight == UITableViewAutomaticDimension) {
+        return cellModel.cellHeight;
+    }
     return cellModel.cellHeight+cellModel.cellSpaceMargin.top+cellModel.cellSpaceMargin.bottom;
 }
 

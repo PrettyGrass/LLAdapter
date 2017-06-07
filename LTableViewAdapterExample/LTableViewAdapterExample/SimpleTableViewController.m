@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = false;
+    
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.simpleTable.backgroundColor = [UIColor clearColor];
+    
     ///初始化适配器
     TableViewAdapter *adapter = [[TableViewAdapter alloc] initWithTableView:self.simpleTable];
     self.adapter = adapter;
