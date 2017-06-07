@@ -12,6 +12,7 @@
 #import "LTabbleViewDefine.h"
 #import "CollectionViewAdapter.h"
 #import "TableViewAdapter.h"
+#import "TableViewEditAdapter.h"
 #import "UICollectionViewCell+Model.h"
 #import "UITableViewCell+Model.h"
 #import "TableSection.h"

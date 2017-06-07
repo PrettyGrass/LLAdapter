@@ -10,6 +10,7 @@
 #import <LTableViewAdapter/LTableViewAdapter.h>
 #import "SimpleTableViewController.h"
 #import "CustomTableViewController.h"
+#import "EditTableViewController.h"
 
 @interface ViewController ()
 
@@ -51,6 +52,14 @@
     };
     customCell.loadType = CellLoadTypeInner;
     customCell.title = @"自定义";
+    
+    TableCell *editCell = [section addNewCell];
+    editCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
+        EditTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EditTableViewController"];
+        [self.navigationController pushViewController:vc animated:true];
+    };
+    editCell.loadType = CellLoadTypeInner;
+    editCell.title = @"编辑";
 
     [self.adapter reloadData];
 }

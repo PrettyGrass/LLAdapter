@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B03599A1E70483900407E06 /* KVTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0359991E70483900407E06 /* KVTableCell.m */; };
+		5B7CFF021EE855A400DBB664 /* EditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CFF011EE855A400DBB664 /* EditTableViewController.m */; };
 		9C0EC5FF9825F7207E5162CB /* libPods-LTableViewAdapterExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 953537232472727D715685E8 /* libPods-LTableViewAdapterExample.a */; };
 		DF03BEA51E701B4E0055FEE4 /* SimpleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF03BEA41E701B4E0055FEE4 /* SimpleTableViewController.m */; };
 		DF03BEA81E701FC50055FEE4 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF03BEA71E701FC50055FEE4 /* CustomTableViewController.m */; };
@@ -27,6 +28,8 @@
 		4FAC04515B0672B3D0B5635C /* Pods-LTableViewAdapterExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTableViewAdapterExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTableViewAdapterExample/Pods-LTableViewAdapterExample.release.xcconfig"; sourceTree = "<group>"; };
 		5B0359981E70483800407E06 /* KVTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVTableCell.h; sourceTree = "<group>"; };
 		5B0359991E70483900407E06 /* KVTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVTableCell.m; sourceTree = "<group>"; };
+		5B7CFF001EE855A400DBB664 /* EditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableViewController.h; sourceTree = "<group>"; };
+		5B7CFF011EE855A400DBB664 /* EditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableViewController.m; sourceTree = "<group>"; };
 		953537232472727D715685E8 /* libPods-LTableViewAdapterExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTableViewAdapterExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD918E24E4B17033C7874996 /* Pods-LTableViewAdapterExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTableViewAdapterExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTableViewAdapterExample/Pods-LTableViewAdapterExample.debug.xcconfig"; sourceTree = "<group>"; };
 		DF03BEA31E701B4E0055FEE4 /* SimpleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableViewController.h; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 				DF03BEA41E701B4E0055FEE4 /* SimpleTableViewController.m */,
 				DF03BEA61E701FC50055FEE4 /* CustomTableViewController.h */,
 				DF03BEA71E701FC50055FEE4 /* CustomTableViewController.m */,
+				5B7CFF001EE855A400DBB664 /* EditTableViewController.h */,
+				5B7CFF011EE855A400DBB664 /* EditTableViewController.m */,
 				5B0359981E70483800407E06 /* KVTableCell.h */,
 				5B0359991E70483900407E06 /* KVTableCell.m */,
 				DF5BA7901E6D4DA100838FB1 /* Main.storyboard */,
@@ -259,6 +264,7 @@
 				DF1138911EE7E3FA00C3E531 /* CustomCellView.m in Sources */,
 				DF5BA78F1E6D4DA100838FB1 /* ViewController.m in Sources */,
 				DF03BEA51E701B4E0055FEE4 /* SimpleTableViewController.m in Sources */,
+				5B7CFF021EE855A400DBB664 /* EditTableViewController.m in Sources */,
 				5B03599A1E70483900407E06 /* KVTableCell.m in Sources */,
 				DF5BA78C1E6D4DA100838FB1 /* AppDelegate.m in Sources */,
 				DF03BEA81E701FC50055FEE4 /* CustomTableViewController.m in Sources */,
