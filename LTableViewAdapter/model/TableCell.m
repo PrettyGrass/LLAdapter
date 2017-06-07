@@ -13,10 +13,13 @@
 {
     self = [super init];
     if (self) {
-        _cellHeight = UITableViewAutomaticDimension;//UITableViewAutomaticDimension
+        _cellHeight = UITableViewAutomaticDimension;
         _cellClazz = [UITableViewCell class];
         _kvcExt = [NSMutableDictionary dictionary];
         _separatorStyle = TableViewCellSeparatorStyleInner;
+        _selectionStyle = UITableViewCellSelectionStyleDefault;
+        _selectionColor = [UIColor lightGrayColor];
+        _deSelectionStyle = DeSelectionStyleNow;
     }
     return self;
 }

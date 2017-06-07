@@ -11,6 +11,7 @@
 #import "TableCell.h"
 #import "Masonry.h"
 
+static NSInteger kCellSelectTag = 1000221;
 static NSString *cellmodelkey = @"cellmodelkey";
 @implementation UITableViewCell (Model)
 
@@ -59,31 +60,39 @@ static NSString *cellmodelkey = @"cellmodelkey";
     return true;
 }
 
-- (void)setFrame:(CGRect)frame {
-    __weak typeof(self) weakSelf = self;
-    /// 设置上下左右边距
-    if ([self resetCellFrame] && [self.model isKindOfClass:[TableCell class]]) {
-        /// cell重用时要重置frame
-        if (CGRectIsEmpty(self.model.cellOriFrame)||
-            CGRectIsNull(self.model.cellOriFrame)) {
-            self.model.cellOriFrame = frame;
-        } else {
-            frame = self.model.cellOriFrame;
-        }
-        //frame.origin.y += self.model.cellSpaceMargin.top;
-        //frame.size.height -= (self.model.cellSpaceMargin.top+self.model.cellSpaceMargin.bottom);
-        //frame.origin.x += self.model.cellSpaceMargin.left;
-        //frame.size.width -= (self.model.cellSpaceMargin.left+self.model.cellSpaceMargin.right);
-        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.left);
-            make.trailing.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.right);
-            make.top.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.top);
-            make.bottom.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.bottom);
-        }];
-    }
-    [super setFrame:frame];
-}
+//- (void)setFrame:(CGRect)frame {
+//    __weak typeof(self) weakSelf = self;
+//    /// 设置上下左右边距
+//    if ([self resetCellFrame] && [self.model isKindOfClass:[TableCell class]]) {
+//        /// cell重用时要重置frame
+//        if (CGRectIsEmpty(self.model.cellOriFrame)||
+//            CGRectIsNull(self.model.cellOriFrame)) {
+//            self.model.cellOriFrame = frame;
+//        } else {
+//            frame = self.model.cellOriFrame;
+//        }
+//        //frame.origin.y += self.model.cellSpaceMargin.top;
+//        //frame.size.height -= (self.model.cellSpaceMargin.top+self.model.cellSpaceMargin.bottom);
+//        //frame.origin.x += self.model.cellSpaceMargin.left;
+//        //frame.size.width -= (self.model.cellSpaceMargin.left+self.model.cellSpaceMargin.right);
+//        [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.left);
+//            make.trailing.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.right);
+//            make.top.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.top);
+//            make.bottom.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.bottom);
+//        }];
+//    }
+//    [super setFrame:frame];
+//}
 - (void)updateUI {
+    __weak typeof(self) weakSelf = self;
+    
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.left);
+        make.trailing.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.right);
+        make.top.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.top);
+        make.bottom.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.bottom);
+    }];
     
     if ([NSStringFromClass(self.class) isEqualToString:@"UITableViewCell"]) {
         self.textLabel.text = self.model.title;
@@ -95,11 +104,6 @@ static NSString *cellmodelkey = @"cellmodelkey";
             self.imageView.image = [UIImage imageNamed:img];
         }
     }
-    
-    __weak typeof(self) weakSelf = self;
-    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [weakSelf setValue:obj forKeyPath:key];
-    }];
     
     if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
         NSInteger tag = 123154;
@@ -137,19 +141,15 @@ static NSString *cellmodelkey = @"cellmodelkey";
         
     }
     
-    //if (self.selectionStyle) {
-    UIView *v = [[UIView alloc] initWithFrame:self.contentView.frame];
-    v.tag = 1000221;
-    self.selectedBackgroundView = v;
-    //[self.selectedBackgroundView addSubview:v];
+    UIView *selectedBackgroundView = [[UIView alloc] init];
+    selectedBackgroundView.tag = kCellSelectTag;
+    self.selectedBackgroundView = selectedBackgroundView;
     self.selectedBackgroundView.backgroundColor = [UIColor clearColor];
-    v.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
-    //}
+    selectedBackgroundView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
     
-    //    ___weakSelf
-    //    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-    //        [weakSelf setValue:obj forKeyPath:key];
-    //    }];
+    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [weakSelf setValue:obj forKeyPath:key];
+    }];
 }
 //- (void)customSetSelected:(BOOL)selected animated:(BOOL)animated {
 //    [self customSetSelected:selected animated:animated];
@@ -169,7 +169,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
 
 - (void)didAddSubview:(UIView *)subview {
     [super didAddSubview:subview];
-    if (subview.tag == 1000221) {
+    if (subview.tag == kCellSelectTag) {
         __weak typeof(self) weakSelf = self;
         if (self.selectedBackgroundView.superview) {
             [self.selectedBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -179,7 +179,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
                 make.top.equalTo(weakSelf.selectedBackgroundView.superview).offset(weakSelf.model.cellSpaceMargin.top);
                 make.bottom.equalTo(weakSelf.selectedBackgroundView.superview).offset(-weakSelf.model.cellSpaceMargin.bottom);
             }];
-            self.selectedBackgroundView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
+            self.selectedBackgroundView.backgroundColor = weakSelf.model.selectionColor;
         }
     }
 }

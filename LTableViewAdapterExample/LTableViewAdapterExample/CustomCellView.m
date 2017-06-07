@@ -23,5 +23,8 @@
     [super updateUI];
     self.titleLab.text = self.model.title;
 }
+- (IBAction)btnAction:(id)sender {
+    
+}
 
 @end

@@ -11,5 +11,6 @@
 @interface CustomCellView : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
 
 @end

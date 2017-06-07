@@ -76,6 +76,8 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 @property (assign, nonatomic) TableViewCellSeparatorStyle separatorStyle;
 /// 行分割线颜色
 @property (strong, nonatomic) UIColor *separatorColor;
+/// 选中时颜色
+@property (strong, nonatomic) UIColor *selectionColor;
 /// 分割线的位置
 @property (nonatomic) UIEdgeInsets separatorInset;
 /// 数据
