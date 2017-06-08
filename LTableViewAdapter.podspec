@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.dependency  'Masonry'
   s.source       = { :git => "https://git.oschina.net/y0/LTableViewAdapter.git", :branch => "1.0.0" }
   s.requires_arc = true
-  s.public_header_files = 'LTableViewAdapter/*/*.{h}'
+  s.public_header_files = 'LTableViewAdapter/**/*.{h}'
   s.resources    = "LTableViewAdapter/**/*.{png,xib,nib,bundle}"
   s.source_files = "LTableViewAdapter/**/*.{h,m}"
 
