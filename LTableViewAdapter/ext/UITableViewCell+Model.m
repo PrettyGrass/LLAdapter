@@ -105,13 +105,14 @@ static NSString *cellmodelkey = @"cellmodelkey";
         }
     }
     //分割线
+    UIView *contentView = self.contentView;
     if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
         NSInteger tag = 123154;
-        UIView *separ = [self.contentView viewWithTag:tag];
+        UIView *separ = [contentView viewWithTag:tag];
         if (!separ) {
             separ = [[UIView alloc] init];
             separ.tag = tag;
-            [self.contentView addSubview:separ];
+            [contentView addSubview:separ];
         }
         UIColor *defaultColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1];
         UIColor *color = self.model.separatorColor;
@@ -123,18 +124,22 @@ static NSString *cellmodelkey = @"cellmodelkey";
             [separ setBackgroundColor:defaultColor];
             [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
                 
-                make.leading.equalTo(weakSelf.textLabel);
-                make.trailing.equalTo(weakSelf);
-                make.bottom.equalTo(weakSelf);
+                if (weakSelf.textLabel) {
+                    make.leading.equalTo(weakSelf.textLabel);
+                } else {
+                    make.leading.equalTo(contentView);
+                }
+                make.trailing.equalTo(contentView);
+                make.bottom.equalTo(contentView);
                 make.height.mas_equalTo(0.3f);
             }];
         } else {
             [separ setBackgroundColor:color];
             [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
                 
-                make.leading.equalTo(weakSelf.contentView).offset(weakSelf.model.separatorInset.left);
-                make.trailing.equalTo(weakSelf.contentView).offset(-weakSelf.model.separatorInset.right);
-                make.bottom.equalTo(weakSelf.contentView).offset(-weakSelf.model.separatorInset.bottom);
+                make.leading.equalTo(contentView).offset(weakSelf.model.separatorInset.left);
+                make.trailing.equalTo(contentView).offset(-weakSelf.model.separatorInset.right);
+                make.bottom.equalTo(contentView).offset(-weakSelf.model.separatorInset.bottom);
                 make.height.mas_equalTo(0.3f);
             }];
         }
