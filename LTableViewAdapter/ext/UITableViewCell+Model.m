@@ -122,28 +122,16 @@ static NSString *cellmodelkey = @"cellmodelkey";
         
         if (self.model.separatorStyle == TableViewCellSeparatorStyleInner) {
             [separ setBackgroundColor:defaultColor];
-            [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
-                
-                if (weakSelf.textLabel) {
-                    make.leading.equalTo(weakSelf.textLabel);
-                } else {
-                    make.leading.equalTo(contentView);
-                }
-                make.trailing.equalTo(contentView);
-                make.bottom.equalTo(contentView);
-                make.height.mas_equalTo(0.3f);
-            }];
         } else {
             [separ setBackgroundColor:color];
-            [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
-                
-                make.leading.equalTo(contentView).offset(weakSelf.model.separatorInset.left);
-                make.trailing.equalTo(contentView).offset(-weakSelf.model.separatorInset.right);
-                make.bottom.equalTo(contentView).offset(-weakSelf.model.separatorInset.bottom);
-                make.height.mas_equalTo(0.3f);
-            }];
         }
-        
+        [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
+            
+            make.leading.equalTo(contentView).offset(weakSelf.model.separatorInset.left);
+            make.trailing.equalTo(contentView).offset(-weakSelf.model.separatorInset.right);
+            make.bottom.equalTo(contentView).offset(-weakSelf.model.separatorInset.bottom);
+            make.height.mas_equalTo(0.3f);
+        }];
     }
     
     /// 选中背景色

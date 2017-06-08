@@ -17,6 +17,7 @@
         _cellClazz = [UITableViewCell class];
         _kvcExt = [NSMutableDictionary dictionary];
         _separatorStyle = TableViewCellSeparatorStyleInner;
+        _separatorInset = UIEdgeInsetsMake(0, 24, 0, 0);
         _selectionStyle = UITableViewCellSelectionStyleDefault;
         _selectionColor = [UIColor lightGrayColor];
         _deSelectionStyle = DeSelectionStyleNow;
