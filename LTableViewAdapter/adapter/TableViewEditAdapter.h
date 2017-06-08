@@ -6,7 +6,7 @@
 //
 //
 
-#import <LTableViewAdapter/LTableViewAdapter.h>
+#import "LTableViewAdapter.h"
 
 /**
  *	@author Y0
