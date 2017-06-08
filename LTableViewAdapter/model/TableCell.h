@@ -40,7 +40,7 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
  *
  *	@since 1.0
  */
-@interface TableCell <DataType: id>: NSObject
+@interface TableCell <DataType: NSObject *>: NSObject
 
 /// kvc 透传数据
 @property (strong, nonatomic) NSMutableDictionary *kvcExt;
@@ -85,6 +85,6 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 /// 分割线的位置
 @property (nonatomic) UIEdgeInsets separatorInset;
 /// 数据
-@property (assign, nonatomic) DataType data;
+@property (strong, nonatomic) DataType data;
 
 @end
