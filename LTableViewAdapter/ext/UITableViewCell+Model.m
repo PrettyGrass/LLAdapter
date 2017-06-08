@@ -106,14 +106,18 @@ static NSString *cellmodelkey = @"cellmodelkey";
     }
     //分割线
     UIView *contentView = self.contentView;
-    if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
-        NSInteger tag = 123154;
+    NSInteger tag = 123154;
+    if (self.model.separatorStyle == TableViewCellSeparatorStyleNone) {
+        UIView *separ = [contentView viewWithTag:tag];
+        [separ setHidden:true];
+    } else {
         UIView *separ = [contentView viewWithTag:tag];
         if (!separ) {
             separ = [[UIView alloc] init];
             separ.tag = tag;
             [contentView addSubview:separ];
         }
+        [separ setHidden:false];
         UIColor *defaultColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1];
         UIColor *color = self.model.separatorColor;
         if (!color) {
