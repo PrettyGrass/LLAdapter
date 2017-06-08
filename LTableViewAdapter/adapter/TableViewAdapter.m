@@ -116,7 +116,7 @@
                 break;
         }
     }
-    cell.selectionStyle = cellModel.selectionStyle;
+    //cell.selectionStyle = cellModel.selectionStyle;
     cell.accessoryType = cellModel.accessoryType;
     cell.model = cellModel;
     return cell;

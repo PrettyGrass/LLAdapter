@@ -49,7 +49,7 @@
     {
         TableCell *customCell = [section addNewCell:KVTableCell.class];
         customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
-        customCell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        //customCell.selectionStyle = UITableViewCellSelectionStyleDefault;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {

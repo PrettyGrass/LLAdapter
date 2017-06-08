@@ -31,6 +31,8 @@ typedef NS_ENUM(NSInteger, TableViewCellSeparatorStyle) {
 
 typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 
+#define TableCellActionDefine(_name_, _type_) void(^_name_)(__kindof TableCell <_type_>*model, NSIndexPath *index);
+
 /**
  *	@author Y0, 16-07-04 17:07:34
  *
@@ -38,7 +40,7 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
  *
  *	@since 1.0
  */
-@interface TableCell : NSObject
+@interface TableCell <DataType: id>: NSObject
 
 /// kvc 透传数据
 @property (strong, nonatomic) NSMutableDictionary *kvcExt;
@@ -58,6 +60,8 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 @property (assign, nonatomic) id image;
 /// 点击事件
 @property (copy, nonatomic) TableCellAction cellClick;
+
+@property (copy, nonatomic) TableCellActionDefine(ccc, DataType);
 /// cell类
 @property (assign, nonatomic) Class cellClazz;
 /// cell Identity
@@ -67,7 +71,7 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 /// cell加载类型
 @property (assign, nonatomic) CellLoadType loadType;
 /// 选择的风格
-@property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle;// = UITableViewCellSelectionStyleNone;
+@property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle __deprecated_msg("弃用, 使用selectionColor 代替");// = UITableViewCellSelectionStyleNone;
 /// 选择时候去选风格
 @property (assign, nonatomic) DeSelectionStyle deSelectionStyle;
 /// 附件风格
@@ -81,6 +85,6 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 /// 分割线的位置
 @property (nonatomic) UIEdgeInsets separatorInset;
 /// 数据
-@property (assign, nonatomic) id data;
+@property (assign, nonatomic) DataType data;
 
 @end

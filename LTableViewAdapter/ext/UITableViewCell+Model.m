@@ -87,7 +87,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
 - (void)updateUI {
     __weak typeof(self) weakSelf = self;
     
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.left);
         make.trailing.equalTo(weakSelf).offset(-weakSelf.model.cellSpaceMargin.right);
         make.top.equalTo(weakSelf).offset(weakSelf.model.cellSpaceMargin.top);
@@ -104,7 +104,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
             self.imageView.image = [UIImage imageNamed:img];
         }
     }
-    
+    //分割线
     if (self.model.separatorStyle != TableViewCellSeparatorStyleNone) {
         NSInteger tag = 123154;
         UIView *separ = [self.contentView viewWithTag:tag];
@@ -141,12 +141,14 @@ static NSString *cellmodelkey = @"cellmodelkey";
         
     }
     
+    /// 选中背景色
     UIView *selectedBackgroundView = [[UIView alloc] init];
     selectedBackgroundView.tag = kCellSelectTag;
     self.selectedBackgroundView = selectedBackgroundView;
     self.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     selectedBackgroundView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
     
+    /// 透传数据
     [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [weakSelf setValue:obj forKeyPath:key];
     }];

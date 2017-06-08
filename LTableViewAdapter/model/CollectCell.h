@@ -19,7 +19,7 @@ typedef void (^CollClick)(CollectCell *model, NSIndexPath *index);
  *
  *	@since 1.0
  */
-@interface CollectCell : NSObject
+@interface CollectCell <DataType: NSObject *>: NSObject
 
 @property (weak, nonatomic) NSIndexPath *indexPath;
 @property (assign, nonatomic) CGSize cellSize;
@@ -28,6 +28,6 @@ typedef void (^CollClick)(CollectCell *model, NSIndexPath *index);
 @property (copy, nonatomic) CollClick cellClick;
 @property (assign, nonatomic) Class cellClazz;
 @property (assign, nonatomic) CellLoadType loadType;
-@property (strong, nonatomic) NSObject *data;
+@property (strong, nonatomic) DataType data;
 
 @end
