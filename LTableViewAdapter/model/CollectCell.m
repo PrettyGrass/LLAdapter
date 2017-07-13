@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         self.cellClazz = [UICollectionViewCell class];
+        _kvcExt = [NSMutableDictionary dictionary];
     }
     return self;
 }

@@ -21,6 +21,8 @@ typedef void (^CollClick)(CollectCell *model, NSIndexPath *index);
  */
 @interface CollectCell <DataType: NSObject *>: NSObject
 
+/// kvc 透传数据
+@property (strong, nonatomic) NSMutableDictionary *kvcExt;
 @property (weak, nonatomic) NSIndexPath *indexPath;
 @property (assign, nonatomic) CGSize cellSize;
 @property (copy, nonatomic) NSString *title;

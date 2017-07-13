@@ -24,7 +24,11 @@ static NSString *collmodelkey = @"collmodelkey";
 }
 
 - (void)updateUI {
-
+    __weak typeof(self) weakSelf = self;
+    /// 透传数据
+    [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [weakSelf setValue:obj forKeyPath:key];
+    }];
 }
 
 @end
