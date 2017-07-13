@@ -26,6 +26,16 @@
     return self;
 }
 
+
+- (instancetype)initWithCollection:(UICollectionView *)collectionView {
+    
+    self = [self init];
+    if (self) {
+        self.collectionView = collectionView;
+    }
+    return self;
+}
+
 - (void)setCollectionView:(UICollectionView *)collectionView {
     
     if (_collectionView == collectionView) {
@@ -35,6 +45,17 @@
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
 }
+
+- (CollectSection *)addNewSection {
+    
+    if (!self.sections) {
+        self.sections = [NSMutableArray array];
+    }
+    CollectSection *section = [[CollectSection alloc] init];
+    [self.sections addObject:section];
+    return section;
+}
+
 - (void)reloadData {
     
     [super reloadData];
@@ -60,17 +81,17 @@
             //[collectionView registerClass:cellModel.cellClazz forCellWithReuseIdentifier:[cellModel.cellClazz className]];
             break;
         case CellLoadTypeNib:
-            [collectionView registerNib:[UINib nibWithNibName:[cellModel.cellClazz className] bundle:nil] forCellWithReuseIdentifier:[cellModel.cellClazz className]];
+            [collectionView registerNib:[UINib nibWithNibName:[cellModel cellNibName] bundle:nil] forCellWithReuseIdentifier:[cellModel cellIdentity]];
             break;
         case CellLoadTypeOri:
-            [collectionView registerClass:cellModel.cellClazz forCellWithReuseIdentifier:[cellModel.cellClazz className]];
+            [collectionView registerClass:cellModel.cellClazz forCellWithReuseIdentifier:[cellModel cellIdentity]];
             break;
             
         default:
             break;
     }
 
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[cellModel.cellClazz className] forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[cellModel cellIdentity] forIndexPath:indexPath];
     
     if (!cell) {
            }

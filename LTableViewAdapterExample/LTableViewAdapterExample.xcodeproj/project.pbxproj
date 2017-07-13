@@ -20,6 +20,7 @@
 		DF5BA7941E6D4DA100838FB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF5BA7931E6D4DA100838FB1 /* Assets.xcassets */; };
 		DF5BA7971E6D4DA100838FB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF5BA7951E6D4DA100838FB1 /* LaunchScreen.storyboard */; };
 		DF5BA8AE1E6D619500838FB1 /* SimpleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5BA8AD1E6D619500838FB1 /* SimpleCellView.m */; };
+		DF755E751F17418900DAEF8B /* CollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF755E741F17418900DAEF8B /* CollectionController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		DF5BA7981E6D4DA100838FB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF5BA8AC1E6D619500838FB1 /* SimpleCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCellView.h; sourceTree = "<group>"; };
 		DF5BA8AD1E6D619500838FB1 /* SimpleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellView.m; sourceTree = "<group>"; };
+		DF755E731F17418900DAEF8B /* CollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionController.h; sourceTree = "<group>"; };
+		DF755E741F17418900DAEF8B /* CollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				DF03BEA41E701B4E0055FEE4 /* SimpleTableViewController.m */,
 				DF03BEA61E701FC50055FEE4 /* CustomTableViewController.h */,
 				DF03BEA71E701FC50055FEE4 /* CustomTableViewController.m */,
+				DF755E731F17418900DAEF8B /* CollectionController.h */,
+				DF755E741F17418900DAEF8B /* CollectionController.m */,
 				5B7CFF001EE855A400DBB664 /* EditTableViewController.h */,
 				5B7CFF011EE855A400DBB664 /* EditTableViewController.m */,
 				5B0359981E70483800407E06 /* KVTableCell.h */,
@@ -261,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF5BA8AE1E6D619500838FB1 /* SimpleCellView.m in Sources */,
+				DF755E751F17418900DAEF8B /* CollectionController.m in Sources */,
 				DF1138911EE7E3FA00C3E531 /* CustomCellView.m in Sources */,
 				DF5BA78F1E6D4DA100838FB1 /* ViewController.m in Sources */,
 				DF03BEA51E701B4E0055FEE4 /* SimpleTableViewController.m in Sources */,

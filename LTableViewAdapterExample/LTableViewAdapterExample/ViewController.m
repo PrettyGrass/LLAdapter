@@ -11,6 +11,7 @@
 #import "SimpleTableViewController.h"
 #import "CustomTableViewController.h"
 #import "EditTableViewController.h"
+#import "CollectionController.h"
 
 @interface ViewController ()
 
@@ -60,6 +61,14 @@
     };
     editCell.loadType = CellLoadTypeInner;
     editCell.title = @"编辑";
+    
+    TableCell *collectCell = [section addNewCell];
+    collectCell.cellClick = ^(TableCell *cell, NSIndexPath *indexPath) {
+        CollectionController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CollectionController"];
+        [self.navigationController pushViewController:vc animated:true];
+    };
+    collectCell.loadType = CellLoadTypeInner;
+    collectCell.title = @"collectCell";
 
     [self.adapter reloadData];
 }

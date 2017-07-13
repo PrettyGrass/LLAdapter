@@ -27,6 +27,12 @@ typedef void (^CollClick)(CollectCell *model, NSIndexPath *index);
 @property (copy, nonatomic) NSString *subTitle;
 @property (copy, nonatomic) CollClick cellClick;
 @property (assign, nonatomic) Class cellClazz;
+
+/// cell Identity
+@property (copy, nonatomic) NSString *cellIdentity;
+/// cell NibName
+@property (copy, nonatomic) NSString *cellNibName;
+
 @property (assign, nonatomic) CellLoadType loadType;
 @property (strong, nonatomic) DataType data;
 

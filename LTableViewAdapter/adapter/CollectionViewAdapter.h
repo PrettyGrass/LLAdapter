@@ -22,4 +22,7 @@
 @property (weak, nonatomic) id<UICollectionViewDelegate> collectionViewDelegate;
 @property (weak, nonatomic) id<UICollectionViewDataSource> dataSourceDelegate;
 
+- (CollectSection *)addNewSection;
+- (instancetype)initWithCollection:(UICollectionView *)collectionView;
+
 @end

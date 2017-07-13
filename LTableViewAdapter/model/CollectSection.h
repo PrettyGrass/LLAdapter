@@ -22,4 +22,8 @@
 /// 单元数据集合
 @property (strong, nonatomic) NSMutableArray <CollectCell *>*datas;
 
+- (CollectCell *)addNewCell;
+
+- (__kindof CollectCell *)addNewCell:(Class)clzz;
+
 @end

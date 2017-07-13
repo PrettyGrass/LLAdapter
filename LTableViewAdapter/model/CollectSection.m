@@ -7,6 +7,7 @@
 //
 
 #import "CollectSection.h"
+#import "CollectCell.h"
 
 @implementation CollectSection
 - (instancetype)init
@@ -17,4 +18,14 @@
     }
     return self;
 }
+
+- (CollectCell *)addNewCell {
+    return [self addNewCell:CollectCell.class];
+}
+- (__kindof CollectCell *)addNewCell:(Class)clzz {
+    CollectCell *cell = [[clzz alloc] init];
+    [self.datas addObject:cell];
+    return cell;
+}
+
 @end
