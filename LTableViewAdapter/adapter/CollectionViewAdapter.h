@@ -15,10 +15,10 @@
  *
  *	@since 1.0
  */
-@interface CollectionViewAdapter : BaseAdapter<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface CollectionViewAdapter : BaseAdapter<CollectSection *><UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) UICollectionView *collectionView;
-@property (strong, nonatomic) NSMutableArray <CollectSection *>* sections;
+//@property (strong, nonatomic) NSMutableArray <CollectSection *>* sections;
 @property (weak, nonatomic) id<UICollectionViewDelegate> collectionViewDelegate;
 @property (weak, nonatomic) id<UICollectionViewDataSource> dataSourceDelegate;
 

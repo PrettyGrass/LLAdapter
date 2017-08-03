@@ -16,10 +16,10 @@
  *
  *	@since 1.0
  */
-@interface TableViewAdapter : BaseAdapter<UITableViewDataSource, UITableViewDelegate>
+@interface TableViewAdapter : BaseAdapter<TableSection *><UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray <TableSection *>* sections;
+//@property (strong, nonatomic) NSMutableArray <TableSection *>* sections;
 @property (weak, nonatomic) id<UITableViewDelegate> tableViewDelegate;
 @property (assign, nonatomic) id<UITableViewDataSource> dataSourceDelegate;
 

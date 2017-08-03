@@ -12,4 +12,8 @@
 - (void)reloadData {
     
 }
+- (void)removeCell:(id)object {
+    
+}
+
 @end

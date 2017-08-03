@@ -25,8 +25,8 @@ typedef void (^CollClick)(CollectCell *model, NSIndexPath *index);
 @property (strong, nonatomic) NSMutableDictionary *kvcExt;
 @property (weak, nonatomic) NSIndexPath *indexPath;
 @property (assign, nonatomic) CGSize cellSize;
-@property (copy, nonatomic) NSString *title;
-@property (copy, nonatomic) NSString *subTitle;
+//@property (copy, nonatomic) NSString *title;
+//@property (copy, nonatomic) NSString *subTitle;
 @property (copy, nonatomic) CollClick cellClick;
 @property (assign, nonatomic) Class cellClazz;
 

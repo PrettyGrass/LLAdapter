@@ -41,7 +41,6 @@
         };
         simpleCell.cellClazz = UICollectionViewCell.class;
         simpleCell.loadType = CellLoadTypeInner;
-        simpleCell.title = @"简单";
     }
     {
         CollectCell *simpleCell = [section addNewCell];
@@ -50,7 +49,6 @@
         };
         simpleCell.cellClazz = UICollectionViewCell.class;
         simpleCell.loadType = CellLoadTypeInner;
-        simpleCell.title = @"简单";
     }
     {
         CollectCell *simpleCell = [section addNewCell];
@@ -59,7 +57,6 @@
         };
         simpleCell.cellClazz = UICollectionViewCell.class;
         simpleCell.loadType = CellLoadTypeInner;
-        simpleCell.title = @"简单";
     }
     [self.adapter reloadData];
 }
