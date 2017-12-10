@@ -144,7 +144,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
     self.selectedBackgroundView = selectedBackgroundView;
     self.selectedBackgroundView.backgroundColor = [UIColor clearColor];
     selectedBackgroundView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.2];
-    
+    self.selectionStyle = self.model.selectionStyle;
     /// 透传数据
     [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [weakSelf setValue:obj forKeyPath:key];

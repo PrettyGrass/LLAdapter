@@ -71,7 +71,7 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 /// cell加载类型
 @property (assign, nonatomic) CellLoadType loadType;
 /// 选择的风格
-@property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle __deprecated_msg("弃用, 使用selectionColor 代替");// = UITableViewCellSelectionStyleNone;
+@property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle;// UITableViewCellSelectionStyleNone
 /// 选择时候去选风格
 @property (assign, nonatomic) DeSelectionStyle deSelectionStyle;
 /// 附件风格
