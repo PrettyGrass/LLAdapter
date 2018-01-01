@@ -19,14 +19,18 @@
     return self;
 }
 
+- (void)addCell:(__kindof LTableCell *)cell {
+    [self.datas addObject:cell];
+}
+
 - (__kindof LTableCell *)addNewCell {
     LTableCell *cell = [[LTableCell alloc] init];
-    [self.datas addObject:cell];
+    [self addCell:cell];
     return cell;
 }
 - (__kindof LTableCell *)addNewCell:(Class)clzz {
     LTableCell *cell = [[clzz alloc] init];
-    [self.datas addObject:cell];
+    [self addCell:cell];
     return cell;
 }
 

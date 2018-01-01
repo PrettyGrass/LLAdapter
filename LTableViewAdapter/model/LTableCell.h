@@ -59,9 +59,9 @@ typedef void (^LTableCellAction)(__kindof LTableCell *model, NSIndexPath *index)
 /// 图片名字  URL UIImage
 @property (assign, nonatomic) id image;
 /// 点击事件
-@property (copy, nonatomic) LTableCellAction cellClick;
+//@property (copy, nonatomic) LTableCellAction cellClick;
 
-@property (copy, nonatomic) LTableCellActionDefine(ccc, DataType);
+@property (copy, nonatomic) LTableCellActionDefine(cellClick, DataType);
 /// cell类
 @property (assign, nonatomic) Class cellClazz;
 /// cell Identity
