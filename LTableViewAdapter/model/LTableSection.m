@@ -10,6 +10,7 @@
 #import "LTableCell.h"
 
 @implementation LTableSection
+
 - (instancetype)init
 {
     self = [super init];
@@ -27,10 +28,9 @@
 }
 
 - (__kindof LTableCell *)addNewCell {
-    LTableCell *cell = [[LTableCell alloc] init];
-    [self addCell:cell];
-    return cell;
+    return [self addNewCell:LTableCell.class];
 }
+
 - (__kindof LTableCell *)addNewCell:(Class)clzz {
     LTableCell *cell = [[clzz alloc] init];
     [self addCell:cell];

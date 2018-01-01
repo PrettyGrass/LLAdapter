@@ -12,4 +12,6 @@
 /// cell事件定义block
 #define LTableCellActionDefine(_name_, _type_) void(^_name_)(__kindof LTableCell <_type_>*model, NSIndexPath *index);
 
+#define LCollectCellActionDefine(_name_, _type_) void(^_name_)(__kindof LCollectCell <_type_>*model, NSIndexPath *index);
+
 #endif /* LTabbleViewDefine_h */

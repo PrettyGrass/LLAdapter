@@ -51,8 +51,6 @@ typedef void (^LTableCellAction)(__kindof LTableCell *model, NSIndexPath *index)
 @property (strong, nonatomic) NSMutableDictionary *kvcExt;
 /// 行索引信息
 @property (weak, nonatomic) NSIndexPath *indexPath;
-/// 行原始生frame
-@property (assign, nonatomic) CGRect cellOriFrame;
 /// 行高
 @property (assign, nonatomic) CGFloat cellHeight;
 /// 行上边距

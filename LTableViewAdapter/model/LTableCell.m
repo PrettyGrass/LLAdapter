@@ -8,6 +8,13 @@
 
 #import "LTableCell.h"
 
+@interface LTableCell ()
+
+/// 行原始生frame
+@property (assign, nonatomic) CGRect cellOriFrame;
+
+@end
+
 @implementation LTableCell
 - (instancetype)init
 {

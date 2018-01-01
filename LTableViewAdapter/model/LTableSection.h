@@ -17,10 +17,17 @@
  *	@since 1.0
  */
 @interface LTableSection : NSObject
+
 /// 标题
 @property (copy, nonatomic) NSString *sectionTitle;
 /// 单元的数据集合
 @property (strong, nonatomic) NSMutableArray <LTableCell *>*datas;
+/// section Header高
+@property (assign, nonatomic) CGFloat sectionHeaderHeight;
+/// section Footer高
+@property (assign, nonatomic) CGFloat sectionFooterHeight;
+/// section 索引
+@property (assign, nonatomic) NSInteger sectionIndex;
 
 - (void)addCell:(__kindof LTableCell *)cell;
 - (__kindof LTableCell *)addNewCell;

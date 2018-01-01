@@ -21,9 +21,11 @@
 @property (copy, nonatomic) NSString *sectionTitle;
 /// 单元数据集合
 @property (strong, nonatomic) NSMutableArray <LCollectCell *>*datas;
+/// section 索引
+@property (assign, nonatomic) NSInteger sectionIndex;
 
-- (LCollectCell *)addNewCell;
-
+- (void)addCell:(LCollectCell *)cell;
+- (__kindof LCollectCell *)addNewCell;
 - (__kindof LCollectCell *)addNewCell:(Class)clzz;
 
 @end
