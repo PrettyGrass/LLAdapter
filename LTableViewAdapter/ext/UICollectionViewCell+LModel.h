@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LCollectCell.h"
 
-@interface UICollectionViewCell (Model)
+@interface UICollectionViewCell (LModel)
 @property (strong, nonatomic) LCollectCell *model;
 - (void)updateUI;
 @end

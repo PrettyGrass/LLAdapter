@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class LTableCell;
-@interface UITableViewCell (Model)
+@interface UITableViewCell (LModel)
 
 @property (strong, nonatomic) LTableCell *model;
 /// 是否允许重置cell 的Frame

@@ -13,7 +13,7 @@
 
 static NSInteger kCellSelectTag = 1000221;
 static NSString *cellmodelkey = @"cellmodelkey";
-@implementation UITableViewCell (Model)
+@implementation UITableViewCell (LModel)
 
 //+ (void)load {
 //    static dispatch_once_t onceToken;

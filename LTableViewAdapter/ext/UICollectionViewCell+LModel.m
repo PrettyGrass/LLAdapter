@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 
 static NSString *collmodelkey = @"collmodelkey";
-@implementation UICollectionViewCell (Model)
+@implementation UICollectionViewCell (LModel)
 
 - (void)setModel:(LCollectCell *)model {
     objc_setAssociatedObject(self, &collmodelkey, model, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
