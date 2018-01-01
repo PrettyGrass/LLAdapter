@@ -128,7 +128,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     LTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     cellModel.indexPath = indexPath;
-    if (cellModel.deSelectionStyle == DeSelectionStyleNow) {
+    if (cellModel.LDeSelectionStyle == LDeSelectionStyleNow) {
         [tableView deselectRowAtIndexPath:indexPath animated:true];
     }
     if (cellModel.cellClick) {

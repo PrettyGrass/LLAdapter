@@ -39,7 +39,7 @@
     }
     {
         KVLTableCell *simpleCell = [section addNewCell];
-        simpleCell.separatorStyle = TableViewCellSeparatorStyleCustom;
+        simpleCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
         simpleCell.cellClick = ^(LTableCell *cell, NSIndexPath *indexPath) {
             
         };
@@ -48,7 +48,7 @@
     }
     {
         LTableCell *customCell = [section addNewCell:KVLTableCell.class];
-        customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LTableCell *cell, NSIndexPath *indexPath) {
@@ -61,7 +61,7 @@
     {
         LTableCell *customCell = [section addNewCell:KVLTableCell.class];
         customCell.cellHeight = 88;
-        customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         //[customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LTableCell *cell, NSIndexPath *indexPath) {
@@ -77,7 +77,7 @@
         //customCell.selectionStyle = UITableViewCellSelectionStyle;
         customCell.cellClazz = CustomCellView.class;
         customCell.cellHeight = 140;
-        customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         //[customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LTableCell *cell, NSIndexPath *indexPath) {
@@ -89,7 +89,7 @@
     {
         LTableCell *customCell = [section addNewCell:KVLTableCell.class];
         customCell.cellHeight = 88;
-        customCell.separatorStyle = TableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         //[customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LTableCell *cell, NSIndexPath *indexPath) {
