@@ -50,12 +50,21 @@
 
 - (LTableSection *)addNewSection {
     
-    if (!self.sections) {
-        self.sections = [NSMutableArray array];
-    }
-    LTableSection *section = [[LTableSection alloc] init];
-    [self.sections addObject:section];
+    return [self addNewSection:LTableSection.class];
+}
+
+- (LTableSection *)addNewSection:(Class)clazz {
+    
+    LTableSection *section = [[clazz alloc] init];
+    [self addSection:section];
     return section;
+}
+
+- (void)addSection:(__kindof LTableSection *)section {
+    if (!section) {
+        return;
+    }
+    [self.sections addObject:section];
 }
 
 #pragma - mark - UITableViewDelegate

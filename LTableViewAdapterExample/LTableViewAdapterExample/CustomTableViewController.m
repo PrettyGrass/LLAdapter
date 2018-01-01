@@ -79,7 +79,7 @@
         customCell.cellClazz = CustomCellView.class;
         customCell.cellHeight = 140;
         customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
-        [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
+        [customCell.kvcExt setObject:[UIColor blueColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LTableCell *cell, NSIndexPath *indexPath) {
             

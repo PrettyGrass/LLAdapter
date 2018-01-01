@@ -9,10 +9,17 @@
 #import "LBaseAdapter.h"
 
 @implementation LBaseAdapter
-- (void)reloadData {
-    
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _sections = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
-- (void)removeCell:(id)object {
+
+- (void)reloadData {
     
 }
 

@@ -11,11 +11,10 @@
 
 @implementation LTableSection
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
-        self.datas = [[NSMutableArray alloc] init];
+        _datas = [[NSMutableArray alloc] init];
     }
     return self;
 }

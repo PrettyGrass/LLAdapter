@@ -26,5 +26,7 @@
 - (instancetype)initWithTableView:(UITableView *)tableView;
 
 - (LTableSection *)addNewSection;
+- (LTableSection *)addNewSection:(Class)clazz;
+- (void)addSection:(__kindof LTableSection *)section;
 
 @end
