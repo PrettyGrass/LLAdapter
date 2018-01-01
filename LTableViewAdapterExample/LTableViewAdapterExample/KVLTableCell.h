@@ -6,7 +6,7 @@
 //  Copyright © 2017年 ylin.yang. All rights reserved.
 //
 
-#import <LTableViewAdapter/LTableViewAdapter.h>
+#import <LTableViewAdapter/LAdapter.h>
 
 @interface KVLTableCell : LTableCell
 

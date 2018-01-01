@@ -7,7 +7,7 @@
 //
 
 #import "SimpleTableViewController.h"
-#import <LTableViewAdapter/LTableViewAdapter.h>
+#import <LTableViewAdapter/LAdapter.h>
 
 @interface SimpleTableViewController ()
 

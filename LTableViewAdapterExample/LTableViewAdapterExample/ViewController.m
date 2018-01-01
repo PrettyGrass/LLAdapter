@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <LTableViewAdapter/LTableViewAdapter.h>
+#import <LTableViewAdapter/LAdapter.h>
 #import "SimpleTableViewController.h"
 #import "CustomTableViewController.h"
 #import "EditTableViewController.h"
