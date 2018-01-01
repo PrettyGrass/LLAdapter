@@ -1,5 +1,5 @@
 //
-//  BaseAdapter.h
+//  LBaseAdapter.h
 //  GetTV_iOS
 //
 //  Created by yangyl on 16/7/6.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 /// 基础适配器
-@interface BaseAdapter <SectionType>: NSObject
+@interface LBaseAdapter <SectionType>: NSObject
 
 @property (strong, nonatomic) NSMutableArray <SectionType>* sections;
 /// 适配器刷新，就是更新列表

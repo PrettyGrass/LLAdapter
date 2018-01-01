@@ -1,26 +1,20 @@
 //
-//  TableCell.m
+//  LCollectCell.m
 //  GetTV_iOS
 //
-//  Created by ylin.yang on 2016/6/24.
+//  Created by ylin.yang on 2016/7/5.
 //  Copyright © 2016年 ylin.yang. All rights reserved.
 //
 
-#import "TableCell.h"
+#import "LCollectCell.h"
 
-@implementation TableCell
+@implementation LCollectCell
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _cellHeight = UITableViewAutomaticDimension;
-        _cellClazz = [UITableViewCell class];
+        self.cellClazz = [UICollectionViewCell class];
         _kvcExt = [NSMutableDictionary dictionary];
-        _separatorStyle = TableViewCellSeparatorStyleInner;
-        _separatorInset = UIEdgeInsetsMake(0, 24, 0, 0);
-        _selectionStyle = UITableViewCellSelectionStyleDefault;
-        _selectionColor = [UIColor lightGrayColor];
-        _deSelectionStyle = DeSelectionStyleNow;
     }
     return self;
 }

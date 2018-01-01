@@ -1,15 +1,15 @@
 //
-//  CollectSection.m
+//  LCollectSection.m
 //  GetTV_iOS
 //
 //  Created by ylin.yang on 2016/7/5.
 //  Copyright © 2016年 ylin.yang. All rights reserved.
 //
 
-#import "CollectSection.h"
-#import "CollectCell.h"
+#import "LCollectSection.h"
+#import "LCollectCell.h"
 
-@implementation CollectSection
+@implementation LCollectSection
 - (instancetype)init
 {
     self = [super init];
@@ -19,11 +19,11 @@
     return self;
 }
 
-- (CollectCell *)addNewCell {
-    return [self addNewCell:CollectCell.class];
+- (LCollectCell *)addNewCell {
+    return [self addNewCell:LCollectCell.class];
 }
-- (__kindof CollectCell *)addNewCell:(Class)clzz {
-    CollectCell *cell = [[clzz alloc] init];
+- (__kindof LCollectCell *)addNewCell:(Class)clzz {
+    LCollectCell *cell = [[clzz alloc] init];
     [self.datas addObject:cell];
     return cell;
 }

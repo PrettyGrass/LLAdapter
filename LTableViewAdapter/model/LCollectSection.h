@@ -1,5 +1,5 @@
 //
-//  CollectSection.h
+//  LCollectSection.h
 //  GetTV_iOS
 //
 //  Created by ylin.yang on 2016/7/5.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CollectCell;
+@class LCollectCell;
 
 /**
  *	@author Y0, 16-07-05 22:07:39
@@ -16,14 +16,14 @@
  *
  *	@since 1.0
  */
-@interface CollectSection : NSObject
+@interface LCollectSection : NSObject
 /// 单元标题
 @property (copy, nonatomic) NSString *sectionTitle;
 /// 单元数据集合
-@property (strong, nonatomic) NSMutableArray <CollectCell *>*datas;
+@property (strong, nonatomic) NSMutableArray <LCollectCell *>*datas;
 
-- (CollectCell *)addNewCell;
+- (LCollectCell *)addNewCell;
 
-- (__kindof CollectCell *)addNewCell:(Class)clzz;
+- (__kindof LCollectCell *)addNewCell:(Class)clzz;
 
 @end

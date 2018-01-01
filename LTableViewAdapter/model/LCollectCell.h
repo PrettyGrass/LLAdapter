@@ -1,5 +1,5 @@
 //
-//  CollectCell.h
+//  LCollectCell.h
 //  GetTV_iOS
 //
 //  Created by ylin.yang on 2016/7/5.
@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TableCell.h"
-@class CollectCell;
+#import "LTableCell.h"
+@class LCollectCell;
 
-typedef void (^CollClick)(CollectCell *model, NSIndexPath *index);
+typedef void (^CollClick)(LCollectCell *model, NSIndexPath *index);
 
 /**
  *	@author Y0, 16-07-05 22:07:19
@@ -19,7 +19,7 @@ typedef void (^CollClick)(CollectCell *model, NSIndexPath *index);
  *
  *	@since 1.0
  */
-@interface CollectCell <DataType: NSObject *>: NSObject
+@interface LCollectCell <DataType: NSObject *>: NSObject
 
 /// kvc 透传数据
 @property (strong, nonatomic) NSMutableDictionary *kvcExt;

@@ -1,5 +1,5 @@
 //
-//  TableViewEditAdapter.h
+//  LTableViewEditAdapter.h
 //  Pods
 //
 //  Created by ylin.yang on 2017/6/7.
@@ -15,6 +15,6 @@
  *
  *	@since 1.0
  */
-@interface TableViewEditAdapter : TableViewAdapter
+@interface LTableViewEditAdapter : LTableViewAdapter
 
 @end

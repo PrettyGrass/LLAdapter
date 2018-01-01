@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B03599A1E70483900407E06 /* KVTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0359991E70483900407E06 /* KVTableCell.m */; };
+		5B03599A1E70483900407E06 /* KVLTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0359991E70483900407E06 /* KVLTableCell.m */; };
 		5B7CFF021EE855A400DBB664 /* EditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7CFF011EE855A400DBB664 /* EditTableViewController.m */; };
 		9C0EC5FF9825F7207E5162CB /* libPods-LTableViewAdapterExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 953537232472727D715685E8 /* libPods-LTableViewAdapterExample.a */; };
 		DF03BEA51E701B4E0055FEE4 /* SimpleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF03BEA41E701B4E0055FEE4 /* SimpleTableViewController.m */; };
@@ -27,8 +27,8 @@
 		45CA3AD6FDE581CCAC294089 /* libPods-LTableViewAdapterExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTableViewAdapterExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4900907A019D72E9D8C7071B /* libPods-LTableViewAdapterExampleUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTableViewAdapterExampleUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAC04515B0672B3D0B5635C /* Pods-LTableViewAdapterExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTableViewAdapterExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTableViewAdapterExample/Pods-LTableViewAdapterExample.release.xcconfig"; sourceTree = "<group>"; };
-		5B0359981E70483800407E06 /* KVTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVTableCell.h; sourceTree = "<group>"; };
-		5B0359991E70483900407E06 /* KVTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVTableCell.m; sourceTree = "<group>"; };
+		5B0359981E70483800407E06 /* KVLTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVLTableCell.h; sourceTree = "<group>"; };
+		5B0359991E70483900407E06 /* KVLTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVLTableCell.m; sourceTree = "<group>"; };
 		5B7CFF001EE855A400DBB664 /* EditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableViewController.h; sourceTree = "<group>"; };
 		5B7CFF011EE855A400DBB664 /* EditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditTableViewController.m; sourceTree = "<group>"; };
 		953537232472727D715685E8 /* libPods-LTableViewAdapterExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTableViewAdapterExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,8 +123,8 @@
 				DF755E741F17418900DAEF8B /* CollectionController.m */,
 				5B7CFF001EE855A400DBB664 /* EditTableViewController.h */,
 				5B7CFF011EE855A400DBB664 /* EditTableViewController.m */,
-				5B0359981E70483800407E06 /* KVTableCell.h */,
-				5B0359991E70483900407E06 /* KVTableCell.m */,
+				5B0359981E70483800407E06 /* KVLTableCell.h */,
+				5B0359991E70483900407E06 /* KVLTableCell.m */,
 				DF5BA7901E6D4DA100838FB1 /* Main.storyboard */,
 				DF5BA7931E6D4DA100838FB1 /* Assets.xcassets */,
 				DF5BA7951E6D4DA100838FB1 /* LaunchScreen.storyboard */,
@@ -249,13 +249,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTableViewAdapterExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -271,7 +274,7 @@
 				DF5BA78F1E6D4DA100838FB1 /* ViewController.m in Sources */,
 				DF03BEA51E701B4E0055FEE4 /* SimpleTableViewController.m in Sources */,
 				5B7CFF021EE855A400DBB664 /* EditTableViewController.m in Sources */,
-				5B03599A1E70483900407E06 /* KVTableCell.m in Sources */,
+				5B03599A1E70483900407E06 /* KVLTableCell.m in Sources */,
 				DF5BA78C1E6D4DA100838FB1 /* AppDelegate.m in Sources */,
 				DF03BEA81E701FC50055FEE4 /* CustomTableViewController.m in Sources */,
 				DF5BA7891E6D4DA100838FB1 /* main.m in Sources */,

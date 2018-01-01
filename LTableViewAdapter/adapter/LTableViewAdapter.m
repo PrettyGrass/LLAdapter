@@ -1,23 +1,23 @@
 //
-//  TableViewAdapter.m
+//  LTableViewAdapter.m
 //  GetTV_iOS
 //
 //  Created by yangyl on 16/7/6.
 //  Copyright © 2016年 ylin.yang. All rights reserved.
 //
 
-#import "TableViewAdapter.h"
-#import "UITableViewCell+Model.h"
+#import "LTableViewAdapter.h"
+#import "UITableViewCell+LModel.h"
 #import "NSObject+Clazz.h"
-#import "TableSection.h"
-#import "TableCell.h"
+#import "LTableSection.h"
+#import "LTableCell.h"
 #import "UIView+Xib.h"
 
-@interface TableViewAdapter()
+@interface LTableViewAdapter()
 
 @end
 
-@implementation TableViewAdapter
+@implementation LTableViewAdapter
 
 - (instancetype)initWithTableView:(UITableView *)tableView {
     
@@ -48,12 +48,12 @@
     [self.tableView reloadData];
 }
 
-- (TableSection *)addNewSection {
+- (LTableSection *)addNewSection {
     
     if (!self.sections) {
         self.sections = [NSMutableArray array];
     }
-    TableSection *section = [[TableSection alloc] init];
+    LTableSection *section = [[LTableSection alloc] init];
     [self.sections addObject:section];
     return section;
 }
@@ -76,7 +76,7 @@
 
 - (UITableViewCell *)getCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath dequeue:(BOOL)dequeue {
     
-    TableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    LTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     cellModel.indexPath = indexPath;
     UITableViewCell *cell;
     /// 是否重用
@@ -126,7 +126,7 @@
  *    cell 的点击事件/
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    TableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    LTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     cellModel.indexPath = indexPath;
     if (cellModel.deSelectionStyle == DeSelectionStyleNow) {
         [tableView deselectRowAtIndexPath:indexPath animated:true];
@@ -144,7 +144,7 @@
             return height;
         }
     }
-    TableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    LTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     cellModel.indexPath = indexPath;
     //[self getCell:tableView cellForRowAtIndexPath:indexPath dequeue:false];
     if (cellModel.cellHeight == UITableViewAutomaticDimension) {

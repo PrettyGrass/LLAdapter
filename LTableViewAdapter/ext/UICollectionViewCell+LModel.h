@@ -1,5 +1,5 @@
 //
-//  UICollectionViewCell+Model.h
+//  UICollectionViewCell+LModel.h
 //  GetTV_iOS
 //
 //  Created by ylin.yang on 2016/6/24.
@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CollectCell.h"
+#import "LCollectCell.h"
 
 @interface UICollectionViewCell (Model)
-@property (strong, nonatomic) CollectCell *model;
+@property (strong, nonatomic) LCollectCell *model;
 - (void)updateUI;
 @end

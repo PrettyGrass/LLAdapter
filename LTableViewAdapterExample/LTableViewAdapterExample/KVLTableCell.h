@@ -1,5 +1,5 @@
 //
-//  KVTableCell.h
+//  KVLTableCell.h
 //  LTableViewAdapterExample
 //
 //  Created by ylin.yang on 2017/3/8.
@@ -8,7 +8,7 @@
 
 #import <LTableViewAdapter/LTableViewAdapter.h>
 
-@interface KVTableCell : TableCell
+@interface KVLTableCell : LTableCell
 
 @property (copy, nonatomic) NSString *placeholder;
 @property (copy, nonatomic) NSString *oldValue;

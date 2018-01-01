@@ -1,5 +1,5 @@
 //
-//  TableSection.h
+//  LTableSection.h
 //  GetTV_iOS
 //
 //  Created by ylin.yang on 2016/6/24.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class TableCell;
+@class LTableCell;
 /**
  *	@author Y0, 16-07-04 17:07:59
  *
@@ -16,13 +16,13 @@
  *
  *	@since 1.0
  */
-@interface TableSection : NSObject
+@interface LTableSection : NSObject
 /// 标题
 @property (copy, nonatomic) NSString *sectionTitle;
 /// 单元的数据集合
-@property (strong, nonatomic) NSMutableArray <TableCell *>*datas;
+@property (strong, nonatomic) NSMutableArray <LTableCell *>*datas;
 
-- (__kindof TableCell *)addNewCell;
-- (__kindof TableCell *)addNewCell:(Class)clzz;
+- (__kindof LTableCell *)addNewCell;
+- (__kindof LTableCell *)addNewCell:(Class)clzz;
 
 @end

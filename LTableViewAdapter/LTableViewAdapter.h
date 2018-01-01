@@ -10,16 +10,16 @@
 #define LTableViewAdapter_h
 
 #import "LTabbleViewDefine.h"
-#import "CollectionViewAdapter.h"
-#import "TableViewAdapter.h"
-#import "TableViewEditAdapter.h"
-#import "UICollectionViewCell+Model.h"
-#import "UITableViewCell+Model.h"
-#import "TableSection.h"
-#import "CollectSection.h"
-#import "UICollectionViewCell+Model.h"
-#import "UITableViewCell+Model.h"
-#import "TableCell.h"
-#import "CollectCell.h"
+#import "LCollectionViewAdapter.h"
+#import "LTableViewAdapter.h"
+#import "LTableViewEditAdapter.h"
+#import "UICollectionViewCell+LModel.h"
+#import "UITableViewCell+LModel.h"
+#import "LTableSection.h"
+#import "LCollectSection.h"
+#import "UICollectionViewCell+LModel.h"
+#import "UITableViewCell+LModel.h"
+#import "LTableCell.h"
+#import "LCollectCell.h"
 
 #endif /* LTableViewAdapter_h */

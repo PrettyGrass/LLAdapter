@@ -1,5 +1,5 @@
 //
-//  TableCell.h
+//  LTableCell.h
 //  GetTV_iOS
 //
 //  Created by ylin.yang on 2016/6/24.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LTabbleViewDefine.h"
 
-@class TableCell;
+@class LTableCell;
 
 typedef NS_ENUM(NSInteger, CellLoadType) {
     CellLoadTypeInner,
@@ -29,9 +29,9 @@ typedef NS_ENUM(NSInteger, TableViewCellSeparatorStyle) {
     TableViewCellSeparatorStyleCustom,//自定义
 };
 
-typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
+typedef void (^LTableCellAction)(__kindof LTableCell *model, NSIndexPath *index);
 
-#define TableCellActionDefine(_name_, _type_) void(^_name_)(__kindof TableCell <_type_>*model, NSIndexPath *index);
+#define LTableCellActionDefine(_name_, _type_) void(^_name_)(__kindof LTableCell <_type_>*model, NSIndexPath *index);
 
 /**
  *	@author Y0, 16-07-04 17:07:34
@@ -40,7 +40,7 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
  *
  *	@since 1.0
  */
-@interface TableCell <DataType: NSObject *>: NSObject
+@interface LTableCell <DataType: NSObject *>: NSObject
 
 /// kvc 透传数据
 @property (strong, nonatomic) NSMutableDictionary *kvcExt;
@@ -59,9 +59,9 @@ typedef void (^TableCellAction)(__kindof TableCell *model, NSIndexPath *index);
 /// 图片名字  URL UIImage
 @property (assign, nonatomic) id image;
 /// 点击事件
-@property (copy, nonatomic) TableCellAction cellClick;
+@property (copy, nonatomic) LTableCellAction cellClick;
 
-@property (copy, nonatomic) TableCellActionDefine(ccc, DataType);
+@property (copy, nonatomic) LTableCellActionDefine(ccc, DataType);
 /// cell类
 @property (assign, nonatomic) Class cellClazz;
 /// cell Identity

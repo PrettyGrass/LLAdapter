@@ -12,7 +12,7 @@
 @interface SimpleTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *simpleTable;
-@property (strong, nonatomic) TableViewAdapter *adapter;
+@property (strong, nonatomic) LTableViewAdapter *adapter;
 
 @end
 
@@ -26,7 +26,7 @@
     self.simpleTable.backgroundColor = [UIColor clearColor];
     
     ///初始化适配器
-    TableViewAdapter *adapter = [[TableViewAdapter alloc] initWithTableView:self.simpleTable];
+    LTableViewAdapter *adapter = [[LTableViewAdapter alloc] initWithTableView:self.simpleTable];
     self.adapter = adapter;
     
     self.simpleTable.estimatedRowHeight = 44;
@@ -41,7 +41,7 @@
 
 - (void)setData:(NSArray <NSString *>*)datas isRefresh:(BOOL)isRefresh {
     
-    TableSection *section = self.adapter.sections.firstObject;
+    LTableSection *section = self.adapter.sections.firstObject;
     if (!section) {
         section = [self.adapter addNewSection];
     }
@@ -49,7 +49,7 @@
         [section.datas removeAllObjects];
     }
     for (NSInteger idx = 0; idx < datas.count; idx ++) {
-        TableCell *cell = [section addNewCell];
+        LTableCell *cell = [section addNewCell];
         
         cell.loadType = CellLoadTypeInner;
         cell.cellClazz = NSClassFromString(@"SimpleCellView");

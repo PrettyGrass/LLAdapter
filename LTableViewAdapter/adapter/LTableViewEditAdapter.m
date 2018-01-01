@@ -1,14 +1,14 @@
 //
-//  TableViewEditAdapter.m
+//  LTableViewEditAdapter.m
 //  Pods
 //
 //  Created by ylin.yang on 2017/6/7.
 //
 //
 
-#import "TableViewEditAdapter.h"
+#import "LTableViewEditAdapter.h"
 
-@implementation TableViewEditAdapter
+@implementation LTableViewEditAdapter
 
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {

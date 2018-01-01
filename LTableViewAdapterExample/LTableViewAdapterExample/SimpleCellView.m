@@ -7,8 +7,8 @@
 //
 
 #import "SimpleCellView.h"
-#import <UITableViewCell+Model.h>
-#import "TableCell.h"
+#import <UITableViewCell+LModel.h>
+#import "LTableCell.h"
 
 @implementation SimpleCellView
 

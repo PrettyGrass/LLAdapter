@@ -1,14 +1,14 @@
 //
-//  UITableViewCell+Model.m
+//  UITableViewCell+LModel.m
 //  GetTV_iOS
 //
 //  Created by ylin on 16/6/12.
 //  Copyright © 2016年 ylin. All rights reserved.
 //
 
-#import "UITableViewCell+Model.h"
+#import "UITableViewCell+LModel.h"
 #import "objc/runtime.h"
-#import "TableCell.h"
+#import "LTableCell.h"
 #import "Masonry.h"
 
 static NSInteger kCellSelectTag = 1000221;
@@ -45,13 +45,13 @@ static NSString *cellmodelkey = @"cellmodelkey";
 //    });
 //}
 
-- (void)setModel:(TableCell *)model {
+- (void)setModel:(LTableCell *)model {
     objc_setAssociatedObject(self, &cellmodelkey, model, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     model.cellOriFrame = CGRectZero;
     [self updateUI];
 }
 
-- (TableCell *)model {
+- (LTableCell *)model {
     
     return objc_getAssociatedObject(self, &cellmodelkey);
 }
@@ -63,7 +63,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
 //- (void)setFrame:(CGRect)frame {
 //    __weak typeof(self) weakSelf = self;
 //    /// 设置上下左右边距
-//    if ([self resetCellFrame] && [self.model isKindOfClass:[TableCell class]]) {
+//    if ([self resetCellFrame] && [self.model isKindOfClass:[LTableCell class]]) {
 //        /// cell重用时要重置frame
 //        if (CGRectIsEmpty(self.model.cellOriFrame)||
 //            CGRectIsNull(self.model.cellOriFrame)) {

@@ -7,8 +7,8 @@
 //
 
 #import "CustomCellView.h"
-#import <UITableViewCell+Model.h>
-#import "TableCell.h"
+#import <UITableViewCell+LModel.h>
+#import "LTableCell.h"
 #import <Masonry.h>
 
 @implementation CustomCellView

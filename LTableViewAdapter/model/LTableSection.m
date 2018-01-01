@@ -1,15 +1,15 @@
 //
-//  TableSection.m
+//  LTableSection.m
 //  GetTV_iOS
 //
 //  Created by ylin.yang on 2016/6/24.
 //  Copyright © 2016年 ylin.yang. All rights reserved.
 //
 
-#import "TableSection.h"
-#import "TableCell.h"
+#import "LTableSection.h"
+#import "LTableCell.h"
 
-@implementation TableSection
+@implementation LTableSection
 - (instancetype)init
 {
     self = [super init];
@@ -19,13 +19,13 @@
     return self;
 }
 
-- (__kindof TableCell *)addNewCell {
-    TableCell *cell = [[TableCell alloc] init];
+- (__kindof LTableCell *)addNewCell {
+    LTableCell *cell = [[LTableCell alloc] init];
     [self.datas addObject:cell];
     return cell;
 }
-- (__kindof TableCell *)addNewCell:(Class)clzz {
-    TableCell *cell = [[clzz alloc] init];
+- (__kindof LTableCell *)addNewCell:(Class)clzz {
+    LTableCell *cell = [[clzz alloc] init];
     [self.datas addObject:cell];
     return cell;
 }

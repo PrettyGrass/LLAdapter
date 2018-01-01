@@ -1,21 +1,21 @@
 //
-//  CollectionViewAdapter.m
+//  LCollectionViewAdapter.m
 //  GetTV_iOS
 //
 //  Created by yangyl on 16/7/6.
 //  Copyright © 2016年 ylin.yang. All rights reserved.
 //
 
-#import "CollectionViewAdapter.h"
-#import "UICollectionViewCell+Model.h"
+#import "LCollectionViewAdapter.h"
+#import "UICollectionViewCell+LModel.h"
 #import "NSObject+Clazz.h"
-#import "CollectSection.h"
+#import "LCollectSection.h"
 
-@interface CollectionViewAdapter ()
+@interface LCollectionViewAdapter ()
 
 @end
 
-@implementation CollectionViewAdapter
+@implementation LCollectionViewAdapter
 
 - (instancetype)init
 {
@@ -46,12 +46,12 @@
     _collectionView.dataSource = self;
 }
 
-- (CollectSection *)addNewSection {
+- (LCollectSection *)addNewSection {
     
     if (!self.sections) {
         self.sections = [NSMutableArray array];
     }
-    CollectSection *section = [[CollectSection alloc] init];
+    LCollectSection *section = [[LCollectSection alloc] init];
     [self.sections addObject:section];
     return section;
 }
@@ -75,7 +75,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    CollectCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    LCollectCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     switch (cellModel.loadType) {
         case CellLoadTypeInner:
             //[collectionView registerClass:cellModel.cellClazz forCellWithReuseIdentifier:[cellModel.cellClazz className]];
@@ -101,7 +101,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CollectCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    LCollectCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     if (cellModel.cellClick) {
         cellModel.cellClick(cellModel, indexPath);
     }
