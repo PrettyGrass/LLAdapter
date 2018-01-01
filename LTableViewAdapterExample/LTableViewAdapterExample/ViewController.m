@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *simpleTable;
 @property (strong, nonatomic) LTableViewAdapter *adapter;
+
 @end
 
 @implementation ViewController
@@ -30,15 +31,14 @@
     
     self.simpleTable.estimatedRowHeight = 44;
     self.simpleTable.rowHeight = UITableViewAutomaticDimension;
-    ///设置数据
     
+    ///设置数据
     LTableSection *section = self.adapter.sections.firstObject;
     if (!section) {
         section = [self.adapter addNewSection];
     }
     
     LTableCell *simpleCell = [section addNewCell];
-    
     simpleCell.cellClick = ^(LTableCell *cell, NSIndexPath *indexPath) {
         SimpleTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
