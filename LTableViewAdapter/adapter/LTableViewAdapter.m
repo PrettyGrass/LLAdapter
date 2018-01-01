@@ -8,10 +8,10 @@
 
 #import "LTableViewAdapter.h"
 #import "UITableViewCell+LModel.h"
-#import "NSObject+Clazz.h"
+#import "NSObject+LClazz.h"
 #import "LTableSection.h"
 #import "LTableCell.h"
-#import "UIView+Xib.h"
+#import "UIView+LXib.h"
 
 @interface LTableViewAdapter()
 

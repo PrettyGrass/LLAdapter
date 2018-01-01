@@ -6,8 +6,8 @@
 //  Copyright © 2016年 ylin.yang. All rights reserved.
 //
 
-#import "UIView+Xib.h"
-#import "NSObject+Clazz.h"
+#import "UIView+LXib.h"
+#import "NSObject+LClazz.h"
 
 @implementation UIView (LXib)
 

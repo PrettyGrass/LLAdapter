@@ -8,7 +8,7 @@
 
 #import "LCollectionViewAdapter.h"
 #import "UICollectionViewCell+LModel.h"
-#import "NSObject+Clazz.h"
+#import "NSObject+LClazz.h"
 #import "LCollectSection.h"
 
 @interface LCollectionViewAdapter ()

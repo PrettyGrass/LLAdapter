@@ -6,7 +6,7 @@
 //  Copyright © 2016年 ylin. All rights reserved.
 //
 
-#import "NSObject+Clazz.h"
+#import "NSObject+LClazz.h"
 
 @implementation NSObject (LClazz)
 
