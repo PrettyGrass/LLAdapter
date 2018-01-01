@@ -1,6 +1,6 @@
 //
 //  LCollectionViewAdapter.m
-//  GetTV_iOS
+//  Adapter
 //
 //  Created by yangyl on 16/7/6.
 //  Copyright © 2016年 ylin.yang. All rights reserved.

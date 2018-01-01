@@ -1,6 +1,6 @@
 //
 //  LCollectSection.m
-//  GetTV_iOS
+//  Adapter
 //
 //  Created by ylin.yang on 2016/7/5.
 //  Copyright © 2016年 ylin.yang. All rights reserved.

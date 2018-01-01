@@ -1,6 +1,6 @@
 //
 //  LTableCell.m
-//  GetTV_iOS
+//  Adapter
 //
 //  Created by ylin.yang on 2016/6/24.
 //  Copyright © 2016年 ylin.yang. All rights reserved.

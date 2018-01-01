@@ -1,6 +1,6 @@
 //
 //  UITableViewCell+LModel.h
-//  GetTV_iOS
+//  Adapter
 //
 //  Created by ylin on 16/6/12.
 //  Copyright © 2016年 ylin. All rights reserved.
