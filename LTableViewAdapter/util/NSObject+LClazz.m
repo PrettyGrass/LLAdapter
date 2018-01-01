@@ -8,7 +8,7 @@
 
 #import "NSObject+Clazz.h"
 
-@implementation NSObject (Clazz)
+@implementation NSObject (LClazz)
 
 - (NSString *)className {
     return NSStringFromClass(self.class);

@@ -9,9 +9,9 @@
 #import "UIView+Xib.h"
 #import "NSObject+Clazz.h"
 
-@implementation UIView (Xib)
+@implementation UIView (LXib)
 
-+ (instancetype)loadViewFromXibName:(NSString *)nibName bundle:(NSBundle *)bundle owner:(nullable id)ownerOrNil options:(NSDictionary *)optionsOrNil{
++ (instancetype)loadViewFromXibName:(NSString *)nibName bundle:(NSBundle *)bundle owner:(nullable id)ownerOrNil options:(NSDictionary *)optionsOrNil {
     
     UINib *nib = [UINib nibWithNibName:nibName bundle:bundle];
     NSArray *array = [nib instantiateWithOwner:ownerOrNil options:optionsOrNil];
@@ -24,6 +24,7 @@
     }
     return ret;
 }
+
 + (instancetype)loadViewFromXibName:(NSString *)nibName bundle:(NSBundle *)bundle owner:(nullable id)ownerOrNil {
     
     return [self loadViewFromXibName:nibName bundle:bundle owner:ownerOrNil options:nil];

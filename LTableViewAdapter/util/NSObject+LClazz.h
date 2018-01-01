@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (Clazz)
+@interface NSObject (LClazz)
 
 - (NSString *)className;
 + (NSString *)className;
