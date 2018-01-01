@@ -20,6 +20,9 @@
 }
 
 - (void)addCell:(__kindof LTableCell *)cell {
+    if (!cell) {
+        return;
+    }
     [self.datas addObject:cell];
 }
 
