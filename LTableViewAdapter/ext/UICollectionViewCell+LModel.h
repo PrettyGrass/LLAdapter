@@ -11,5 +11,5 @@
 
 @interface UICollectionViewCell (LModel)
 @property (strong, nonatomic) LCollectCell *model;
-- (void)updateUI;
+- (void)updateCellUI;
 @end

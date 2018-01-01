@@ -16,8 +16,8 @@
     [super awakeFromNib];
     // Initialization code
 }
-- (void)updateUI {
-    [super updateUI];
+- (void)updateCellUI {
+    [super updateCellUI];
     self.titleLab.text = self.model.title;
 }
 @end

@@ -48,7 +48,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
 - (void)setModel:(LTableCell *)model {
     objc_setAssociatedObject(self, &cellmodelkey, model, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     model.cellOriFrame = CGRectZero;
-    [self updateUI];
+    [self updateCellUI];
 }
 
 - (LTableCell *)model {
@@ -84,7 +84,7 @@ static NSString *cellmodelkey = @"cellmodelkey";
 //    }
 //    [super setFrame:frame];
 //}
-- (void)updateUI {
+- (void)updateCellUI {
     __weak typeof(self) weakSelf = self;
     
     [self.contentView mas_remakeConstraints:^(MASConstraintMaker *make) {

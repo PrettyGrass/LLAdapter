@@ -15,7 +15,7 @@ static NSString *collmodelkey = @"collmodelkey";
 - (void)setModel:(LCollectCell *)model {
     objc_setAssociatedObject(self, &collmodelkey, model, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    [self updateUI];
+    [self updateCellUI];
 }
 
 - (LCollectCell *)model {
@@ -23,7 +23,7 @@ static NSString *collmodelkey = @"collmodelkey";
     return objc_getAssociatedObject(self, &collmodelkey);
 }
 
-- (void)updateUI {
+- (void)updateCellUI {
     __weak typeof(self) weakSelf = self;
     /// 透传数据
     [self.model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {

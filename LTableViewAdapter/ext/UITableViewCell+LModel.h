@@ -13,6 +13,6 @@
 @property (strong, nonatomic) LTableCell *model;
 /// 是否允许重置cell 的Frame
 - (BOOL)resetCellFrame;
-- (void)updateUI;
+- (void)updateCellUI;
 
 @end
