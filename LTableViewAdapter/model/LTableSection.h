@@ -29,6 +29,11 @@
 /// section 索引
 @property (assign, nonatomic) NSInteger sectionIndex;
 
+///组头
+@property (nonatomic, strong) UIView *sectionHeaderView;
+///组尾
+@property (nonatomic, strong) UIView *sectionFooterView;
+
 - (void)addCell:(__kindof LTableCell *)cell;
 - (__kindof LTableCell *)addNewCell;
 - (__kindof LTableCell *)addNewCell:(Class)clzz;

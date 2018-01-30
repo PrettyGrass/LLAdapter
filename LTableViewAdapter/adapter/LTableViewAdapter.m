@@ -146,7 +146,6 @@
 }
 //设置每个cell 的高度;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
         CGFloat height = [self.tableViewDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
         if (UITableViewAutomaticDimension != height) {
@@ -163,17 +162,35 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    if (![self.tableViewDelegate respondsToSelector:_cmd]) {
-        return nil;
+    if ([self.tableViewDelegate respondsToSelector:_cmd]) {
+        return [self.tableViewDelegate tableView:tableView viewForHeaderInSection:section];
     }
-    return [self.tableViewDelegate tableView:tableView viewForHeaderInSection:section];
+    LTableSection *sectionModel = self.sections[section];
+    return sectionModel.sectionHeaderView ? sectionModel.sectionHeaderView : nil;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (![self.tableViewDelegate respondsToSelector:_cmd]) {
-        return 0;
+    if ([self.tableViewDelegate respondsToSelector:_cmd]) {
+        [self.tableViewDelegate tableView:tableView heightForHeaderInSection:section];
     }
-    return [self.tableViewDelegate tableView:tableView heightForHeaderInSection:section];
+    LTableSection *sectionModel = self.sections[section];
+    return sectionModel.sectionHeaderHeight == 0 ? sectionModel.sectionHeaderHeight : 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if ([self.tableViewDelegate respondsToSelector:_cmd]) {
+        return [self.tableViewDelegate tableView:tableView viewForFooterInSection:section];
+    }
+    LTableSection *sectionModel = self.sections[section];
+    return sectionModel.sectionFooterView ? sectionModel.sectionFooterView : nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if ([self.tableViewDelegate respondsToSelector:_cmd]) {
+        return [self.tableViewDelegate tableView:tableView heightForFooterInSection:section];
+    }
+    LTableSection *sectionModel = self.sections[section];
+    return sectionModel.sectionFooterHeight == 0 ? sectionModel.sectionFooterHeight : 0;
 }
 
 #pragma - mark - UIScrollViewDelegate
