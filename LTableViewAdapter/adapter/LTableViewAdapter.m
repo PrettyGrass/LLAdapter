@@ -171,10 +171,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
-        [self.tableViewDelegate tableView:tableView heightForHeaderInSection:section];
+        return [self.tableViewDelegate tableView:tableView heightForHeaderInSection:section];
     }
     LTableSection *sectionModel = self.sections[section];
-    return sectionModel.sectionHeaderHeight == 0 ? sectionModel.sectionHeaderHeight : 0;
+    return sectionModel.sectionHeaderHeight != 0 ? sectionModel.sectionHeaderHeight : 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -190,7 +190,7 @@
         return [self.tableViewDelegate tableView:tableView heightForFooterInSection:section];
     }
     LTableSection *sectionModel = self.sections[section];
-    return sectionModel.sectionFooterHeight == 0 ? sectionModel.sectionFooterHeight : 0;
+    return sectionModel.sectionFooterHeight != 0 ? sectionModel.sectionFooterHeight : 0;
 }
 
 #pragma - mark - UIScrollViewDelegate
@@ -287,3 +287,4 @@
 }
 
 @end
+
