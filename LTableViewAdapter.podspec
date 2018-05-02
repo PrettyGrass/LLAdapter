@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LTableViewAdapter"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "这是一个 UITableView 的适配器"
   s.homepage     = "http://ylin.club"
   s.license      = "MIT"
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = "8.0"
   s.dependency  'Masonry'
-  s.source       = { :git => "https://git.oschina.net/y0/LTableViewAdapter.git", :branch => "1.1.0" }
+  s.source       = { :git => "https://git.oschina.net/y0/LTableViewAdapter.git", :branch => "1.1.1" }
   s.requires_arc = true
 
   s.subspec 'default' do|ss| 
