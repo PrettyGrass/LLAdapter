@@ -74,8 +74,8 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    
     LCollectCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    cellModel.indexPath = indexPath;
     switch (cellModel.loadType) {
         case CellLoadTypeInner:
             //[collectionView registerClass:cellModel.cellClazz forCellWithReuseIdentifier:[cellModel.cellClazz className]];
@@ -96,7 +96,6 @@
     if (!cell) {
            }
     cell.model = cellModel;
-    cellModel.indexPath = indexPath;
     return cell;
 }
 
