@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1743B736CC0005336E7BF60A /* libPods-LLTableViewAdapterExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8020B0B783C61BBC313EE677 /* libPods-LLTableViewAdapterExample.a */; };
-		9C0EC5FF9825F7207E5162CB /* libPods-LTableViewAdapterExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 953537232472727D715685E8 /* libPods-LTableViewAdapterExample.a */; };
 		F399B8D4211DA0B900C1020E /* CollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BB211DA0B900C1020E /* CollectionController.m */; };
 		F399B8D5211DA0B900C1020E /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BD211DA0B900C1020E /* CustomTableViewController.m */; };
 		F399B8D6211DA0B900C1020E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F399B8BE211DA0B900C1020E /* Assets.xcassets */; };
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C0EC5FF9825F7207E5162CB /* libPods-LTableViewAdapterExample.a in Frameworks */,
 				1743B736CC0005336E7BF60A /* libPods-LLTableViewAdapterExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +389,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TUKX34Z3B2;
-				INFOPLIST_FILE = LTableViewAdapterExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LLTableViewAdapterExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,7 +402,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = TUKX34Z3B2;
-				INFOPLIST_FILE = LTableViewAdapterExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LLTableViewAdapterExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
