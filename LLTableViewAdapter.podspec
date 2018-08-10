@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LLTableViewAdapter"
-  s.version      = "1.1.1"
+  s.version      = "1.2.0"
   s.summary      = "这是一个 UITableView 的适配器"
   s.homepage     = "http://ylin.club"
   s.license      = "MIT"
