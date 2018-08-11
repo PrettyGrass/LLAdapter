@@ -24,5 +24,4 @@
 #import "UITableViewCell+LLModel.h"
 #import "UICollectionViewCell+LLModel.h"
 
-
 #endif /* LLTableViewAdapter_h */

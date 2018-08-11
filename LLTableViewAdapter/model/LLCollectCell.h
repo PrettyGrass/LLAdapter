@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LLTableCell.h"
+#import "LLBaseCell.h"
 @class LLCollectCell;
 
 typedef void (^CollClick)(LLCollectCell *model, NSIndexPath *index);
@@ -19,21 +19,10 @@ typedef void (^CollClick)(LLCollectCell *model, NSIndexPath *index);
  *
  *	@since 1.0
  */
-@interface LLCollectCell <DataType: NSObject *>: NSObject
+@interface LLCollectCell <DataType>: LLBaseCell<DataType>
 
-/// kvc 透传数据
-@property (strong, nonatomic) NSMutableDictionary *kvcExt;
-@property (weak, nonatomic) NSIndexPath *indexPath;
 @property (assign, nonatomic) CGSize cellSize;
+/// 点击事件
 @property (copy, nonatomic) LLCollectCellActionDefine(cellClick, DataType);
-@property (assign, nonatomic) Class cellClazz;
-
-/// cell Identity
-@property (copy, nonatomic) NSString *cellIdentity;
-/// cell NibName
-@property (copy, nonatomic) NSString *cellNibName;
-
-@property (assign, nonatomic) LLCellLoadType loadType;
-@property (strong, nonatomic) DataType data;
 
 @end

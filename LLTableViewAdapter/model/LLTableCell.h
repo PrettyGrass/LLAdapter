@@ -7,67 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LLTabbleViewDefine.h"
+#import "LLBaseCell.h"
 
 @class LLTableCell;
-
-/**
- cell加载类型
-
- - LLCellLoadTypeInner: 使用sb构建的cell使用该选项
- - LLCellLoadTypeOri: 使用纯代码构建的cell使用该选项
- - LLCellLoadTypeNib: 使用Nib构建的cell使用该选项
- */
-typedef NS_ENUM(NSInteger, LLCellLoadType) {
-    LLCellLoadTypeInner,
-    LLCellLoadTypeOri,
-    LLCellLoadTypeNib
-};
-/// 点击后的去选风格
-typedef NS_ENUM(NSInteger, LLDeSelectionStyle) {
-    LLDeSelectionStyleNone,//不操作
-    LLDeSelectionStyleNow,//立即去选择
-    LLDeSelectionStylePersist,//永久选择
-};
-/// 分割线风格
-typedef NS_ENUM(NSInteger, LLTableViewCellSeparatorStyle) {
-    LLTableViewCellSeparatorStyleNone,//无
-    LLTableViewCellSeparatorStyleInner,//系统内置
-    LLTableViewCellSeparatorStyleCustom,//自定义
-};
-
 typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *index);
 
 /**
  *	@author Y0, 16-07-04 17:07:34
  *
- *	tableviewcell 数据模型
+ *	Table cell 数据模型
  *
  *	@since 1.0
  */
-@interface LLTableCell <DataType: NSObject *>: NSObject
+@interface LLTableCell<DataType>: LLBaseCell<DataType>
 
-/// kvc 透传数据
-@property (strong, nonatomic) NSMutableDictionary *kvcExt;
-/// 行索引信息
-@property (weak, nonatomic) NSIndexPath *indexPath;
 /// 行高
 @property (assign, nonatomic) CGFloat cellHeight;
-/// cell类
-@property (assign, nonatomic) Class cellClazz;
-/// cell 重用id 默认是 cellClazz类的类名
-@property (copy, nonatomic) NSString *cellIdentity;
-/// cell 默认是 cellClazz类的类名
-@property (copy, nonatomic) NSString *cellNibName;
-/// cell加载类型 默认 LLCellLoadTypeInner
-@property (assign, nonatomic) LLCellLoadType loadType;
 /// 选择的样式 默认 UITableViewCellSelectionStyleNone
 @property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle;
 /// 附件样式 默认 UITableViewCellAccessoryNone
 @property (assign, nonatomic) UITableViewCellAccessoryType accessoryType;
 /// 选择时候去选样式
 @property (assign, nonatomic) LLDeSelectionStyle LLDeSelectionStyle;
-
 /// 行分割线样式
 @property (assign, nonatomic) LLTableViewCellSeparatorStyle separatorStyle;
 /// 行分割线颜色
@@ -76,11 +37,9 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 @property (strong, nonatomic) UIColor *selectionColor;
 /// 分割线的位置
 @property (nonatomic) UIEdgeInsets separatorInset;
-/// 数据
-@property (strong, nonatomic) DataType data;
 
 /// 点击事件
-@property (copy, nonatomic) LLTableCellActionDefine(cellClick, DataType);
+@property (copy, nonatomic) LLTableCellActionDefine(cellClick, DataType)
 
 /**
  ============================================================

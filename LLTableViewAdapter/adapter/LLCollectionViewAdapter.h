@@ -18,7 +18,6 @@
 @interface LLCollectionViewAdapter : LLBaseAdapter<LLCollectSection *><UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) UICollectionView *collectionView;
-//@property (strong, nonatomic) NSMutableArray <LLCollectSection *>* sections;
 @property (weak, nonatomic) id<UICollectionViewDelegate> collectionViewDelegate;
 @property (weak, nonatomic) id<UICollectionViewDataSource> dataSourceDelegate;
 

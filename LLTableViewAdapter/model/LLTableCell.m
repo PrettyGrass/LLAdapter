@@ -20,9 +20,8 @@
 {
     self = [super init];
     if (self) {
+        self.cellClazz = [UITableViewCell class];
         _cellHeight = UITableViewAutomaticDimension;
-        _cellClazz = [UITableViewCell class];
-        _kvcExt = [NSMutableDictionary dictionary];
         _separatorStyle = LLTableViewCellSeparatorStyleInner;
         _separatorInset = UIEdgeInsetsMake(0, 24, 0, 0);
         _selectionStyle = UITableViewCellSelectionStyleDefault;
@@ -31,25 +30,4 @@
     }
     return self;
 }
-
-- (NSString *)cellIdentity {
-    
-    if (_cellIdentity) {
-        return _cellIdentity;
-    }
-    NSString *val = NSStringFromClass(self.cellClazz);
-    
-    return val;
-}
-
-- (NSString *)cellNibName {
-    
-    if (_cellNibName) {
-        return _cellNibName;
-    }
-    NSString *val = NSStringFromClass(self.cellClazz);
-    
-    return val;
-}
-
 @end

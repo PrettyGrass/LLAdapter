@@ -18,6 +18,7 @@
 }
 - (void)ll_updateCellUI {
     [super ll_updateCellUI];
-    self.titleLab.text = self.ll_model.title;
+    self.titleLab.text = self.ll_model.text;
 }
+
 @end

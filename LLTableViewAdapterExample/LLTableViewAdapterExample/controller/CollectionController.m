@@ -21,15 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = false;
-    //self.view.backgroundColor = [UIColor lightGrayColor];
-    //self.simpleTable.backgroundColor = [UIColor clearColor];
     ///初始化适配器
     LLCollectionViewAdapter *adapter = [[LLCollectionViewAdapter alloc] initWithCollection:self.collectionView];
     self.adapter = adapter;
-
     
     ///设置数据
-    
     LLCollectSection *section = self.adapter.sections.firstObject;
     if (!section) {
         section = [self.adapter addNewSection];
