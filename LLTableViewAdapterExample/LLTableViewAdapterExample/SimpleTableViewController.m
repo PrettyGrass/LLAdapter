@@ -51,10 +51,10 @@
     for (NSInteger idx = 0; idx < datas.count; idx ++) {
         LLTableCell *cell = [section addNewCell];
         
-        cell.loadType = CellLoadTypeInner;
+        cell.loadType = LLCellLoadTypeInner;
         cell.cellClazz = NSClassFromString(@"SimpleCellView");
         cell.title = datas[idx];
-        cell.separatorStyle = LTableViewCellSeparatorStyleCustom;
+        cell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         cell.separatorInset = UIEdgeInsetsMake(10, 10, 0, 10);
         [cell.kvcExt setObject:[UIColor redColor] forKey:@"titleLab.textColor"];
         

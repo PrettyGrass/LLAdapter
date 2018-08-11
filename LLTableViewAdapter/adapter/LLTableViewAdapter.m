@@ -93,13 +93,13 @@
         cell = [tableView dequeueReusableCellWithIdentifier:[celLLModel.cellClazz className]];
         if (!cell) {
             switch (celLLModel.loadType) {
-                case CellLoadTypeInner:
+                case LLCellLoadTypeInner:
                     [tableView registerClass:celLLModel.cellClazz forCellReuseIdentifier:celLLModel.cellIdentity];
                     break;
-                case CellLoadTypeNib:
+                case LLCellLoadTypeNib:
                     [tableView registerNib:[UINib nibWithNibName:celLLModel.cellNibName bundle:nil] forCellReuseIdentifier:celLLModel.cellIdentity];
                     break;
-                case CellLoadTypeOri:
+                case LLCellLoadTypeOri:
                     [tableView registerClass:celLLModel.cellClazz forCellReuseIdentifier:celLLModel.cellIdentity];
                     break;
                     
@@ -110,14 +110,14 @@
         }
     } else {
         switch (celLLModel.loadType) {
-            case CellLoadTypeInner:
+            case LLCellLoadTypeInner:
                 cell = [[celLLModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:celLLModel.cellIdentity];
                 break;
-            case CellLoadTypeNib:{
+            case LLCellLoadTypeNib:{
                 cell = [celLLModel.cellClazz loadViewFromXibName:celLLModel.cellNibName];
             }
                 break;
-            case CellLoadTypeOri:
+            case LLCellLoadTypeOri:
                 cell = [[celLLModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:celLLModel.cellIdentity];
                 break;
                 
@@ -137,7 +137,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     LLTableCell *celLLModel = self.sections[indexPath.section].datas[indexPath.row];
     celLLModel.indexPath = indexPath;
-    if (celLLModel.LDeSelectionStyle == LDeSelectionStyleNow) {
+    if (celLLModel.LLDeSelectionStyle == LLDeSelectionStyleNow) {
         [tableView deselectRowAtIndexPath:indexPath animated:true];
     }
     if (celLLModel.cellClick) {

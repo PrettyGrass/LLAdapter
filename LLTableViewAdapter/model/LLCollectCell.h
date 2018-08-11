@@ -33,7 +33,7 @@ typedef void (^CollClick)(LLCollectCell *model, NSIndexPath *index);
 /// cell NibName
 @property (copy, nonatomic) NSString *cellNibName;
 
-@property (assign, nonatomic) CellLoadType loadType;
+@property (assign, nonatomic) LLCellLoadType loadType;
 @property (strong, nonatomic) DataType data;
 
 @end

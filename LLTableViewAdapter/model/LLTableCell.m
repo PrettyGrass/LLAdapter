@@ -23,11 +23,11 @@
         _cellHeight = UITableViewAutomaticDimension;
         _cellClazz = [UITableViewCell class];
         _kvcExt = [NSMutableDictionary dictionary];
-        _separatorStyle = LTableViewCellSeparatorStyleInner;
+        _separatorStyle = LLTableViewCellSeparatorStyleInner;
         _separatorInset = UIEdgeInsetsMake(0, 24, 0, 0);
         _selectionStyle = UITableViewCellSelectionStyleDefault;
         _selectionColor = [UIColor colorWithRed:229.0/255.0 green:229.0/255.0 blue:229.0/255.0 alpha:1.0];
-        _LDeSelectionStyle = LDeSelectionStyleNow;
+        _LLDeSelectionStyle = LLDeSelectionStyleNow;
     }
     return self;
 }

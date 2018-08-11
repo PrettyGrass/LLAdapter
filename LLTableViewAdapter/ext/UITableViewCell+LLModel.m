@@ -52,7 +52,7 @@ static NSString *celLLModelkey = @"celLLModelkey";
     //分割线
     UIView *contentView = self.contentView;
     NSInteger tag = 123154;
-    if (self.model.separatorStyle == LTableViewCellSeparatorStyleNone) {
+    if (self.model.separatorStyle == LLTableViewCellSeparatorStyleNone) {
         UIView *separ = [contentView viewWithTag:tag];
         [separ setHidden:true];
     } else {
@@ -69,7 +69,7 @@ static NSString *celLLModelkey = @"celLLModelkey";
             color = defaultColor;
         }
         
-        if (self.model.separatorStyle == LTableViewCellSeparatorStyleInner) {
+        if (self.model.separatorStyle == LLTableViewCellSeparatorStyleInner) {
             [separ setBackgroundColor:defaultColor];
         } else {
             [separ setBackgroundColor:color];

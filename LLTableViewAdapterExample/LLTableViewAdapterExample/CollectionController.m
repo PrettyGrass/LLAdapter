@@ -40,7 +40,7 @@
             
         };
         simpleCell.cellClazz = UICollectionViewCell.class;
-        simpleCell.loadType = CellLoadTypeInner;
+        simpleCell.loadType = LLCellLoadTypeInner;
     }
     {
         LLCollectCell *simpleCell = [section addNewCell];
@@ -48,7 +48,7 @@
             
         };
         simpleCell.cellClazz = UICollectionViewCell.class;
-        simpleCell.loadType = CellLoadTypeInner;
+        simpleCell.loadType = LLCellLoadTypeInner;
     }
     {
         LLCollectCell *simpleCell = [section addNewCell];
@@ -56,7 +56,7 @@
             
         };
         simpleCell.cellClazz = UICollectionViewCell.class;
-        simpleCell.loadType = CellLoadTypeInner;
+        simpleCell.loadType = LLCellLoadTypeInner;
     }
     [self.adapter reloadData];
 }

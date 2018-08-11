@@ -43,7 +43,7 @@
         SimpleTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
     };
-    simpleCell.loadType = CellLoadTypeInner;
+    simpleCell.loadType = LLCellLoadTypeInner;
     simpleCell.title = @"简单";
     
     LLTableCell *customCell = [section addNewCell];
@@ -51,7 +51,7 @@
         CustomTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CustomTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
     };
-    customCell.loadType = CellLoadTypeInner;
+    customCell.loadType = LLCellLoadTypeInner;
     customCell.title = @"自定义";
     
     LLTableCell *editCell = [section addNewCell];
@@ -59,7 +59,7 @@
         EditTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EditTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
     };
-    editCell.loadType = CellLoadTypeInner;
+    editCell.loadType = LLCellLoadTypeInner;
     editCell.title = @"编辑";
     
     LLTableCell *collectCell = [section addNewCell];
@@ -67,7 +67,7 @@
         CollectionController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CollectionController"];
         [self.navigationController pushViewController:vc animated:true];
     };
-    collectCell.loadType = CellLoadTypeInner;
+    collectCell.loadType = LLCellLoadTypeInner;
     collectCell.title = @"collectCell";
 
     [self.adapter reloadData];

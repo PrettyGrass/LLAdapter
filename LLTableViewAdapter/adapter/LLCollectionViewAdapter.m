@@ -77,13 +77,13 @@
     LLCollectCell *celLLModel = self.sections[indexPath.section].datas[indexPath.row];
     celLLModel.indexPath = indexPath;
     switch (celLLModel.loadType) {
-        case CellLoadTypeInner:
+        case LLCellLoadTypeInner:
             //[collectionView registerClass:celLLModel.cellClazz forCellWithReuseIdentifier:[celLLModel.cellClazz className]];
             break;
-        case CellLoadTypeNib:
+        case LLCellLoadTypeNib:
             [collectionView registerNib:[UINib nibWithNibName:[celLLModel cellNibName] bundle:nil] forCellWithReuseIdentifier:[celLLModel cellIdentity]];
             break;
-        case CellLoadTypeOri:
+        case LLCellLoadTypeOri:
             [collectionView registerClass:celLLModel.cellClazz forCellWithReuseIdentifier:[celLLModel cellIdentity]];
             break;
             

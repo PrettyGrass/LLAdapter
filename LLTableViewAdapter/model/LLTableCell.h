@@ -14,26 +14,26 @@
 /**
  cell加载类型
 
- - CellLoadTypeInner: 使用sb构建的cell使用该选项
- - CellLoadTypeOri: 使用纯代码构建的cell使用该选项
- - CellLoadTypeNib: 使用Nib构建的cell使用该选项
+ - LLCellLoadTypeInner: 使用sb构建的cell使用该选项
+ - LLCellLoadTypeOri: 使用纯代码构建的cell使用该选项
+ - LLCellLoadTypeNib: 使用Nib构建的cell使用该选项
  */
-typedef NS_ENUM(NSInteger, CellLoadType) {
-    CellLoadTypeInner,
-    CellLoadTypeOri,
-    CellLoadTypeNib
+typedef NS_ENUM(NSInteger, LLCellLoadType) {
+    LLCellLoadTypeInner,
+    LLCellLoadTypeOri,
+    LLCellLoadTypeNib
 };
 /// 点击后的去选风格
-typedef NS_ENUM(NSInteger, LDeSelectionStyle) {
-    LDeSelectionStyleNone,//不操作
-    LDeSelectionStyleNow,//立即去选择
-    LDeSelectionStylePersist,//永久选择
+typedef NS_ENUM(NSInteger, LLDeSelectionStyle) {
+    LLDeSelectionStyleNone,//不操作
+    LLDeSelectionStyleNow,//立即去选择
+    LLDeSelectionStylePersist,//永久选择
 };
 /// 分割线风格
-typedef NS_ENUM(NSInteger, LTableViewCellSeparatorStyle) {
-    LTableViewCellSeparatorStyleNone,//无
-    LTableViewCellSeparatorStyleInner,//系统内置
-    LTableViewCellSeparatorStyleCustom,//自定义
+typedef NS_ENUM(NSInteger, LLTableViewCellSeparatorStyle) {
+    LLTableViewCellSeparatorStyleNone,//无
+    LLTableViewCellSeparatorStyleInner,//系统内置
+    LLTableViewCellSeparatorStyleCustom,//自定义
 };
 
 typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *index);
@@ -70,15 +70,15 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 /// cell NibName
 @property (copy, nonatomic) NSString *cellNibName;
 /// cell加载类型
-@property (assign, nonatomic) CellLoadType loadType;
+@property (assign, nonatomic) LLCellLoadType loadType;
 /// 选择的风格
 @property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle;// UITableViewCellSelectionStyleNone
 /// 选择时候去选风格
-@property (assign, nonatomic) LDeSelectionStyle LDeSelectionStyle;
+@property (assign, nonatomic) LLDeSelectionStyle LLDeSelectionStyle;
 /// 附件风格
 @property (assign, nonatomic) UITableViewCellAccessoryType accessoryType;// = UITableViewCellAccessoryNone;
 /// 行分割线风格
-@property (assign, nonatomic) LTableViewCellSeparatorStyle separatorStyle;
+@property (assign, nonatomic) LLTableViewCellSeparatorStyle separatorStyle;
 /// 行分割线颜色
 @property (strong, nonatomic) UIColor *separatorColor;
 /// 选中时颜色

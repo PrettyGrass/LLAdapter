@@ -39,46 +39,46 @@
     }
     {
         KVLLTableCell *simpleCell = [section addNewCell];
-        simpleCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
+        simpleCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
-        simpleCell.loadType = CellLoadTypeInner;
+        simpleCell.loadType = LLCellLoadTypeInner;
         simpleCell.title = @"简单";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
-        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         //customCell.selectionStyle = UITableViewCellSelectionStyleDefault;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.loadType = CellLoadTypeInner;
+        customCell.loadType = LLCellLoadTypeInner;
         customCell.title = @"自定义";
     }
     
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
         customCell.cellHeight = 88;
-        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         //[customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
         customCell.cellSpaceMargin = UIEdgeInsetsMake(0, 0, 20, 0);
-        customCell.loadType = CellLoadTypeInner;
+        customCell.loadType = LLCellLoadTypeInner;
         customCell.title = @"下边距";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
-        customCell.loadType = CellLoadTypeNib;
+        customCell.loadType = LLCellLoadTypeNib;
         //customCell.selectionStyle = UITableViewCellSelectionStyle;
         customCell.cellClazz = CustomCellView.class;
         customCell.cellHeight = 140;
-        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor blueColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
@@ -90,14 +90,14 @@
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
         customCell.cellHeight = 88;
-        customCell.separatorStyle = LTableViewCellSeparatorStyleCustom;
+        customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
         customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 0, 0, 0);
-        customCell.loadType = CellLoadTypeInner;
+        customCell.loadType = LLCellLoadTypeInner;
         customCell.title = @"上边距";
     }
     [self.adapter reloadData];
