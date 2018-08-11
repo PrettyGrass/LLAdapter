@@ -38,7 +38,7 @@
         section = [self.adapter addNewSection];
     }
     {
-        KVLLTableCell *simpleCell = [section addNewCell];
+        KVLLTableCell *simpleCell = [section buildAddCell];
         simpleCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
@@ -47,7 +47,7 @@
         simpleCell.text = @"简单";
     }
     {
-        LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
+        LLTableCell *customCell = [section buildAddCell:KVLLTableCell.class];
         customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         //customCell.selectionStyle = UITableViewCellSelectionStyleDefault;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
@@ -60,7 +60,7 @@
     }
     
     {
-        LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
+        LLTableCell *customCell = [section buildAddCell:KVLLTableCell.class];
         customCell.cellHeight = 88;
         customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
@@ -72,7 +72,7 @@
         customCell.text = @"下边距";
     }
     {
-        LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
+        LLTableCell *customCell = [section buildAddCell:KVLLTableCell.class];
         customCell.loadType = LLCellLoadTypeNib;
         //customCell.selectionStyle = UITableViewCellSelectionStyle;
         customCell.cellClazz = CustomCellView.class;
@@ -86,7 +86,7 @@
         customCell.text = @"上下下边距";
     }
     {
-        LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
+        LLTableCell *customCell = [section buildAddCell:KVLLTableCell.class];
         customCell.cellHeight = 88;
         customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LLBaseSection.h"
 @class LLCollectCell;
 
 /**
@@ -16,16 +17,6 @@
  *
  *	@since 1.0
  */
-@interface LLCollectSection : NSObject
-/// 单元标题
-@property (copy, nonatomic) NSString *sectionTitle;
-/// 单元数据集合
-@property (strong, nonatomic) NSMutableArray <LLCollectCell *>*datas;
-/// section 索引
-@property (assign, nonatomic) NSInteger sectionIndex;
-
-- (void)addCell:(LLCollectCell *)cell;
-- (__kindof LLCollectCell *)addNewCell;
-- (__kindof LLCollectCell *)addNewCell:(Class)clzz;
+@interface LLCollectSection: LLBaseSection
 
 @end

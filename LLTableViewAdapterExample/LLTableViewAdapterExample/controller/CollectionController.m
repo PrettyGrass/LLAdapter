@@ -31,7 +31,7 @@
         section = [self.adapter addNewSection];
     }
     {
-        LLCollectCell *simpleCell = [section addNewCell];
+        LLCollectCell *simpleCell = [section buildAddCell];
         simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {
             
         };
@@ -39,7 +39,7 @@
         simpleCell.loadType = LLCellLoadTypeInner;
     }
     {
-        LLCollectCell *simpleCell = [section addNewCell];
+        LLCollectCell *simpleCell = [section buildAddCell];
         simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {
             
         };
@@ -47,7 +47,7 @@
         simpleCell.loadType = LLCellLoadTypeInner;
     }
     {
-        LLCollectCell *simpleCell = [section addNewCell];
+        LLCollectCell *simpleCell = [section buildAddCell];
         simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {
             
         };

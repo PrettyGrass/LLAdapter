@@ -38,7 +38,7 @@
         section = [self.adapter addNewSection];
     }
     {
-        KVLLTableCell *simpleCell = [section addNewCell];
+        KVLLTableCell *simpleCell = [section buildAddCell];
         simpleCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
@@ -47,7 +47,7 @@
         simpleCell.text = @"简单";
     }
     {
-        LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
+        LLTableCell *customCell = [section buildAddCell:KVLLTableCell.class];
         customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         [customCell.kvcExt setObject:[UIColor redColor] forKey:@"contentView.backgroundColor"];

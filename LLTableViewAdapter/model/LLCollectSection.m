@@ -14,26 +14,12 @@
 {
     self = [super init];
     if (self) {
-        _datas = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)addCell:(LLCollectCell *)cell {
-    if (!cell) {
-        return;
-    }
-    [self.datas addObject:cell];
-}
-
-- (__kindof LLCollectCell *)addNewCell {
-    return [self addNewCell:LLCollectCell.class];
-}
-
-- (__kindof LLCollectCell *)addNewCell:(Class)clzz {
-    LLCollectCell *cell = [[clzz alloc] init];
-    [self addCell:cell];
-    return cell;
+- (LLBaseCell *)buildAddCell {
+    return [self buildAddCell:LLCollectCell.class];
 }
 
 @end

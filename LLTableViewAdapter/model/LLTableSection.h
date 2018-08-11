@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLBaseSection.h"
 
 @class LLTableCell;
 /**
@@ -16,26 +17,16 @@
  *
  *	@since 1.0
  */
-@interface LLTableSection : NSObject
+@interface LLTableSection : LLBaseSection
 
-/// 标题
-@property (copy, nonatomic) NSString *sectionTitle;
-/// 单元的数据集合
-@property (strong, nonatomic) NSMutableArray <LLTableCell *>*datas;
 /// section Header高
 @property (assign, nonatomic) CGFloat sectionHeaderHeight;
 /// section Footer高
 @property (assign, nonatomic) CGFloat sectionFooterHeight;
-/// section 索引
-@property (assign, nonatomic) NSInteger sectionIndex;
 
 ///组头
 @property (nonatomic, strong) UIView *sectionHeaderView;
 ///组尾
 @property (nonatomic, strong) UIView *sectionFooterView;
-
-- (void)addCell:(__kindof LLTableCell *)cell;
-- (__kindof LLTableCell *)addNewCell;
-- (__kindof LLTableCell *)addNewCell:(Class)clzz;
 
 @end

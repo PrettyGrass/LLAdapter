@@ -49,7 +49,7 @@
         [section.datas removeAllObjects];
     }
     for (NSInteger idx = 0; idx < datas.count; idx ++) {
-        LLTableCell *cell = [section addNewCell];
+        LLTableCell *cell = [section buildAddCell];
         
         cell.loadType = LLCellLoadTypeInner;
         cell.cellClazz = NSClassFromString(@"SimpleCellView");

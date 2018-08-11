@@ -38,7 +38,7 @@
         section = [self.adapter addNewSection];
     }
     
-    LLTableCell *simpleCell = [section addNewCell];
+    LLTableCell *simpleCell = [section buildAddCell];
     simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
         SimpleTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SimpleTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
@@ -46,7 +46,7 @@
     simpleCell.loadType = LLCellLoadTypeInner;
     simpleCell.text = @"简单";
     
-    LLTableCell *customCell = [section addNewCell];
+    LLTableCell *customCell = [section buildAddCell];
     customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
         CustomTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CustomTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
@@ -54,7 +54,7 @@
     customCell.loadType = LLCellLoadTypeInner;
     customCell.text = @"自定义";
     
-    LLTableCell *editCell = [section addNewCell];
+    LLTableCell *editCell = [section buildAddCell];
     editCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
         EditTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"EditTableViewController"];
         [self.navigationController pushViewController:vc animated:true];
@@ -62,7 +62,7 @@
     editCell.loadType = LLCellLoadTypeInner;
     editCell.text = @"编辑";
     
-    LLTableCell *collectCell = [section addNewCell];
+    LLTableCell *collectCell = [section buildAddCell];
     collectCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
         CollectionController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"CollectionController"];
         [self.navigationController pushViewController:vc animated:true];

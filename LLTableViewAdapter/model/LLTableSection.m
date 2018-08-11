@@ -14,26 +14,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _datas = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
-- (void)addCell:(__kindof LLTableCell *)cell {
-    if (!cell) {
-        return;
-    }
-    [self.datas addObject:cell];
-}
-
-- (__kindof LLTableCell *)addNewCell {
-    return [self addNewCell:LLTableCell.class];
-}
-
-- (__kindof LLTableCell *)addNewCell:(Class)clzz {
-    LLTableCell *cell = [[clzz alloc] init];
-    [self addCell:cell];
-    return cell;
+- (LLBaseCell *)buildAddCell {
+    return [self buildAddCell:LLTableCell.class];
 }
 
 @end
