@@ -11,16 +11,13 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://git.oschina.net/y0/LLTableViewAdapter.git", :branch => "1.2.0" }
   s.requires_arc = true
 
-  s.subspec 'default' do|ss| 
-    ss.public_header_files = 'LLTableViewAdapter/**/*.{h}'
-    ss.resources    = "LLTableViewAdapter/**/*.{png,xib,nib,bundle}"
-    ss.source_files = "LLTableViewAdapter/**/*.{h,m}"
-  end
-  s.subspec 'static' do|ss| 
-    ss.public_header_files = 'LLTableViewAdapter/**/*.{h}'
-    ss.source_files = 'LLTableViewAdapter/**/*.{h}'
-    ss.resources    = "LLTableViewAdapter/**/*.{png,xib,nib,bundle}"
-    ss.vendored_libraries = 'LLTableViewAdapter_static/*.a'
-  end
+  s.public_header_files = 'LLTableViewAdapter/**/*.{h}'
+  s.resources    = "LLTableViewAdapter/**/*.{png,xib,nib,bundle}"
+  s.source_files = "LLTableViewAdapter/**/*.{h,m}"
+
+  #   s.public_header_files = 'LLTableViewAdapter/**/*.{h}'
+  #   s.source_files = 'LLTableViewAdapter/**/*.{h}'
+  #   s.resources    = "LLTableViewAdapter/**/*.{png,xib,nib,bundle}"
+  #   s.vendored_libraries = 'LLTableViewAdapter_static/*.a'
 
 end
