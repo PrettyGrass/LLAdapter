@@ -9,7 +9,6 @@
 #import "UITableViewCell+LLModel.h"
 #import "objc/runtime.h"
 #import "LLTableCell.h"
-#import "Masonry.h"
 
 static NSInteger kCellSelectTag = 1000221;
 static NSInteger kCellSeparatorStyleTag = 1000222;
@@ -29,6 +28,7 @@ static NSString *celLLModelkey = @"celLLModelkey";
 - (void)ll_updateCellUI {
     __weak typeof(self) weakSelf = self;
     
+    // 如果是原生的cell 处理数据
     if ([NSStringFromClass(self.class) isEqualToString:@"UITableViewCell"]) {
         self.textLabel.text = self.ll_model.text;
         self.detailTextLabel.text = self.ll_model.detailText;
@@ -52,6 +52,7 @@ static NSString *celLLModelkey = @"celLLModelkey";
             separ = [[UIView alloc] init];
             separ.tag = kCellSeparatorStyleTag;
             [contentView addSubview:separ];
+            separ.translatesAutoresizingMaskIntoConstraints = NO;
         }
         [separ setHidden:false];
         UIColor *defaultColor = [UIColor colorWithRed:229/255.0 green:229/255.0 blue:229/255.0 alpha:1];
@@ -65,12 +66,46 @@ static NSString *celLLModelkey = @"celLLModelkey";
         } else {
             [separ setBackgroundColor:color];
         }
-        [separ mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(contentView).offset(weakSelf.ll_model.separatorInset.left);
-            make.trailing.equalTo(contentView).offset(-weakSelf.ll_model.separatorInset.right);
-            make.bottom.equalTo(contentView).offset(-weakSelf.ll_model.separatorInset.bottom);
-            make.height.mas_equalTo(0.3f);
-        }];
+        CGFloat height = 0.3;
+        CGFloat bottom = weakSelf.ll_model.separatorInset.bottom;
+        CGFloat left = weakSelf.ll_model.separatorInset.left;
+        CGFloat right = weakSelf.ll_model.separatorInset.right;
+        
+        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:separ
+                                                                          attribute:(NSLayoutAttributeLeft)
+                                                                          relatedBy:(NSLayoutRelationEqual)
+                                                                             toItem:contentView
+                                                                          attribute:(NSLayoutAttributeLeft)
+                                                                         multiplier:1
+                                                                           constant:left];
+
+        NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:separ
+                                                                          attribute:(NSLayoutAttributeRight)
+                                                                          relatedBy:(NSLayoutRelationEqual)
+                                                                             toItem:contentView
+                                                                          attribute:(NSLayoutAttributeRight)
+                                                                         multiplier:1
+                                                                           constant:right];
+        
+        NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:separ
+                                                                           attribute:(NSLayoutAttributeHeight)
+                                                                           relatedBy:(NSLayoutRelationEqual)
+                                                                              toItem:nil
+                                                                           attribute:(NSLayoutAttributeHeight)
+                                                                          multiplier:1
+                                                                            constant:height];
+        
+        NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:separ
+                                                                           attribute:(NSLayoutAttributeBottom)
+                                                                           relatedBy:(NSLayoutRelationEqual)
+                                                                              toItem:contentView
+                                                                           attribute:(NSLayoutAttributeBottom)
+                                                                          multiplier:1
+                                                                            constant:bottom];
+        [contentView addConstraints:@[leftConstraint,
+                                      rightConstraint,
+                                      bottomConstraint,
+                                      heightConstraint]];
     }
     
     /// 选中背景色
