@@ -53,24 +53,22 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 @property (weak, nonatomic) NSIndexPath *indexPath;
 /// 行高
 @property (assign, nonatomic) CGFloat cellHeight;
-
-/// 点击事件
-@property (copy, nonatomic) LLTableCellActionDefine(cellClick, DataType);
 /// cell类
 @property (assign, nonatomic) Class cellClazz;
-/// cell Identity
+/// cell 重用id 默认是 cellClazz类的类名
 @property (copy, nonatomic) NSString *cellIdentity;
-/// cell NibName
+/// cell 默认是 cellClazz类的类名
 @property (copy, nonatomic) NSString *cellNibName;
-/// cell加载类型
+/// cell加载类型 默认 LLCellLoadTypeInner
 @property (assign, nonatomic) LLCellLoadType loadType;
-/// 选择的风格
-@property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle;// UITableViewCellSelectionStyleNone
-/// 选择时候去选风格
+/// 选择的样式 默认 UITableViewCellSelectionStyleNone
+@property (assign, nonatomic) UITableViewCellSelectionStyle selectionStyle;
+/// 附件样式 默认 UITableViewCellAccessoryNone
+@property (assign, nonatomic) UITableViewCellAccessoryType accessoryType;
+/// 选择时候去选样式
 @property (assign, nonatomic) LLDeSelectionStyle LLDeSelectionStyle;
-/// 附件风格
-@property (assign, nonatomic) UITableViewCellAccessoryType accessoryType;// = UITableViewCellAccessoryNone;
-/// 行分割线风格
+
+/// 行分割线样式
 @property (assign, nonatomic) LLTableViewCellSeparatorStyle separatorStyle;
 /// 行分割线颜色
 @property (strong, nonatomic) UIColor *separatorColor;
@@ -81,6 +79,8 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 /// 数据
 @property (strong, nonatomic) DataType data;
 
+/// 点击事件
+@property (copy, nonatomic) LLTableCellActionDefine(cellClick, DataType);
 
 /**
  ============================================================

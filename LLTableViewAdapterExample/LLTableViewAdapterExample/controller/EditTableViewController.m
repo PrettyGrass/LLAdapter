@@ -74,7 +74,7 @@
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
         customCell.loadType = LLCellLoadTypeNib;
-        //customCell.selectionStyle = UITableViewCellSelectionStyle;
+        customCell.selectionStyle = UITableViewCellSelectionStyleBlue;
         customCell.cellClazz = CustomCellView.class;
         customCell.cellHeight = 140;
         customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
