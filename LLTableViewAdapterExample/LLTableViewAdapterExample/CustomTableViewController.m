@@ -44,7 +44,7 @@
             
         };
         simpleCell.loadType = LLCellLoadTypeInner;
-        simpleCell.title = @"简单";
+        simpleCell.text = @"简单";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
@@ -56,7 +56,7 @@
             
         };
         customCell.loadType = LLCellLoadTypeInner;
-        customCell.title = @"自定义";
+        customCell.text = @"自定义";
     }
     
     {
@@ -69,7 +69,7 @@
             
         };
         customCell.loadType = LLCellLoadTypeInner;
-        customCell.title = @"下边距";
+        customCell.text = @"下边距";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
@@ -83,7 +83,7 @@
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.title = @"上下下边距";
+        customCell.text = @"上下下边距";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
@@ -95,7 +95,7 @@
             
         };
         customCell.loadType = LLCellLoadTypeInner;
-        customCell.title = @"上边距";
+        customCell.text = @"上边距";
     }
     [self.adapter reloadData];
 }

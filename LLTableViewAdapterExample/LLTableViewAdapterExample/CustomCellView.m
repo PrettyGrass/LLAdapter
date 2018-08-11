@@ -19,9 +19,8 @@
 }
 
 - (void)ll_updateCellUI {
-    __weak typeof(self) weakSelf = self;
     [super ll_updateCellUI];
-    self.titleLab.text = self.ll_model.title;
+    self.titleLab.text = self.ll_model.text;
 }
 - (IBAction)btnAction:(id)sender {
     

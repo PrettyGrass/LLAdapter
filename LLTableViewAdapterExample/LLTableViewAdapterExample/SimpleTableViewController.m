@@ -53,7 +53,7 @@
         
         cell.loadType = LLCellLoadTypeInner;
         cell.cellClazz = NSClassFromString(@"SimpleCellView");
-        cell.title = datas[idx];
+        cell.text = datas[idx];
         cell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         cell.separatorInset = UIEdgeInsetsMake(10, 10, 0, 10);
         [cell.kvcExt setObject:[UIColor redColor] forKey:@"titleLab.textColor"];

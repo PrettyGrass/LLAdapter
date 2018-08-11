@@ -44,7 +44,7 @@
             
         };
         simpleCell.loadType = LLCellLoadTypeInner;
-        simpleCell.title = @"简单";
+        simpleCell.text = @"简单";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
@@ -55,7 +55,7 @@
             
         };
         customCell.loadType = LLCellLoadTypeInner;
-        customCell.title = @"自定义";
+        customCell.text = @"自定义";
     }
     
     {
@@ -69,7 +69,7 @@
         };
         //customCell.cellSpaceMargin = UIEdgeInsetsMake(0, 0, 20, 0);
         customCell.loadType = LLCellLoadTypeInner;
-        customCell.title = @"下边距";
+        customCell.text = @"下边距";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
@@ -84,7 +84,7 @@
             
         };
         //customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 20, 20, 20);
-        customCell.title = @"上下下边距";
+        customCell.text = @"上下下边距";
     }
     {
         LLTableCell *customCell = [section addNewCell:KVLLTableCell.class];
@@ -97,7 +97,7 @@
         };
         //customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 0, 0, 0);
         customCell.loadType = LLCellLoadTypeInner;
-        customCell.title = @"上边距";
+        customCell.text = @"上边距";
     }
     [self.adapter reloadData];
 }

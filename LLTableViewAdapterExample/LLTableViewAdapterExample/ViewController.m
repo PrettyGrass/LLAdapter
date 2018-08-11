@@ -44,7 +44,7 @@
         [self.navigationController pushViewController:vc animated:true];
     };
     simpleCell.loadType = LLCellLoadTypeInner;
-    simpleCell.title = @"简单";
+    simpleCell.text = @"简单";
     
     LLTableCell *customCell = [section addNewCell];
     customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
@@ -52,7 +52,7 @@
         [self.navigationController pushViewController:vc animated:true];
     };
     customCell.loadType = LLCellLoadTypeInner;
-    customCell.title = @"自定义";
+    customCell.text = @"自定义";
     
     LLTableCell *editCell = [section addNewCell];
     editCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
@@ -60,7 +60,7 @@
         [self.navigationController pushViewController:vc animated:true];
     };
     editCell.loadType = LLCellLoadTypeInner;
-    editCell.title = @"编辑";
+    editCell.text = @"编辑";
     
     LLTableCell *collectCell = [section addNewCell];
     collectCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
@@ -68,7 +68,7 @@
         [self.navigationController pushViewController:vc animated:true];
     };
     collectCell.loadType = LLCellLoadTypeInner;
-    collectCell.title = @"collectCell";
+    collectCell.text = @"collectCell";
 
     [self.adapter reloadData];
 }
