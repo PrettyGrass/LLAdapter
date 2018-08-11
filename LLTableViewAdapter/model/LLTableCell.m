@@ -26,7 +26,7 @@
         _separatorInset = UIEdgeInsetsMake(0, 24, 0, 0);
         _selectionStyle = UITableViewCellSelectionStyleDefault;
         _selectionColor = [UIColor colorWithRed:229.0/255.0 green:229.0/255.0 blue:229.0/255.0 alpha:1.0];
-        _LLDeSelectionStyle = LLDeSelectionStyleNow;
+        _deSelectionStyle = LLDeSelectionStyleNow;
     }
     return self;
 }

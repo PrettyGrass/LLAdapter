@@ -9,7 +9,6 @@
 #import "CustomCellView.h"
 #import <UITableViewCell+LLModel.h>
 #import "LLTableCell.h"
-#import <Masonry.h>
 
 @implementation CustomCellView
 

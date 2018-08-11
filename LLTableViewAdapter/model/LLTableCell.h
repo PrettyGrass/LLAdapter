@@ -28,7 +28,7 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 /// 附件样式 默认 UITableViewCellAccessoryNone
 @property (assign, nonatomic) UITableViewCellAccessoryType accessoryType;
 /// 选择时候去选样式
-@property (assign, nonatomic) LLDeSelectionStyle LLDeSelectionStyle;
+@property (assign, nonatomic) LLDeSelectionStyle deSelectionStyle;
 /// 行分割线样式
 @property (assign, nonatomic) LLTableViewCellSeparatorStyle separatorStyle;
 /// 行分割线颜色
