@@ -10,6 +10,6 @@
 #import "LLCollectCell.h"
 
 @interface UICollectionViewCell (LLModel)
-@property (strong, nonatomic) LLCollectCell *model;
-- (void)updateCellUI;
+@property (strong, nonatomic) LLCollectCell *ll_model;
+- (void)ll_updateCellUI;
 @end

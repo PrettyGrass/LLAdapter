@@ -53,14 +53,7 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 @property (weak, nonatomic) NSIndexPath *indexPath;
 /// 行高
 @property (assign, nonatomic) CGFloat cellHeight;
-/// 行上边距
-@property (assign, nonatomic) UIEdgeInsets cellSpaceMargin;
-/// 标题
-@property (copy, nonatomic) NSString *title;
-/// 子标题
-@property (copy, nonatomic) NSString *subTitle;
-/// 图片名字  URL UIImage
-@property (assign, nonatomic) id image;
+
 /// 点击事件
 @property (copy, nonatomic) LLTableCellActionDefine(cellClick, DataType);
 /// cell类
@@ -87,5 +80,19 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 @property (nonatomic) UIEdgeInsets separatorInset;
 /// 数据
 @property (strong, nonatomic) DataType data;
+
+
+/**
+ ============================================================
+ 默认cell 字段内容,未完全实现, 如有需要可自行实现或者使用kvcExt替代,
+ 自定义cell可忽略以下字段
+ ============================================================
+ */
+/// 标题
+@property (copy, nonatomic) NSString *text;
+/// 子标题
+@property (copy, nonatomic) NSString *detailText;
+/// 图片  内置图片名 或 UIImage *
+@property (assign, nonatomic) id image;
 
 @end

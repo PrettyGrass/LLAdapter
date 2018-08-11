@@ -115,54 +115,30 @@
 			isa = PBXGroup;
 			children = (
 				F399B8B8211DA0B900C1020E /* AppDelegate.h */,
+				F399B8CA211DA0B900C1020E /* AppDelegate.m */,
 				F399B8B9211DA0B900C1020E /* CustomCellView.h */,
+				F399B8C9211DA0B900C1020E /* CustomCellView.m */,
 				F399B8BA211DA0B900C1020E /* EditTableViewController.h */,
+				F399B8C8211DA0B900C1020E /* EditTableViewController.m */,
+				F399B8C7211DA0B900C1020E /* CollectionController.h */,
 				F399B8BB211DA0B900C1020E /* CollectionController.m */,
 				F399B8BC211DA0B900C1020E /* KVLLTableCell.h */,
+				F399B8CE211DA0B900C1020E /* KVLLTableCell.m */,
+				F399B8CD211DA0B900C1020E /* CustomTableViewController.h */,
 				F399B8BD211DA0B900C1020E /* CustomTableViewController.m */,
 				F399B8BE211DA0B900C1020E /* Assets.xcassets */,
 				F399B8BF211DA0B900C1020E /* ViewController.m */,
 				F399B8C0211DA0B900C1020E /* SimpleTableViewController.h */,
+				F399B8D0211DA0B900C1020E /* SimpleTableViewController.m */,
 				F399B8C1211DA0B900C1020E /* LaunchScreen.storyboard */,
 				F399B8C3211DA0B900C1020E /* Main.storyboard */,
 				F399B8C5211DA0B900C1020E /* SimpleCellView.h */,
-				F399B8C6211DA0B900C1020E /* main.m */,
-				F399B8C7211DA0B900C1020E /* CollectionController.h */,
-				F399B8C8211DA0B900C1020E /* EditTableViewController.m */,
-				F399B8C9211DA0B900C1020E /* CustomCellView.m */,
-				F399B8CA211DA0B900C1020E /* AppDelegate.m */,
-				F399B8CB211DA0B900C1020E /* libwebp-0.4.4-ios-framework */,
-				F399B8CD211DA0B900C1020E /* CustomTableViewController.h */,
-				F399B8CE211DA0B900C1020E /* KVLLTableCell.m */,
 				F399B8CF211DA0B900C1020E /* SimpleCellView.m */,
-				F399B8D0211DA0B900C1020E /* SimpleTableViewController.m */,
+				F399B8C6211DA0B900C1020E /* main.m */,
 				F399B8D1211DA0B900C1020E /* Info.plist */,
-				F399B8D2211DA0B900C1020E /* testVC */,
 				F399B8D3211DA0B900C1020E /* ViewController.h */,
 			);
 			path = LLTableViewAdapterExample;
-			sourceTree = "<group>";
-		};
-		F399B8CB211DA0B900C1020E /* libwebp-0.4.4-ios-framework */ = {
-			isa = PBXGroup;
-			children = (
-				F399B8CC211DA0B900C1020E /* Headers */,
-			);
-			path = "libwebp-0.4.4-ios-framework";
-			sourceTree = "<group>";
-		};
-		F399B8CC211DA0B900C1020E /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		F399B8D2211DA0B900C1020E /* testVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = testVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

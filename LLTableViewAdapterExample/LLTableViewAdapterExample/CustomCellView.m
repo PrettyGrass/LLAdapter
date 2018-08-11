@@ -18,10 +18,10 @@
     // Initialization code
 }
 
-- (void)updateCellUI {
+- (void)ll_updateCellUI {
     __weak typeof(self) weakSelf = self;
-    [super updateCellUI];
-    self.titleLab.text = self.model.title;
+    [super ll_updateCellUI];
+    self.titleLab.text = self.ll_model.title;
 }
 - (IBAction)btnAction:(id)sender {
     

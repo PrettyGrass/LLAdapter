@@ -10,9 +10,8 @@
 @class LLTableCell;
 @interface UITableViewCell (LLModel)
 
-@property (strong, nonatomic) LLTableCell *model;
-/// 是否允许重置cell 的Frame
-- (BOOL)resetCellFrame;
-- (void)updateCellUI;
+@property (strong, nonatomic) LLTableCell *ll_model;
+
+- (void)ll_updateCellUI;
 
 @end

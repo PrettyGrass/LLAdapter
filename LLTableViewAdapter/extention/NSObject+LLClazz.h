@@ -10,7 +10,7 @@
 
 @interface NSObject (LLClazz)
 
-- (NSString *)className;
-+ (NSString *)className;
+- (NSString *)ll_className;
++ (NSString *)ll_className;
 
 @end

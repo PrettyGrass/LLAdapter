@@ -10,11 +10,11 @@
 
 @implementation NSObject (LLClazz)
 
-- (NSString *)className {
+- (NSString *)ll_className {
     return NSStringFromClass(self.class);
 }
 
-+ (NSString *)className {
++ (NSString *)ll_className {
     return NSStringFromClass(self);
 }
 @end

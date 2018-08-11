@@ -85,49 +85,49 @@
 
 - (UITableViewCell *)getCell:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath dequeue:(BOOL)dequeue {
     
-    LLTableCell *celLLModel = self.sections[indexPath.section].datas[indexPath.row];
-    celLLModel.indexPath = indexPath;
+    LLTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    cellModel.indexPath = indexPath;
     UITableViewCell *cell;
     /// 是否重用
     if (dequeue) {
-        cell = [tableView dequeueReusableCellWithIdentifier:[celLLModel.cellClazz className]];
+        cell = [tableView dequeueReusableCellWithIdentifier:[cellModel.cellClazz ll_className]];
         if (!cell) {
-            switch (celLLModel.loadType) {
+            switch (cellModel.loadType) {
                 case LLCellLoadTypeInner:
-                    [tableView registerClass:celLLModel.cellClazz forCellReuseIdentifier:celLLModel.cellIdentity];
+                    [tableView registerClass:cellModel.cellClazz forCellReuseIdentifier:cellModel.cellIdentity];
                     break;
                 case LLCellLoadTypeNib:
-                    [tableView registerNib:[UINib nibWithNibName:celLLModel.cellNibName bundle:nil] forCellReuseIdentifier:celLLModel.cellIdentity];
+                    [tableView registerNib:[UINib nibWithNibName:cellModel.cellNibName bundle:nil] forCellReuseIdentifier:cellModel.cellIdentity];
                     break;
                 case LLCellLoadTypeOri:
-                    [tableView registerClass:celLLModel.cellClazz forCellReuseIdentifier:celLLModel.cellIdentity];
+                    [tableView registerClass:cellModel.cellClazz forCellReuseIdentifier:cellModel.cellIdentity];
                     break;
                     
                 default:
                     break;
             }
-            cell = [tableView dequeueReusableCellWithIdentifier:celLLModel.cellIdentity];
+            cell = [tableView dequeueReusableCellWithIdentifier:cellModel.cellIdentity];
         }
     } else {
-        switch (celLLModel.loadType) {
+        switch (cellModel.loadType) {
             case LLCellLoadTypeInner:
-                cell = [[celLLModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:celLLModel.cellIdentity];
+                cell = [[cellModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellModel.cellIdentity];
                 break;
             case LLCellLoadTypeNib:{
-                cell = [celLLModel.cellClazz loadViewFromXibName:celLLModel.cellNibName];
+                cell = [cellModel.cellClazz ll_loadViewFromXibName:cellModel.cellNibName];
             }
                 break;
             case LLCellLoadTypeOri:
-                cell = [[celLLModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:celLLModel.cellIdentity];
+                cell = [[cellModel.cellClazz alloc] initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:cellModel.cellIdentity];
                 break;
                 
             default:
                 break;
         }
     }
-    //cell.selectionStyle = celLLModel.selectionStyle;
-    cell.accessoryType = celLLModel.accessoryType;
-    cell.model = celLLModel;
+    //cell.selectionStyle = cellModel.selectionStyle;
+    cell.accessoryType = cellModel.accessoryType;
+    cell.ll_model = cellModel;
     return cell;
 }
 
@@ -135,13 +135,13 @@
  *    cell 的点击事件/
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    LLTableCell *celLLModel = self.sections[indexPath.section].datas[indexPath.row];
-    celLLModel.indexPath = indexPath;
-    if (celLLModel.LLDeSelectionStyle == LLDeSelectionStyleNow) {
+    LLTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    cellModel.indexPath = indexPath;
+    if (cellModel.LLDeSelectionStyle == LLDeSelectionStyleNow) {
         [tableView deselectRowAtIndexPath:indexPath animated:true];
     }
-    if (celLLModel.cellClick) {
-        celLLModel.cellClick(celLLModel, indexPath);
+    if (cellModel.cellClick) {
+        cellModel.cellClick(cellModel, indexPath);
     }
 }
 //设置每个cell 的高度;
@@ -152,13 +152,9 @@
             return height;
         }
     }
-    LLTableCell *celLLModel = self.sections[indexPath.section].datas[indexPath.row];
-    celLLModel.indexPath = indexPath;
-    //[self getCell:tableView cellForRowAtIndexPath:indexPath dequeue:false];
-    if (celLLModel.cellHeight == UITableViewAutomaticDimension) {
-        return celLLModel.cellHeight;
-    }
-    return celLLModel.cellHeight+celLLModel.cellSpaceMargin.top+celLLModel.cellSpaceMargin.bottom;
+    LLTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    cellModel.indexPath = indexPath;
+    return cellModel.cellHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

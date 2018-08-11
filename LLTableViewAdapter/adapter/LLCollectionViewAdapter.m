@@ -74,35 +74,35 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    LLCollectCell *celLLModel = self.sections[indexPath.section].datas[indexPath.row];
-    celLLModel.indexPath = indexPath;
-    switch (celLLModel.loadType) {
+    LLCollectCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
+    cellModel.indexPath = indexPath;
+    switch (cellModel.loadType) {
         case LLCellLoadTypeInner:
-            //[collectionView registerClass:celLLModel.cellClazz forCellWithReuseIdentifier:[celLLModel.cellClazz className]];
+            //[collectionView registerClass:celModel.cellClazz forCellWithReuseIdentifier:[celModel.cellClazz ll_className]];
             break;
         case LLCellLoadTypeNib:
-            [collectionView registerNib:[UINib nibWithNibName:[celLLModel cellNibName] bundle:nil] forCellWithReuseIdentifier:[celLLModel cellIdentity]];
+            [collectionView registerNib:[UINib nibWithNibName:[cellModel cellNibName] bundle:nil] forCellWithReuseIdentifier:[cellModel cellIdentity]];
             break;
         case LLCellLoadTypeOri:
-            [collectionView registerClass:celLLModel.cellClazz forCellWithReuseIdentifier:[celLLModel cellIdentity]];
+            [collectionView registerClass:cellModel.cellClazz forCellWithReuseIdentifier:[cellModel cellIdentity]];
             break;
             
         default:
             break;
     }
 
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[celLLModel cellIdentity] forIndexPath:indexPath];
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[cellModel cellIdentity] forIndexPath:indexPath];
     
     if (!cell) {
            }
-    cell.model = celLLModel;
+    cell.ll_model = cellModel;
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    LLCollectCell *celLLModel = self.sections[indexPath.section].datas[indexPath.row];
-    if (celLLModel.cellClick) {
-        celLLModel.cellClick(celLLModel, indexPath);
+    LLCollectCell *celModel = self.sections[indexPath.section].datas[indexPath.row];
+    if (celModel.cellClick) {
+        celModel.cellClick(celModel, indexPath);
     }
 }
 

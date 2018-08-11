@@ -68,7 +68,6 @@
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.cellSpaceMargin = UIEdgeInsetsMake(0, 0, 20, 0);
         customCell.loadType = LLCellLoadTypeInner;
         customCell.title = @"下边距";
     }
@@ -84,7 +83,6 @@
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 20, 20, 20);
         customCell.title = @"上下下边距";
     }
     {
@@ -96,7 +94,6 @@
         customCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
         };
-        customCell.cellSpaceMargin = UIEdgeInsetsMake(20, 0, 0, 0);
         customCell.loadType = LLCellLoadTypeInner;
         customCell.title = @"上边距";
     }

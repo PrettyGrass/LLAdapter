@@ -11,8 +11,8 @@
 @interface UIView (LLXib)
 
 /// 从xib加载视图，xib文件名为类名
-+ (instancetype)loadViewFromXib;
++ (instancetype)ll_loadViewFromXib;
 /// 从xib加载视图，xib文件名: nibName
-+ (instancetype)loadViewFromXibName:(NSString *)nibName;
++ (instancetype)ll_loadViewFromXibName:(NSString *)nibName;
 
 @end
