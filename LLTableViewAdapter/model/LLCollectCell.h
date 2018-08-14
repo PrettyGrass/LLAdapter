@@ -10,7 +10,7 @@
 #import "LLBaseCell.h"
 @class LLCollectCell;
 
-typedef void (^CollClick)(LLCollectCell *model, NSIndexPath *index);
+typedef void (^LLCollAction)(LLCollectCell *model, NSIndexPath *index);
 
 /**
  *	@author Y0, 16-07-05 22:07:19
@@ -22,7 +22,7 @@ typedef void (^CollClick)(LLCollectCell *model, NSIndexPath *index);
 @interface LLCollectCell <DataType>: LLBaseCell<DataType>
 
 @property (assign, nonatomic) CGSize cellSize;
-/// 点击事件
-@property (copy, nonatomic) LLCollectCellActionDefine(cellClick, DataType);
+/// 点击事件 DataType 为cell的 data 类型
+@property (copy, nonatomic) void (^cellClick)(LLCollectCell <DataType>*model, NSIndexPath *index);
 
 @end

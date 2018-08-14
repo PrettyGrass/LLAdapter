@@ -38,7 +38,7 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 /// 分割线的位置
 @property (nonatomic) UIEdgeInsets separatorInset;
 
-/// 点击事件 DataType 为 data 类型
+/// 点击事件 DataType 为cell的 data 类型
 @property (copy, nonatomic) void (^cellClick)(__kindof LLTableCell <DataType> *model, NSIndexPath *index);
 
 /**
