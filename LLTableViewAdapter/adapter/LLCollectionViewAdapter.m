@@ -109,6 +109,9 @@
     } else if (kind == UICollectionElementKindSectionFooter) {
         cellModel = section.footerCell;
     }
+    if (!cellModel) {
+        return nil;
+    }
     NSString *cellIdentity = cellModel.cellIdentity;
     //NSAssert((!cellModel || [cellModel.cellClazz isKindOfClass:UICollectionReusableView.class]), @"section 头视图必须继承自 UICollectionReusableView");
     switch (cellModel.loadType) {
@@ -141,7 +144,8 @@
     LLCollectSection *llSection = self.sections[section];
     LLCollectCell *cell = llSection.headerCell;
     NSAssert((!cell || [cell isKindOfClass:LLCollectCell.class]), @"section 头必须继承自 LLCollectCell");
-    return cell.cellSize;
+    CGSize size = cell.cellSize;
+    return size;
 }
 //显示组尾尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
@@ -149,7 +153,8 @@
     LLCollectSection *llSection = self.sections[section];
     LLCollectCell *cell = llSection.footerCell;
     NSAssert((!cell || [cell isKindOfClass:LLCollectCell.class]), @"section 尾必须继承自 LLCollectCell");
-    return cell.cellSize;
+    CGSize size = cell.cellSize;
+    return size;
 }
 
 
