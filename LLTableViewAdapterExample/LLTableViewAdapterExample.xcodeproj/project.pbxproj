@@ -12,6 +12,7 @@
 		DF3F5C552122B04300ADD1A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3F5C532122B04300ADD1A2 /* main.m */; };
 		DF3F5C5A2122B06600ADD1A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3F5C562122B06600ADD1A2 /* Main.storyboard */; };
 		DF3F5C5B2122B06600ADD1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3F5C582122B06600ADD1A2 /* LaunchScreen.storyboard */; };
+		DFBD9CAC21250E4E008CC2FF /* AACollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBD9CAB21250E4E008CC2FF /* AACollectCell.m */; };
 		F399B8D4211DA0B900C1020E /* CollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BB211DA0B900C1020E /* CollectionController.m */; };
 		F399B8D5211DA0B900C1020E /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BD211DA0B900C1020E /* CustomTableViewController.m */; };
 		F399B8D7211DA0B900C1020E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BF211DA0B900C1020E /* ViewController.m */; };
@@ -38,6 +39,8 @@
 		DF3F5C572122B06600ADD1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Other/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF3F5C592122B06600ADD1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Other/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF5BA7841E6D4DA100838FB1 /* LLTableViewAdapterExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLTableViewAdapterExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFBD9CAA21250E4E008CC2FF /* AACollectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AACollectCell.h; sourceTree = "<group>"; };
+		DFBD9CAB21250E4E008CC2FF /* AACollectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AACollectCell.m; sourceTree = "<group>"; };
 		F399B8B8211DA0B900C1020E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F399B8B9211DA0B900C1020E /* CustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellView.h; sourceTree = "<group>"; };
 		F399B8BA211DA0B900C1020E /* EditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableViewController.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				F399B8CE211DA0B900C1020E /* KVLLTableCell.m */,
 				F399B8C5211DA0B900C1020E /* SimpleCellView.h */,
 				F399B8CF211DA0B900C1020E /* SimpleCellView.m */,
+				DFBD9CAA21250E4E008CC2FF /* AACollectCell.h */,
+				DFBD9CAB21250E4E008CC2FF /* AACollectCell.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFBD9CAC21250E4E008CC2FF /* AACollectCell.m in Sources */,
 				DF3F5C552122B04300ADD1A2 /* main.m in Sources */,
 				F399B8D7211DA0B900C1020E /* ViewController.m in Sources */,
 				F399B8DC211DA0B900C1020E /* CustomCellView.m in Sources */,

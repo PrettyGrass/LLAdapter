@@ -8,7 +8,7 @@
 
 #import <LLTableViewAdapter/LLAdapter.h>
 
-@interface KVLLTableCell : LLTableCell
+@interface KVLLTableCell<T>: LLTableCell<T>
 
 @property (copy, nonatomic) NSString *placeholder;
 @property (copy, nonatomic) NSString *oldValue;

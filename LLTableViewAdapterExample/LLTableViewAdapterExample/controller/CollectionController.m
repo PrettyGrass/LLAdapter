@@ -8,6 +8,7 @@
 
 #import "CollectionController.h"
 #import <LLTableViewAdapter/LLAdapter.h>
+#import "AACollectCell.h"
 
 @interface CollectionController ()
 
@@ -31,8 +32,9 @@
         section = [self.adapter addNewSection];
     }
     {
-        LLCollectCell *simpleCell = [section buildAddCell];
-        simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {
+        AACollectCell <NSDictionary *>*simpleCell = [section buildAddCell:AACollectCell.class];
+        simpleCell.data = [NSDictionary dictionary];
+        simpleCell.cellClick = ^(AACollectCell <NSDictionary *>*cell, NSIndexPath *indexPath) {
             
         };
         simpleCell.cellClazz = UICollectionViewCell.class;

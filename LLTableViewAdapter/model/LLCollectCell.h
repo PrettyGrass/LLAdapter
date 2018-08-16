@@ -23,6 +23,6 @@ typedef void (^LLCollAction)(LLCollectCell *model, NSIndexPath *index);
 
 @property (assign, nonatomic) CGSize cellSize;
 /// 点击事件 DataType 为cell的 data 类型
-@property (copy, nonatomic) void (^cellClick)(LLCollectCell <DataType>*model, NSIndexPath *index);
+@property (copy, nonatomic) void (^cellClick)(__kindof LLCollectCell <DataType>*model, NSIndexPath *index);
 
 @end
