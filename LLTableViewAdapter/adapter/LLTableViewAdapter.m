@@ -8,6 +8,7 @@
 
 #import "LLTableViewAdapter.h"
 #import "UITableViewCell+LLModel.h"
+#import "UITableViewHeaderFooterView+LLModel.h"
 #import "NSObject+LLClazz.h"
 #import "LLTableSection.h"
 #import "LLTableCell.h"
@@ -202,7 +203,7 @@
     return cellModel.cellHeight;
 }
 
-- (UIView *)_tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section cellModel:(LLBaseCell *)cellModel {
+- (UIView *)_tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section cellModel:(LLTableCell *)cellModel {
     
     if (!cellModel) {
         return nil;
@@ -223,7 +224,8 @@
         default:
             break;
     }
-    UIView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:cellIdentity];
+    UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:cellIdentity];
+    headerView.ll_model = cellModel;
     return headerView;
 }
 

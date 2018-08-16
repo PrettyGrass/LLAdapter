@@ -12,6 +12,7 @@
 #import "CustomTableViewController.h"
 #import "EditTableViewController.h"
 #import "CollectionController.h"
+#import "TableViewHeaderFooter.h"
 
 @interface ViewController ()
 
@@ -36,6 +37,40 @@
     LLTableSection *section = self.adapter.sections.firstObject;
     if (!section) {
         section = [self.adapter addNewSection];
+    }
+    
+    {
+        /// 头
+        LLTableCell <NSDictionary *>*simpleCell = [[LLTableCell alloc] init];
+        simpleCell.data = [NSDictionary dictionary];
+        simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
+            
+        };
+        simpleCell.text = @"头头头头头头头头头头头头";
+        simpleCell.detailText = @"头头头头头头头头头头头头detailText";
+        simpleCell.cellClazz = UITableViewHeaderFooterView.class;
+        simpleCell.loadType = LLCellLoadTypeOri;
+        simpleCell.cellHeight = 60;
+        
+        section.headerCell = simpleCell;
+        
+    }
+    
+    {
+        /// 尾
+        LLTableCell <NSDictionary *>*simpleCell = [[LLTableCell alloc] init];
+        simpleCell.data = [NSDictionary dictionary];
+        simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
+            
+        };
+        simpleCell.text = @"尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾";
+        simpleCell.detailText = @"尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾detailText";
+        simpleCell.cellClazz = UITableViewHeaderFooterView.class;
+        simpleCell.loadType = LLCellLoadTypeOri;
+        simpleCell.cellHeight = 32;
+        
+        section.footerCell = simpleCell;
+        
     }
     
     LLTableCell *simpleCell = [section buildAddCell];

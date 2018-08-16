@@ -14,6 +14,7 @@
 		DF3F5C5B2122B06600ADD1A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3F5C582122B06600ADD1A2 /* LaunchScreen.storyboard */; };
 		DFBD9CAC21250E4E008CC2FF /* AACollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBD9CAB21250E4E008CC2FF /* AACollectCell.m */; };
 		DFBD9CB821254930008CC2FF /* CollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBD9CB721254930008CC2FF /* CollectionHeaderView.m */; };
+		DFBD9CBB212553D9008CC2FF /* TableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBD9CBA212553D9008CC2FF /* TableViewHeaderFooter.m */; };
 		F399B8D4211DA0B900C1020E /* CollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BB211DA0B900C1020E /* CollectionController.m */; };
 		F399B8D5211DA0B900C1020E /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BD211DA0B900C1020E /* CustomTableViewController.m */; };
 		F399B8D7211DA0B900C1020E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BF211DA0B900C1020E /* ViewController.m */; };
@@ -44,6 +45,8 @@
 		DFBD9CAB21250E4E008CC2FF /* AACollectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AACollectCell.m; sourceTree = "<group>"; };
 		DFBD9CB621254930008CC2FF /* CollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionHeaderView.h; sourceTree = "<group>"; };
 		DFBD9CB721254930008CC2FF /* CollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionHeaderView.m; sourceTree = "<group>"; };
+		DFBD9CB9212553D9008CC2FF /* TableViewHeaderFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderFooter.h; sourceTree = "<group>"; };
+		DFBD9CBA212553D9008CC2FF /* TableViewHeaderFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderFooter.m; sourceTree = "<group>"; };
 		F399B8B8211DA0B900C1020E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F399B8B9211DA0B900C1020E /* CustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellView.h; sourceTree = "<group>"; };
 		F399B8BA211DA0B900C1020E /* EditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableViewController.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				DFBD9CAB21250E4E008CC2FF /* AACollectCell.m */,
 				DFBD9CB621254930008CC2FF /* CollectionHeaderView.h */,
 				DFBD9CB721254930008CC2FF /* CollectionHeaderView.m */,
+				DFBD9CB9212553D9008CC2FF /* TableViewHeaderFooter.h */,
+				DFBD9CBA212553D9008CC2FF /* TableViewHeaderFooter.m */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 				F399B8D4211DA0B900C1020E /* CollectionController.m in Sources */,
 				F399B8E0211DA0B900C1020E /* SimpleTableViewController.m in Sources */,
 				F399B8DE211DA0B900C1020E /* KVLLTableCell.m in Sources */,
+				DFBD9CBB212553D9008CC2FF /* TableViewHeaderFooter.m in Sources */,
 				F399B8DD211DA0B900C1020E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

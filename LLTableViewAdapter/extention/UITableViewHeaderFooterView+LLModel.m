@@ -27,8 +27,12 @@ static NSString *colLLModelkey = @"UITableViewHeaderFooterView+Modelkey";
     __weak typeof(self) weakSelf = self;
     // 如果是原生的cell 处理数据
     if ([NSStringFromClass(self.class) isEqualToString:@"UITableViewHeaderFooterView"]) {
-        self.textLabel.text = self.ll_model.text;
-        self.detailTextLabel.text = self.ll_model.detailText;
+        if (self.ll_model.text) {
+            self.textLabel.text = self.ll_model.text;
+        }
+        if (self.ll_model.detailText) {
+            self.detailTextLabel.text = self.ll_model.detailText;
+        }
     }
     /// 透传数据
     [self.ll_model.kvcExt enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {

@@ -34,7 +34,7 @@
     
     {
         /// 头
-        AACollectCell <NSDictionary *>*simpleCell = [[AACollectCell alloc] init];
+        LLCollectCell <NSDictionary *>*simpleCell = [[LLCollectCell alloc] init];
         simpleCell.data = [NSDictionary dictionary];
         simpleCell.cellClick = ^(AACollectCell <NSDictionary *>*cell, NSIndexPath *indexPath) {
             
@@ -49,9 +49,9 @@
     
     {
         /// 尾
-        AACollectCell <NSDictionary *>*simpleCell = [[AACollectCell alloc] init];
+        LLCollectCell <NSDictionary *>*simpleCell = [[LLCollectCell alloc] init];
         simpleCell.data = [NSDictionary dictionary];
-        simpleCell.cellClick = ^(AACollectCell <NSDictionary *>*cell, NSIndexPath *indexPath) {
+        simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {
             
         };
         simpleCell.cellClazz = CollectionHeaderView.class;
@@ -62,6 +62,7 @@
         
     }
     
+    /// cell
     for (NSInteger i = 0; i < 10; i ++) {
         LLCollectCell *simpleCell = [section buildAddCell];
         simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {

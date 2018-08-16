@@ -92,9 +92,6 @@
     }
 
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[cellModel cellIdentity] forIndexPath:indexPath];
-    
-    if (!cell) {
-           }
     cell.ll_model = cellModel;
     return cell;
 }
@@ -105,7 +102,7 @@
                                  atIndexPath:(NSIndexPath *)indexPath{
     
     LLCollectSection *section = self.sections[indexPath.section];
-    LLBaseCell *cellModel = nil;
+    LLCollectCell *cellModel = nil;
     
     if (kind == UICollectionElementKindSectionHeader) {
         cellModel = section.headerCell;
@@ -128,16 +125,15 @@
         default:
             break;
     }
+    UICollectionReusableView *reusableView = nil;
     if (kind == UICollectionElementKindSectionHeader) {
-        
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity forIndexPath:indexPath];
-        return headerView;
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity forIndexPath:indexPath];
     }
     if (kind == UICollectionElementKindSectionFooter) {
-        UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity forIndexPath:indexPath];
-        return footerView;
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity forIndexPath:indexPath];
     }
-    return nil;
+    reusableView.ll_model = cellModel;
+    return reusableView;
 }
 //显示组头尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
