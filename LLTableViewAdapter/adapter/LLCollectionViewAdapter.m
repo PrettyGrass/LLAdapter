@@ -7,7 +7,7 @@
 //
 
 #import "LLCollectionViewAdapter.h"
-#import "UICollectionViewCell+LLModel.h"
+#import "UICollectionReusableView+LLModel.h"
 #import "NSObject+LLClazz.h"
 #import "LLCollectSection.h"
 
@@ -98,6 +98,64 @@
     cell.ll_model = cellModel;
     return cell;
 }
+
+//显示组头
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
+           viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath{
+    
+    LLCollectSection *section = self.sections[indexPath.section];
+    LLBaseCell *cellModel = nil;
+    
+    if (kind == UICollectionElementKindSectionHeader) {
+        cellModel = section.headerCell;
+    } else if (kind == UICollectionElementKindSectionFooter) {
+        cellModel = section.footerCell;
+    }
+    NSString *cellIdentity = cellModel.cellIdentity;
+    //NSAssert((!cellModel || [cellModel.cellClazz isKindOfClass:UICollectionReusableView.class]), @"section 头视图必须继承自 UICollectionReusableView");
+    switch (cellModel.loadType) {
+        case LLCellLoadTypeInner:
+            //[collectionView registerClass:celModel.cellClazz forCellWithReuseIdentifier:[celModel.cellClazz ll_className]];
+            break;
+        case LLCellLoadTypeNib:
+            [collectionView registerNib:[UINib nibWithNibName:[cellModel cellNibName] bundle:nil] forSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity];
+            break;
+        case LLCellLoadTypeOri:
+            [collectionView registerClass:cellModel.cellClazz forSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity];
+            break;
+            
+        default:
+            break;
+    }
+    if (kind == UICollectionElementKindSectionHeader) {
+        
+        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity forIndexPath:indexPath];
+        return headerView;
+    }
+    if (kind == UICollectionElementKindSectionFooter) {
+        UICollectionReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:cellIdentity forIndexPath:indexPath];
+        return footerView;
+    }
+    return nil;
+}
+//显示组头尺寸
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    LLCollectSection *llSection = self.sections[section];
+    LLCollectCell *cell = llSection.headerCell;
+    NSAssert((!cell || [cell isKindOfClass:LLCollectCell.class]), @"section 头必须继承自 LLCollectCell");
+    return cell.cellSize;
+}
+//显示组尾尺寸
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
+    LLCollectSection *llSection = self.sections[section];
+    LLCollectCell *cell = llSection.footerCell;
+    NSAssert((!cell || [cell isKindOfClass:LLCollectCell.class]), @"section 尾必须继承自 LLCollectCell");
+    return cell.cellSize;
+}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     LLCollectCell *celModel = self.sections[indexPath.section].datas[indexPath.row];

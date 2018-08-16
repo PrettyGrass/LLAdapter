@@ -17,6 +17,6 @@
  *
  *	@since 1.0
  */
-@interface LLCollectSection: LLBaseSection
+@interface LLCollectSection<LLCellType: LLBaseCell*, LLHeaderType: LLBaseCell*, LLFooterType: LLBaseCell*>: LLBaseSection<LLCellType, LLHeaderType, LLFooterType>
 
 @end

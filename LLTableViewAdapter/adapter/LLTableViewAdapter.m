@@ -158,36 +158,75 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
         return [self.tableViewDelegate tableView:tableView viewForHeaderInSection:section];
     }
-    LLTableSection *sectionModel = self.sections[section];
-    return sectionModel.sectionHeaderView ? sectionModel.sectionHeaderView : nil;
+    
+    LLTableSection *tableSection = self.sections[section];
+    LLTableCell *cellModel = tableSection.headerCell;
+    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 头必须继承自 LLTableCell");
+    UIView *headerView = [self _tableView:tableView viewForHeaderInSection:section cellModel:cellModel];
+    return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
         return [self.tableViewDelegate tableView:tableView heightForHeaderInSection:section];
     }
-    LLTableSection *sectionModel = self.sections[section];
-    return sectionModel.sectionHeaderHeight != 0 ? sectionModel.sectionHeaderHeight : 0;
+    LLTableSection *tableSection = self.sections[section];
+    LLTableCell *cellModel = tableSection.headerCell;
+    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 头必须继承自 LLTableCell");
+    return cellModel.cellHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
         return [self.tableViewDelegate tableView:tableView viewForFooterInSection:section];
     }
-    LLTableSection *sectionModel = self.sections[section];
-    return sectionModel.sectionFooterView ? sectionModel.sectionFooterView : nil;
+    
+    LLTableSection *tableSection = self.sections[section];
+    LLTableCell *cellModel = tableSection.footerCell;
+    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 头必须继承自 LLTableCell");
+    UIView *headerView = [self _tableView:tableView viewForHeaderInSection:section cellModel:cellModel];
+    return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
         return [self.tableViewDelegate tableView:tableView heightForFooterInSection:section];
     }
-    LLTableSection *sectionModel = self.sections[section];
-    return sectionModel.sectionFooterHeight != 0 ? sectionModel.sectionFooterHeight : 0;
+    LLTableSection *tableSection = self.sections[section];
+    LLTableCell *cellModel = tableSection.footerCell;
+    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 尾必须继承自 LLTableCell");
+    return cellModel.cellHeight;
 }
+
+- (UIView *)_tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section cellModel:(LLBaseCell *)cellModel {
+    
+    if (!cellModel) {
+        return nil;
+    }
+    NSString *cellIdentity = cellModel.cellIdentity;
+    //NSAssert(([cellModel.cellClazz isKindOfClass:UITableViewHeaderFooterView.class]), @"section 头视图必须继承自 UITableViewHeaderFooterView");
+    switch (cellModel.loadType) {
+        case LLCellLoadTypeInner:
+            //[collectionView registerClass:celModel.cellClazz forCellWithReuseIdentifier:[celModel.cellClazz ll_className]];
+            break;
+        case LLCellLoadTypeNib:
+            [tableView registerNib:[UINib nibWithNibName:[cellModel cellNibName] bundle:nil] forHeaderFooterViewReuseIdentifier:cellIdentity];
+            break;
+        case LLCellLoadTypeOri:
+            [tableView registerClass:cellModel.cellClazz forHeaderFooterViewReuseIdentifier:cellIdentity];
+            break;
+            
+        default:
+            break;
+    }
+    UIView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:cellIdentity];
+    return headerView;
+}
+
 
 #pragma - mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

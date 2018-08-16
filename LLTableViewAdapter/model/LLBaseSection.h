@@ -7,7 +7,12 @@
 
 #import <Foundation/Foundation.h>
 @class LLBaseCell;
-@interface LLBaseSection <LLCellType: LLBaseCell*>: NSObject
+@interface LLBaseSection <LLCellType: LLBaseCell*, LLHeaderType: LLBaseCell*, LLFooterType: LLBaseCell*>: NSObject
+
+/// 组头
+@property (strong, nonatomic) LLHeaderType headerCell;
+/// 组尾
+@property (strong, nonatomic) LLFooterType footerCell;
 
 /// 单元的数据集合
 @property (strong, nonatomic) NSMutableArray <LLCellType> *datas;
@@ -22,5 +27,8 @@
 - (LLCellType)buildAddCell;
 /// 构建并添加指定类型cell对象
 - (LLCellType)buildAddCell:(Class)clazz;
+
+/// 清除datas
+- (void)clearCells;
 
 @end

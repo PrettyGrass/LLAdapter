@@ -14,7 +14,7 @@
 @interface EditTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *simpleTable;
-@property (strong, nonatomic) LLTableViewEditAdapter *adapter;
+@property (strong, nonatomic) LLTableViewAdapter *adapter;
 
 @end
 
@@ -26,7 +26,7 @@
     //self.view.backgroundColor = [UIColor lightGrayColor];
     //self.simpleTable.backgroundColor = [UIColor clearColor];
     ///初始化适配器
-    LLTableViewEditAdapter *adapter = [[LLTableViewEditAdapter alloc] initWithTableView:self.simpleTable];
+    LLTableViewAdapter *adapter = [[LLTableViewAdapter alloc] initWithTableView:self.simpleTable];
     self.adapter = adapter;
     
     self.simpleTable.estimatedRowHeight = 44;

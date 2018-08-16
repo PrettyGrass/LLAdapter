@@ -7,6 +7,7 @@
 //
 
 #import "LLBaseAdapter.h"
+#import "LLBaseAdapter+private.h"
 
 @implementation LLBaseAdapter
 
@@ -15,6 +16,7 @@
     self = [super init];
     if (self) {
         _sections = [[NSMutableArray alloc] init];
+        _registerViewMap = [NSMutableDictionary dictionary];
     }
     return self;
 }

@@ -28,10 +28,16 @@
     NSAssert(false, @"子类需要覆盖该实现方法, [LLBaseSection buildAddCell]");
     return nil;
 }
+
 - (LLBaseCell *)buildAddCell:(Class)clazz {
     LLBaseCell *cell = [[clazz alloc] init];
     [self addCell:cell];
     return cell;
+}
+
+/// 清除datas
+- (void)clearCells {
+    [self.datas removeAllObjects];
 }
 
 @end

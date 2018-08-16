@@ -12,7 +12,7 @@
 
 static NSInteger kCellSelectTag = 1000221;
 static NSInteger kCellSeparatorStyleTag = 1000222;
-static NSString *celLLModelkey = @"celLLModelkey";
+static NSString *celLLModelkey = @"UITableViewCell+Modelkey";
 @implementation UITableViewCell (LLModel)
 
 - (void)setLl_model:(LLTableCell *)ll_model {

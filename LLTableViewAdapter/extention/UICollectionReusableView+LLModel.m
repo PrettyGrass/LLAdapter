@@ -1,16 +1,16 @@
 //
-//  UICollectionViewCell+LLModel.m
+//  UICollectionReusableView+LLModel.m
 //  Adapter
 //
 //  Created by ylin.yang on 2016/6/24.
 //  Copyright © 2016年 ylin.yang. All rights reserved.
 //
 
-#import "UICollectionViewCell+LLModel.h"
+#import "UICollectionReusableView+LLModel.h"
 #import <objc/runtime.h>
 
-static NSString *colLLModelkey = @"colLLModelkey";
-@implementation UICollectionViewCell (LLModel)
+static NSString *colLLModelkey = @"UICollectionReusableView+Modelkey";
+@implementation UICollectionReusableView (LLModel)
 
 - (void)setLl_model:(LLCollectCell *)ll_model {
     objc_setAssociatedObject(self, &colLLModelkey, ll_model, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

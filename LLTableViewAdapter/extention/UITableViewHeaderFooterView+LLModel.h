@@ -1,5 +1,5 @@
 //
-//  UICollectionViewCell+LLModel.h
+//  UITableViewHeaderFooterView+LLModel.h
 //  Adapter
 //
 //  Created by ylin.yang on 2016/6/24.
@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LLCollectCell.h"
+#import "LLTableCell.h"
 
-@interface UICollectionViewCell (LLModel)
-@property (strong, nonatomic) LLCollectCell *ll_model;
+@interface UITableViewHeaderFooterView (LLModel)
+@property (strong, nonatomic) LLTableCell *ll_model;
 - (void)ll_updateCellUI;
 @end

@@ -17,16 +17,6 @@
  *
  *	@since 1.0
  */
-@interface LLTableSection : LLBaseSection
-
-/// section Header高
-@property (assign, nonatomic) CGFloat sectionHeaderHeight;
-/// section Footer高
-@property (assign, nonatomic) CGFloat sectionFooterHeight;
-
-///组头
-@property (nonatomic, strong) UIView *sectionHeaderView;
-///组尾
-@property (nonatomic, strong) UIView *sectionFooterView;
+@interface LLTableSection<LLCellType: LLBaseCell*, LLHeaderType: LLBaseCell*, LLFooterType: LLBaseCell*>: LLBaseSection<LLCellType, LLHeaderType, LLFooterType>
 
 @end

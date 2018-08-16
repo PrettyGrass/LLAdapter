@@ -13,7 +13,6 @@
 
 #import "LLCollectionViewAdapter.h"
 #import "LLTableViewAdapter.h"
-#import "LLTableViewEditAdapter.h"
 
 #import "LLTableSection.h"
 #import "LLCollectSection.h"
@@ -22,6 +21,7 @@
 #import "LLCollectCell.h"
 
 #import "UITableViewCell+LLModel.h"
-#import "UICollectionViewCell+LLModel.h"
+#import "UICollectionReusableView+LLModel.h"
+#import "UITableViewHeaderFooterView+LLModel.h"
 
 #endif /* LLTableViewAdapter_h */

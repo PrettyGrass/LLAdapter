@@ -9,6 +9,7 @@
 #import "CollectionController.h"
 #import <LLTableViewAdapter/LLAdapter.h>
 #import "AACollectCell.h"
+#import "CollectionHeaderView.h"
 
 @interface CollectionController ()
 
@@ -25,30 +26,43 @@
     ///初始化适配器
     LLCollectionViewAdapter *adapter = [[LLCollectionViewAdapter alloc] initWithCollection:self.collectionView];
     self.adapter = adapter;
-    
     ///设置数据
     LLCollectSection *section = self.adapter.sections.firstObject;
     if (!section) {
         section = [self.adapter addNewSection];
     }
+    
     {
-        AACollectCell <NSDictionary *>*simpleCell = [section buildAddCell:AACollectCell.class];
+        /// 头
+        AACollectCell <NSDictionary *>*simpleCell = [[AACollectCell alloc] init];
         simpleCell.data = [NSDictionary dictionary];
         simpleCell.cellClick = ^(AACollectCell <NSDictionary *>*cell, NSIndexPath *indexPath) {
             
         };
-        simpleCell.cellClazz = UICollectionViewCell.class;
-        simpleCell.loadType = LLCellLoadTypeInner;
+        simpleCell.cellClazz = CollectionHeaderView.class;
+        simpleCell.loadType = LLCellLoadTypeOri;
+        simpleCell.cellSize = CGSizeMake(100, 100);
+        
+        section.headerCell = simpleCell;
+
     }
+    
     {
-        LLCollectCell *simpleCell = [section buildAddCell];
-        simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {
+        /// 尾
+        AACollectCell <NSDictionary *>*simpleCell = [[AACollectCell alloc] init];
+        simpleCell.data = [NSDictionary dictionary];
+        simpleCell.cellClick = ^(AACollectCell <NSDictionary *>*cell, NSIndexPath *indexPath) {
             
         };
-        simpleCell.cellClazz = UICollectionViewCell.class;
-        simpleCell.loadType = LLCellLoadTypeInner;
+        simpleCell.cellClazz = CollectionHeaderView.class;
+        simpleCell.loadType = LLCellLoadTypeOri;
+        simpleCell.cellSize = CGSizeMake(100, 50);
+        
+        section.footerCell = simpleCell;
+        
     }
-    {
+    
+    for (NSInteger i = 0; i < 10; i ++) {
         LLCollectCell *simpleCell = [section buildAddCell];
         simpleCell.cellClick = ^(LLCollectCell *cell, NSIndexPath *indexPath) {
             
