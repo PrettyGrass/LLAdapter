@@ -52,6 +52,6 @@ typedef void (^LLTableCellAction)(__kindof LLTableCell *model, NSIndexPath *inde
 /// 子标题
 @property (copy, nonatomic) NSString *detailText;
 /// 图片  内置图片名 或 UIImage *
-@property (assign, nonatomic) id image;
+@property (strong, nonatomic) id image;
 
 @end
