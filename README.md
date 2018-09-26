@@ -1,1 +1,1 @@
-#LLTableViewAdapter
+#LLAdapter
