@@ -21,7 +21,6 @@
 		F399B8DB211DA0B900C1020E /* EditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8C8211DA0B900C1020E /* EditTableViewController.m */; };
 		F399B8DC211DA0B900C1020E /* CustomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8C9211DA0B900C1020E /* CustomCellView.m */; };
 		F399B8DD211DA0B900C1020E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8CA211DA0B900C1020E /* AppDelegate.m */; };
-		F399B8DE211DA0B900C1020E /* KVLLTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8CE211DA0B900C1020E /* KVLLTableCell.m */; };
 		F399B8DF211DA0B900C1020E /* SimpleCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8CF211DA0B900C1020E /* SimpleCellView.m */; };
 		F399B8E0211DA0B900C1020E /* SimpleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8D0211DA0B900C1020E /* SimpleTableViewController.m */; };
 		F399B8E1211DA0B900C1020E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F399B8D1211DA0B900C1020E /* Info.plist */; };
@@ -51,7 +50,6 @@
 		F399B8B9211DA0B900C1020E /* CustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellView.h; sourceTree = "<group>"; };
 		F399B8BA211DA0B900C1020E /* EditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableViewController.h; sourceTree = "<group>"; };
 		F399B8BB211DA0B900C1020E /* CollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionController.m; sourceTree = "<group>"; };
-		F399B8BC211DA0B900C1020E /* KVLLTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVLLTableCell.h; sourceTree = "<group>"; };
 		F399B8BD211DA0B900C1020E /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
 		F399B8BF211DA0B900C1020E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F399B8C0211DA0B900C1020E /* SimpleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleTableViewController.h; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 		F399B8C9211DA0B900C1020E /* CustomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCellView.m; sourceTree = "<group>"; };
 		F399B8CA211DA0B900C1020E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F399B8CD211DA0B900C1020E /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
-		F399B8CE211DA0B900C1020E /* KVLLTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVLLTableCell.m; sourceTree = "<group>"; };
 		F399B8CF211DA0B900C1020E /* SimpleCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCellView.m; sourceTree = "<group>"; };
 		F399B8D0211DA0B900C1020E /* SimpleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTableViewController.m; sourceTree = "<group>"; };
 		F399B8D1211DA0B900C1020E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,8 +121,6 @@
 			children = (
 				F399B8B9211DA0B900C1020E /* CustomCellView.h */,
 				F399B8C9211DA0B900C1020E /* CustomCellView.m */,
-				F399B8BC211DA0B900C1020E /* KVLLTableCell.h */,
-				F399B8CE211DA0B900C1020E /* KVLLTableCell.m */,
 				F399B8C5211DA0B900C1020E /* SimpleCellView.h */,
 				F399B8CF211DA0B900C1020E /* SimpleCellView.m */,
 				DFBD9CAA21250E4E008CC2FF /* AACollectCell.h */,
@@ -277,7 +272,6 @@
 				F399B8D5211DA0B900C1020E /* CustomTableViewController.m in Sources */,
 				F399B8D4211DA0B900C1020E /* CollectionController.m in Sources */,
 				F399B8E0211DA0B900C1020E /* SimpleTableViewController.m in Sources */,
-				F399B8DE211DA0B900C1020E /* KVLLTableCell.m in Sources */,
 				DFBD9CBB212553D9008CC2FF /* TableViewHeaderFooter.m in Sources */,
 				F399B8DD211DA0B900C1020E /* AppDelegate.m in Sources */,
 			);

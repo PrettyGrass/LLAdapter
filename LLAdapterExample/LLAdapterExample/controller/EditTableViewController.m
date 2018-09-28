@@ -8,7 +8,6 @@
 
 #import "EditTableViewController.h"
 #import <LLAdapter/LLAdapter.h>
-#import "KVLLTableCell.h"
 #import "CustomCellView.h"
 
 @interface EditTableViewController ()
@@ -38,7 +37,7 @@
         section = [self.adapter buildAddNewSection];
     }
     {
-        KVLLTableCell *simpleCell = [section buildAddCell];
+        LLTableCell *simpleCell = [section buildAddCell];
         simpleCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
             
@@ -47,7 +46,7 @@
         simpleCell.text = @"简单";
     }
     for (int i = 0; i < 1000; i ++) {
-        LLTableCell *customCell = [section buildAddCell:KVLLTableCell.class];
+        LLTableCell *customCell = [section buildAddCell:LLTableCell.class];
         customCell.separatorStyle = LLTableViewCellSeparatorStyleCustom;
         [customCell.kvcExt setObject:[UIColor clearColor] forKey:@"backgroundColor"];
         if (i % 2) {

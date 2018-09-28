@@ -11,5 +11,5 @@
 
 @interface UITableViewHeaderFooterView (LLModel)
 @property (strong, nonatomic) LLTableCell *ll_model;
-- (void)ll_updateCellUI;
+- (void)ll_updateCellUI NS_REQUIRES_SUPER;
 @end

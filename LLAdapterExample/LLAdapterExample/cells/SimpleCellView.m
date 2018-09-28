@@ -14,11 +14,13 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 - (void)ll_updateCellUI {
     [super ll_updateCellUI];
     self.titleLab.text = self.ll_model.text;
 }
-
+- (IBAction)btnAction:(id)sender {
+    !self.cellBtnClick ?: self.cellBtnClick(self.ll_model, self.ll_model.indexPath);
+}
+    
 @end
