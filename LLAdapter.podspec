@@ -11,7 +11,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.public_header_files = "LLAdapter/**/*.{h}"
-  s.resources    = "LLAdapter/**/*.{png,xib,nib,bundle}"
   s.source_files = "LLAdapter/**/*.{h,m}"
 
 end
