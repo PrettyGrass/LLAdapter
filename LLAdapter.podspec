@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "LLAdapter"
-  s.version      = "1.3.0"
+  s.version      = "2.0.0"
   s.summary      = "UITableView/UICollectionView 的适配器. 助你优雅的构建UITableView/UICollectionView, 分离控制器和cell的逻辑."
   s.homepage     = "https://github.com/y0love/LLAdapter"
   s.license      = "MIT"
