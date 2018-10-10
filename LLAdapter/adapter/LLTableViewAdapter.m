@@ -68,7 +68,7 @@
 //    [self.sections addObject:section];
 //}
 
-#pragma - mark - UITableViewDelegate
+#pragma - mark - UITableViewDataSource
 - (NSInteger )numberOfSectionsInTableView:(UITableView *)tableView {
     
     return self.sections.count;
@@ -126,15 +126,71 @@
                 break;
         }
     }
-    //cell.selectionStyle = cellModel.selectionStyle;
     cell.accessoryType = cellModel.accessoryType;
     cell.ll_model = cellModel;
     return cell;
 }
 
-/**
- *    cell 的点击事件/
- */
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if ([self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return [self.dataSourceDelegate tableView:tableView titleForFooterInSection:section];
+    }
+    LLTableSection *tableSection = self.sections[section];
+    return tableSection.sectionHeaderTitle;
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    if ([self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return [self.dataSourceDelegate tableView:tableView titleForFooterInSection:section];
+    }
+    LLTableSection *tableSection = self.sections[section];
+    return tableSection.sectionFooterTitle;
+}
+
+- (nullable NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    if ([self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return [self.dataSourceDelegate sectionIndexTitlesForTableView:tableView];
+    }
+    return nil;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    if ([self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return [self.dataSourceDelegate tableView:tableView sectionForSectionIndexTitle:title atIndex:index];
+    }
+    return 0;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (![self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return NO;
+    }
+    return [self.dataSourceDelegate tableView:tableView canEditRowAtIndexPath:indexPath];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (![self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return NO;
+    }
+    return [self.dataSourceDelegate tableView:tableView canMoveRowAtIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (![self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.dataSourceDelegate tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    if (![self.dataSourceDelegate respondsToSelector:_cmd]) {
+        return;
+    }
+    [self.dataSourceDelegate tableView:tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:destinationIndexPath];
+}
+
+#pragma mark - UITableViewDelegate
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     LLTableCell *cellModel = self.sections[indexPath.section].datas[indexPath.row];
     cellModel.indexPath = indexPath;
@@ -145,7 +201,7 @@
         cellModel.cellClick(cellModel, indexPath);
     }
 }
-//设置每个cell 的高度;
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
         CGFloat height = [self.tableViewDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
@@ -159,14 +215,14 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-
+    
     if ([self.tableViewDelegate respondsToSelector:_cmd]) {
         return [self.tableViewDelegate tableView:tableView viewForHeaderInSection:section];
     }
     
     LLTableSection *tableSection = self.sections[section];
-    LLTableCell *cellModel = tableSection.headerCell;
-    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 头必须继承自 LLTableCell");
+    LLTableSectionReusableCell *cellModel = tableSection.headerCell;
+    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableSectionReusableCell.class]), @"section 头必须继承自 LLTableSectionReusableCell");
     UIView *headerView = [self _tableView:tableView viewForHeaderInSection:section cellModel:cellModel];
     return headerView;
 }
@@ -176,9 +232,13 @@
         return [self.tableViewDelegate tableView:tableView heightForHeaderInSection:section];
     }
     LLTableSection *tableSection = self.sections[section];
-    LLTableCell *cellModel = tableSection.headerCell;
-    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 头必须继承自 LLTableCell");
-    return cellModel.cellHeight;
+    LLTableSectionReusableCell *cellModel = tableSection.headerCell;
+    if (cellModel) {
+        NSAssert((!cellModel || [cellModel isKindOfClass:LLTableSectionReusableCell.class]), @"section 头必须继承自 LLTableSectionReusableCell");
+        return cellModel.cellHeight;
+    }else { //兼容系统的title
+        return tableSection.sectionFooterTitleHeight;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
@@ -187,8 +247,8 @@
     }
     
     LLTableSection *tableSection = self.sections[section];
-    LLTableCell *cellModel = tableSection.footerCell;
-    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 头必须继承自 LLTableCell");
+    LLTableSectionReusableCell *cellModel = tableSection.footerCell;
+    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableSectionReusableCell.class]), @"section尾必须继承自 LLTableSectionReusableCell");
     UIView *headerView = [self _tableView:tableView viewForHeaderInSection:section cellModel:cellModel];
     return headerView;
 }
@@ -198,12 +258,16 @@
         return [self.tableViewDelegate tableView:tableView heightForFooterInSection:section];
     }
     LLTableSection *tableSection = self.sections[section];
-    LLTableCell *cellModel = tableSection.footerCell;
-    NSAssert((!cellModel || [cellModel isKindOfClass:LLTableCell.class]), @"section 尾必须继承自 LLTableCell");
-    return cellModel.cellHeight;
+    LLTableSectionReusableCell *cellModel = tableSection.footerCell;
+    if (cellModel) {
+        NSAssert((!cellModel || [cellModel isKindOfClass:LLTableSectionReusableCell.class]), @"section 尾必须继承自 LLTableSectionReusableCell");
+        return cellModel.cellHeight;
+    }else {
+        return tableSection.sectionFooterTitleHeight;
+    }
 }
 
-- (UIView *)_tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section cellModel:(LLTableCell *)cellModel {
+- (UIView *)_tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section cellModel:(LLTableSectionReusableCell *)cellModel {
     
     if (!cellModel) {
         return nil;
@@ -228,7 +292,6 @@
     headerView.ll_model = cellModel;
     return headerView;
 }
-
 
 #pragma - mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

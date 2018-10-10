@@ -15,6 +15,7 @@
 		DFBD9CAC21250E4E008CC2FF /* AACollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBD9CAB21250E4E008CC2FF /* AACollectCell.m */; };
 		DFBD9CB821254930008CC2FF /* CollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBD9CB721254930008CC2FF /* CollectionHeaderView.m */; };
 		DFBD9CBB212553D9008CC2FF /* TableViewHeaderFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBD9CBA212553D9008CC2FF /* TableViewHeaderFooter.m */; };
+		F31A2E6B216CBE3000575E65 /* SectionTitleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F31A2E6A216CBE3000575E65 /* SectionTitleController.m */; };
 		F399B8D4211DA0B900C1020E /* CollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BB211DA0B900C1020E /* CollectionController.m */; };
 		F399B8D5211DA0B900C1020E /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BD211DA0B900C1020E /* CustomTableViewController.m */; };
 		F399B8D7211DA0B900C1020E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F399B8BF211DA0B900C1020E /* ViewController.m */; };
@@ -46,6 +47,8 @@
 		DFBD9CB721254930008CC2FF /* CollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionHeaderView.m; sourceTree = "<group>"; };
 		DFBD9CB9212553D9008CC2FF /* TableViewHeaderFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewHeaderFooter.h; sourceTree = "<group>"; };
 		DFBD9CBA212553D9008CC2FF /* TableViewHeaderFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewHeaderFooter.m; sourceTree = "<group>"; };
+		F31A2E6A216CBE3000575E65 /* SectionTitleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionTitleController.m; sourceTree = "<group>"; };
+		F31A2E6C216CBE3900575E65 /* SectionTitleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionTitleController.h; sourceTree = "<group>"; };
 		F399B8B8211DA0B900C1020E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F399B8B9211DA0B900C1020E /* CustomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellView.h; sourceTree = "<group>"; };
 		F399B8BA211DA0B900C1020E /* EditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditTableViewController.h; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				F399B8BD211DA0B900C1020E /* CustomTableViewController.m */,
 				F399B8C0211DA0B900C1020E /* SimpleTableViewController.h */,
 				F399B8D0211DA0B900C1020E /* SimpleTableViewController.m */,
+				F31A2E6C216CBE3900575E65 /* SectionTitleController.h */,
+				F31A2E6A216CBE3000575E65 /* SectionTitleController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -199,7 +204,7 @@
 				TargetAttributes = {
 					DF5BA7831E6D4DA100838FB1 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = TUKX34Z3B2;
+						DevelopmentTeam = 9F64NC5QM7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -265,6 +270,7 @@
 				DFBD9CAC21250E4E008CC2FF /* AACollectCell.m in Sources */,
 				DFBD9CB821254930008CC2FF /* CollectionHeaderView.m in Sources */,
 				DF3F5C552122B04300ADD1A2 /* main.m in Sources */,
+				F31A2E6B216CBE3000575E65 /* SectionTitleController.m in Sources */,
 				F399B8D7211DA0B900C1020E /* ViewController.m in Sources */,
 				F399B8DC211DA0B900C1020E /* CustomCellView.m in Sources */,
 				F399B8DF211DA0B900C1020E /* SimpleCellView.m in Sources */,
@@ -392,7 +398,7 @@
 			baseConfigurationReference = 8664B2EE9375DC452D2DD19E /* Pods-LLAdapterExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TUKX34Z3B2;
+				DEVELOPMENT_TEAM = 9F64NC5QM7;
 				INFOPLIST_FILE = "$(SRCROOT)/LLAdapterExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExample;
@@ -405,7 +411,7 @@
 			baseConfigurationReference = 858C51FC6758561382FB1EDF /* Pods-LLAdapterExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TUKX34Z3B2;
+				DEVELOPMENT_TEAM = 9F64NC5QM7;
 				INFOPLIST_FILE = "$(SRCROOT)/LLAdapterExample/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = club.ylin.LTableViewAdapterExample;

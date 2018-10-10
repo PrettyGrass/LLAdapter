@@ -17,6 +17,8 @@
 #import "LLTableSection.h"
 #import "LLCollectSection.h"
 
+#import "LLTableSectionReusableCell.h"
+
 #import "LLTableCell.h"
 #import "LLCollectCell.h"
 

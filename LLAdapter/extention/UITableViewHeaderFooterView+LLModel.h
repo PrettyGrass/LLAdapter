@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LLTableCell.h"
+#import "LLTableSectionReusableCell.h"
 
 @interface UITableViewHeaderFooterView (LLModel)
-@property (strong, nonatomic) LLTableCell *ll_model;
+@property (strong, nonatomic) LLTableSectionReusableCell *ll_model;
 - (void)ll_updateCellUI NS_REQUIRES_SUPER;
 @end
