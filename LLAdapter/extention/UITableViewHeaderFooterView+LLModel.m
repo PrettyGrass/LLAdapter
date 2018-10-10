@@ -12,13 +12,13 @@
 static NSString *colLLModelkey = @"UITableViewHeaderFooterView+Modelkey";
 @implementation UITableViewHeaderFooterView (LLModel)
 
-- (void)setLl_model:(LLTableCell *)ll_model {
+- (void)setLl_model:(LLTableSectionReusableCell *)ll_model {
     objc_setAssociatedObject(self, &colLLModelkey, ll_model, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     [self ll_updateCellUI];
 }
 
-- (LLTableCell *)ll_model {
+- (LLTableSectionReusableCell *)ll_model {
     
     return objc_getAssociatedObject(self, &colLLModelkey);
 }
@@ -32,6 +32,9 @@ static NSString *colLLModelkey = @"UITableViewHeaderFooterView+Modelkey";
         }
         if (self.ll_model.detailText) {
             self.detailTextLabel.text = self.ll_model.detailText;
+        }
+        if (self.ll_model.backgroundView) {
+            self.backgroundView = self.ll_model.backgroundView;
         }
     }
     /// 透传数据

@@ -12,7 +12,8 @@
 #import "CustomTableViewController.h"
 #import "EditTableViewController.h"
 #import "CollectionController.h"
-#import "TableViewHeaderFooter.h"
+#import "SectionTitleController.h"
+
 
 @interface ViewController ()
 
@@ -41,36 +42,24 @@
     
     {
         /// 头
-        LLTableCell <NSDictionary *>*simpleCell = [[LLTableCell alloc] init];
+        LLTableSectionReusableCell *simpleCell = [[LLTableSectionReusableCell alloc] init];
         simpleCell.data = [NSDictionary dictionary];
-        simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
-            
-        };
-        simpleCell.text = @"头头头头头头头头头头头头";
-        simpleCell.detailText = @"头头头头头头头头头头头头detailText";
         simpleCell.cellClazz = UITableViewHeaderFooterView.class;
         simpleCell.loadType = LLCellLoadTypeOri;
         simpleCell.cellHeight = 60;
-        
+        simpleCell.text = @"头部需要继承UITableViewHeaderFooterView ";
         section.headerCell = simpleCell;
-        
     }
     
     {
         /// 尾
-        LLTableCell <NSDictionary *>*simpleCell = [[LLTableCell alloc] init];
+        LLTableSectionReusableCell *simpleCell = [[LLTableSectionReusableCell alloc] init];
         simpleCell.data = [NSDictionary dictionary];
-        simpleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
-            
-        };
-        simpleCell.text = @"尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾";
-        simpleCell.detailText = @"尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾尾detailText";
         simpleCell.cellClazz = UITableViewHeaderFooterView.class;
         simpleCell.loadType = LLCellLoadTypeOri;
         simpleCell.cellHeight = 32;
-        
+        simpleCell.text = @"实现 - (void)ll_updateCellUI 方法";
         section.footerCell = simpleCell;
-        
     }
     
     LLTableCell *simpleCell = [section buildAddCell];
@@ -96,6 +85,14 @@
     };
     editCell.loadType = LLCellLoadTypeInner;
     editCell.text = @"编辑";
+    
+    LLTableCell *sectionTitleCell = [section buildAddCell];
+    sectionTitleCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
+        SectionTitleController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"SectionTitleController"];
+        [self.navigationController pushViewController:vc animated:true];
+    };
+    sectionTitleCell.loadType = LLCellLoadTypeInner;
+    sectionTitleCell.text = @"sectionHeaderTitle and sectionFooterTitle";
     
     LLTableCell *collectCell = [section buildAddCell];
     collectCell.cellClick = ^(LLTableCell *cell, NSIndexPath *indexPath) {
